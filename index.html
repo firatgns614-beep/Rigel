@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RigelApp — KPSS Fiziki Coğrafya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1e14;
+    --surface: #162118;
+    --surface2: #1e2e21;
+    --border: #2a3d2d;
+    --accent: #5a8a45;
+    --accent2: #7eb85a;
+    --gold: #c9a96e;
+    --text: #dde8d5;
+    --muted: #7a9975;
+    --red: #c0544a;
+    --green: #4a9962;
+    --white: #f0ede4;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* PARTICLES */
+  .leaf { position:fixed; pointer-events:none; opacity:0; font-size:18px; z-index:0; animation: leaffall linear infinite; }
+  @keyframes leaffall {
+    0% { transform: translateY(-30px) rotate(0deg); opacity:0.6; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity:0; }
+  }
+
+  /* SCREENS */
+  .screen { display:none; min-height:100vh; }
+  .screen.active { display:flex; flex-direction:column; align-items:center; justify-content:center; }
+
+  /* HOME SCREEN */
+  #home {
+    background: radial-gradient(ellipse at 50% 0%, #1e3520 0%, var(--bg) 70%);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    gap: 0;
+    position: relative;
+    overflow: hidden;
+  }
+  #home::before {
+    content:'';
+    position:absolute; inset:0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%235a8a45' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity:1;
+  }
+  .logo-ring {
+    width: 90px; height: 90px;
+    margin: 0 auto 1.5rem;
+    position:relative;
+  }
+  .logo-ring::before, .logo-ring::after {
+    content:'';
+    position:absolute; inset:0;
+    border-radius:50%;
+    border: 2px solid;
+  }
+  .logo-ring::before { border-color: var(--gold); opacity:0.5; transform:scale(1.15); }
+  .logo-ring::after { border-color: var(--accent); opacity:0.4; transform:scale(1.35); }
+  .logo-inner {
+    width:70px; height:70px; border-radius:50%;
+    background: radial-gradient(circle, #2a4020, #1a2e17);
+    border: 2px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    margin: 10px auto 0;
+    font-size:26px;
+  }
+  .app-title {
+    font-family:'Playfair Display', serif;
+    font-size: clamp(2.2rem, 8vw, 3.2rem);
+    font-weight:700;
+    letter-spacing:-1px;
+    margin-bottom:0.2rem;
+  }
+  .app-title span { color: var(--accent2); }
+  .app-sub {
+    letter-spacing:0.3em;
+    font-size:0.65rem;
+    color: var(--muted);
+    text-transform:uppercase;
+    margin-bottom:1.2rem;
+  }
+  .app-tagline {
+    font-family:'Playfair Display', serif;
+    font-style:italic;
+    color: var(--gold);
+    font-size:1rem;
+    margin-bottom:2rem;
+    opacity:0.9;
+  }
+
+  .unite-label {
+    font-size:0.65rem;
+    text-transform:uppercase;
+    letter-spacing:0.25em;
+    color:var(--muted);
+    margin-bottom:0.8rem;
+    font-weight:600;
+  }
+  .unite-grid {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+    width:100%;
+    max-width:420px;
+    margin-bottom:1.2rem;
+  }
+  .unite-btn {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    color: var(--text);
+    border-radius:12px;
+    padding: 0.7rem 0.9rem;
+    font-family:'DM Sans',sans-serif;
+    font-size:0.82rem;
+    font-weight:500;
+    cursor:pointer;
+    transition: all 0.2s;
+    text-align:left;
+    display:flex; align-items:center; gap:0.5rem;
+  }
+  .unite-btn:hover, .unite-btn.selected {
+    background: var(--surface2);
+    border-color: var(--accent);
+    color: var(--white);
+  }
+  .unite-btn.selected {
+    border-color: var(--accent2);
+    box-shadow: 0 0 0 1px var(--accent2)22;
+  }
+  .unite-btn .uico { font-size:1rem; }
+  .unite-all {
+    grid-column: 1/-1;
+    justify-content:center;
+    border-color: var(--gold) !important;
+    color: var(--gold) !important;
+    font-weight:600;
+  }
+  .unite-all.selected { background: #1e1800; }
+
+  .start-btn {
+    width:100%; max-width:420px;
+    background: var(--accent);
+    border:none;
+    color: var(--white);
+    border-radius:14px;
+    padding: 1rem;
+    font-family:'DM Sans',sans-serif;
+    font-size:1rem;
+    font-weight:600;
+    cursor:pointer;
+    transition: all 0.2s;
+    letter-spacing:0.02em;
+    display:flex; align-items:center; justify-content:center; gap:0.5rem;
+    margin-top: 0.3rem;
+  }
+  .start-btn:hover { background: var(--accent2); transform:translateY(-1px); }
+  .start-btn:active { transform:translateY(0); }
+
+  /* QUIZ SCREEN */
+  #quiz {
+    background: var(--bg);
+    padding: 0;
+    align-items:stretch;
+    justify-content:flex-start;
+  }
+  .quiz-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 0.8rem 1.2rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:1rem;
+    position:sticky; top:0; z-index:10;
+  }
+  .quiz-back {
+    background:transparent;
+    border: 1.5px solid var(--border);
+    color:var(--muted);
+    border-radius:8px;
+    width:36px; height:36px;
+    cursor:pointer;
+    font-size:1rem;
+    display:flex; align-items:center; justify-content:center;
+    transition: all 0.2s;
+    flex-shrink:0;
+  }
+  .quiz-back:hover { border-color:var(--accent); color:var(--text); }
+  .quiz-progress-wrap { flex:1; }
+  .quiz-info {
+    font-size:0.72rem;
+    color:var(--muted);
+    margin-bottom:0.3rem;
+    display:flex; justify-content:space-between;
+  }
+  .quiz-bar { height:4px; background:var(--border); border-radius:4px; overflow:hidden; }
+  .quiz-bar-fill { height:100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius:4px; transition: width 0.4s ease; }
+  .score-badge {
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    border-radius:8px;
+    padding: 0.3rem 0.7rem;
+    font-size:0.78rem;
+    font-weight:600;
+    color:var(--gold);
+    flex-shrink:0;
+  }
+
+  .quiz-body { flex:1; overflow-y:auto; padding:1rem 1.2rem 2rem; display:flex; flex-direction:column; gap:1rem; }
+
+  /* MAP CONTAINER */
+  .map-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius:16px;
+    overflow:hidden;
+    position:relative;
+  }
+  .map-label {
+    position:absolute; top:0.6rem; left:0.8rem;
+    font-size:0.6rem; text-transform:uppercase; letter-spacing:0.2em;
+    color:var(--muted); z-index:2;
+  }
+  .map-wrapper {
+    width:100%;
+    padding: 0.5rem;
+  }
+  .map-wrapper svg {
+    width:100%;
+    height:auto;
+    display:block;
+  }
+  /* Province base styles */
+  .map-wrapper svg path, .map-wrapper svg circle {
+    cursor: default;
+    transition: fill 0.3s, filter 0.3s;
+  }
+  .map-wrapper svg path.highlighted {
+    fill: var(--gold) !important;
+    filter: drop-shadow(0 0 6px rgba(201,169,110,0.6));
+    cursor: pointer;
+  }
+  .map-wrapper svg path.highlighted:hover {
+    fill: #e0be7a !important;
+  }
+  .map-wrapper svg path.correct-flash {
+    fill: var(--green) !important;
+    filter: drop-shadow(0 0 8px rgba(74,153,98,0.8));
+  }
+  .map-wrapper svg path.wrong-flash {
+    fill: var(--red) !important;
+    filter: drop-shadow(0 0 8px rgba(192,84,74,0.8));
+  }
+
+  /* QUESTION CARD */
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius:16px;
+    padding: 1.1rem;
+  }
+  .q-unite-tag {
+    display:inline-flex; align-items:center; gap:0.3rem;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius:20px;
+    padding: 0.2rem 0.6rem;
+    font-size:0.65rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.15em;
+    margin-bottom:0.7rem;
+  }
+  .q-text {
+    font-family:'Playfair Display', serif;
+    font-size:1rem;
+    line-height:1.55;
+    color:var(--white);
+    margin-bottom:1rem;
+  }
+  .options-list { display:flex; flex-direction:column; gap:0.5rem; }
+  .opt-btn {
+    background: var(--surface2);
+    border: 1.5px solid var(--border);
+    color:var(--text);
+    border-radius:10px;
+    padding: 0.75rem 1rem;
+    font-family:'DM Sans',sans-serif;
+    font-size:0.88rem;
+    cursor:pointer;
+    transition: all 0.2s;
+    text-align:left;
+    display:flex; align-items:center; gap:0.6rem;
+    line-height:1.3;
+  }
+  .opt-btn:hover:not(.disabled) { border-color:var(--accent); color:var(--white); background:#1f2e1f; }
+  .opt-btn.correct { border-color:var(--green) !important; background:#0f2218 !important; color:#a8f0b8 !important; }
+  .opt-btn.wrong { border-color:var(--red) !important; background:#200e0e !important; color:#f0b8b8 !important; }
+  .opt-btn.disabled { cursor:default; }
+  .opt-letter {
+    width:24px; height:24px; border-radius:50%;
+    border: 1.5px solid currentColor;
+    display:flex; align-items:center; justify-content:center;
+    font-size:0.72rem; font-weight:600;
+    flex-shrink:0;
+    opacity:0.7;
+  }
+
+  /* EXPLANATION */
+  .explain-card {
+    background: #0f2218;
+    border: 1.5px solid #2a4a2e;
+    border-radius:12px;
+    padding: 0.9rem 1rem;
+    font-size:0.82rem;
+    line-height:1.6;
+    color:#b0d8b8;
+    display:none;
+  }
+  .explain-card.show { display:block; }
+  .explain-card strong { color: var(--accent2); }
+
+  /* NEXT BTN */
+  .next-btn {
+    background: var(--accent);
+    border:none;
+    color:var(--white);
+    border-radius:12px;
+    padding: 0.85rem;
+    width:100%;
+    font-family:'DM Sans',sans-serif;
+    font-size:0.95rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.2s;
+    display:none;
+  }
+  .next-btn.show { display:block; }
+  .next-btn:hover { background:var(--accent2); }
+
+  /* RESULT SCREEN */
+  #result {
+    background: radial-gradient(ellipse at 50% 0%, #1e3520 0%, var(--bg) 70%);
+    padding: 2rem 1.5rem;
+    text-align:center;
+    gap:1.2rem;
+  }
+  .result-icon { font-size:3.5rem; margin-bottom:0.5rem; }
+  .result-title {
+    font-family:'Playfair Display', serif;
+    font-size:1.8rem;
+    font-weight:700;
+    color:var(--white);
+  }
+  .result-score {
+    font-size:3.5rem;
+    font-weight:700;
+    font-family:'Playfair Display', serif;
+    color:var(--gold);
+    line-height:1;
+  }
+  .result-score span { font-size:1.5rem; color:var(--muted); }
+  .result-detail {
+    font-size:0.85rem;
+    color:var(--muted);
+    line-height:1.7;
+  }
+  .result-detail strong { color:var(--text); }
+  .result-grade {
+    display:inline-block;
+    background:var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius:50px;
+    padding: 0.4rem 1.2rem;
+    font-size:0.85rem;
+    font-weight:600;
+    color:var(--gold);
+  }
+
+  .result-actions {
+    display:flex;
+    flex-direction:column;
+    gap:0.7rem;
+    width:100%;
+    max-width:380px;
+  }
+  .btn-primary {
+    background:var(--accent);
+    border:none;
+    color:var(--white);
+    border-radius:12px;
+    padding:0.9rem;
+    font-family:'DM Sans',sans-serif;
+    font-size:0.95rem;
+    font-weight:600;
+    cursor:pointer;
+    transition:all 0.2s;
+  }
+  .btn-primary:hover { background:var(--accent2); }
+  .btn-ghost {
+    background:transparent;
+    border: 1.5px solid var(--border);
+    color:var(--muted);
+    border-radius:12px;
+    padding:0.9rem;
+    font-family:'DM Sans',sans-serif;
+    font-size:0.95rem;
+    cursor:pointer;
+    transition:all 0.2s;
+  }
+  .btn-ghost:hover { border-color:var(--accent); color:var(--text); }
+
+  /* STATS BAR */
+  .stats-row {
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:0.6rem;
+    width:100%; max-width:380px;
+  }
+  .stat-box {
+    background:var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius:12px;
+    padding: 0.8rem 0.5rem;
+    text-align:center;
+  }
+  .stat-val { font-size:1.4rem; font-weight:700; font-family:'Playfair Display',serif; }
+  .stat-lbl { font-size:0.62rem; text-transform:uppercase; letter-spacing:0.15em; color:var(--muted); margin-top:0.1rem; }
+
+  /* LOADING */
+  .loading { display:flex; flex-direction:column; align-items:center; gap:1rem; }
+  .spinner { width:40px; height:40px; border: 3px solid var(--border); border-top-color:var(--accent); border-radius:50%; animation: spin 0.8s linear infinite; }
+  @keyframes spin { to { transform:rotate(360deg); } }
+</style>
+</head>
+<body>
+
+<!-- Falling leaves -->
+<div class="leaf" style="left:5%;animation-duration:8s;animation-delay:0s;font-size:14px;">🍃</div>
+<div class="leaf" style="left:15%;animation-duration:11s;animation-delay:2s;font-size:10px;">🌿</div>
+<div class="leaf" style="left:30%;animation-duration:9s;animation-delay:4s;font-size:16px;">🍃</div>
+<div class="leaf" style="left:55%;animation-duration:13s;animation-delay:1s;font-size:12px;">🌿</div>
+<div class="leaf" style="left:70%;animation-duration:7s;animation-delay:3s;font-size:14px;">🍃</div>
+<div class="leaf" style="left:85%;animation-duration:10s;animation-delay:0.5s;font-size:10px;">🌿</div>
+<div class="leaf" style="left:92%;animation-duration:12s;animation-delay:5s;font-size:16px;">🍃</div>
+
+<!-- HOME SCREEN -->
+<div id="home" class="screen active">
+  <div class="logo-ring">
+    <div class="logo-inner">🌿</div>
+  </div>
+  <h1 class="app-title">Rigel<span>App</span></h1>
+  <p class="app-sub">KPSS · Fiziki Coğrafya</p>
+  <p class="app-tagline">Türkiye'yi harita üzerinde keşfet & öğren</p>
+
+  <p class="unite-label">Ünite seç (veya tümünü çalış):</p>
+  <div class="unite-grid" id="uniteGrid">
+    <button class="unite-btn unite-all selected" data-unite="0" onclick="toggleUnite(this)">
+      <span class="uico">🗺️</span> Tüm Sorular (<span id="totalCount">155</span>)
+    </button>
+    <button class="unite-btn" data-unite="1" onclick="toggleUnite(this)">
+      <span class="uico">🌊</span> Ünite 1 — Akarsular
+    </button>
+    <button class="unite-btn" data-unite="2" onclick="toggleUnite(this)">
+      <span class="uico">⛰️</span> Ünite 2 — Dağlar & Volkanlar
+    </button>
+    <button class="unite-btn" data-unite="3" onclick="toggleUnite(this)">
+      <span class="uico">🌾</span> Ünite 3 — Ovalar & Platolar
+    </button>
+    <button class="unite-btn" data-unite="4" onclick="toggleUnite(this)">
+      <span class="uico">💧</span> Ünite 4 — Göller
+    </button>
+    <button class="unite-btn" data-unite="5" onclick="toggleUnite(this)">
+      <span class="uico">⚓</span> Ünite 5 — Boğazlar & Kıyılar
+    </button>
+    <button class="unite-btn" style="grid-column:1/-1;" data-unite="6" onclick="toggleUnite(this)">
+      <span class="uico">🗾</span> Ünite 6 — Coğrafi Bölgeler
+    </button>
+  </div>
+
+  <button class="start-btn" onclick="startQuiz()">
+    ▷ &nbsp;Sınava Başla
+  </button>
+</div>
+
+<!-- QUIZ SCREEN -->
+<div id="quiz" class="screen">
+  <div class="quiz-header">
+    <button class="quiz-back" onclick="goHome()">←</button>
+    <div class="quiz-progress-wrap">
+      <div class="quiz-info">
+        <span id="qCounter">Soru 1 / 20</span>
+        <span id="uniteNameBadge">Akarsular</span>
+      </div>
+      <div class="quiz-bar"><div class="quiz-bar-fill" id="progressBar" style="width:0%"></div></div>
+    </div>
+    <div class="score-badge" id="scoreBadge">0 / 0</div>
+  </div>
+  <div class="quiz-body" id="quizBody">
+    <!-- dinamik içerik buraya -->
+  </div>
+</div>
+
+<!-- RESULT SCREEN -->
+<div id="result" class="screen">
+  <div class="result-icon" id="resultIcon">🏆</div>
+  <h2 class="result-title" id="resultTitle">Harika!</h2>
+  <div class="result-score" id="resultScore">18 <span>/ 20</span></div>
+  <div class="result-grade" id="resultGrade">Puan: 90</div>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-val" id="statCorrect" style="color:var(--green)">0</div>
+      <div class="stat-lbl">Doğru</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val" id="statWrong" style="color:var(--red)">0</div>
+      <div class="stat-lbl">Yanlış</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-val" id="statPct" style="color:var(--gold)">0%</div>
+      <div class="stat-lbl">Başarı</div>
+    </div>
+  </div>
+
+  <div class="result-detail" id="resultDetail">
+    Çalıştığın ünite: <strong>Tüm Sorular</strong>
+  </div>
+
+  <div class="result-actions">
+    <button class="btn-primary" onclick="startQuiz()">Tekrar Dene</button>
+    <button class="btn-ghost" onclick="goHome()">Ana Menü</button>
+  </div>
+</div>
+
+<script src="questions.js"></script>
+<script>
+// Province ID → Name map
+const PROV = {
+  TR01:'Adana',TR02:'Adıyaman',TR03:'Afyonkarahisar',TR04:'Ağrı',TR05:'Amasya',
+  TR06:'Ankara',TR07:'Antalya',TR08:'Artvin',TR09:'Aydın',TR10:'Balıkesir',
+  TR11:'Bilecik',TR12:'Bingöl',TR13:'Bitlis',TR14:'Bolu',TR15:'Burdur',
+  TR16:'Bursa',TR17:'Çanakkale',TR18:'Çankırı',TR19:'Çorum',TR20:'Denizli',
+  TR21:'Diyarbakır',TR22:'Edirne',TR23:'Elazığ',TR24:'Erzincan',TR25:'Erzurum',
+  TR26:'Eskişehir',TR27:'Gaziantep',TR28:'Giresun',TR29:'Gümüşhane',TR30:'Hakkari',
+  TR31:'Hatay',TR32:'Isparta',TR33:'Mersin',TR34:'İstanbul',TR35:'İzmir',
+  TR36:'Kars',TR37:'Kastamonu',TR38:'Kayseri',TR39:'Kırklareli',TR40:'Kırşehir',
+  TR41:'Kocaeli',TR42:'Konya',TR43:'Kütahya',TR44:'Malatya',TR45:'Manisa',
+  TR46:'K.Maraş',TR47:'Mardin',TR48:'Muğla',TR49:'Muş',TR50:'Nevşehir',
+  TR51:'Niğde',TR52:'Ordu',TR53:'Rize',TR54:'Sakarya',TR55:'Samsun',
+  TR56:'Siirt',TR57:'Sinop',TR58:'Sivas',TR59:'Tekirdağ',TR60:'Tokat',
+  TR61:'Trabzon',TR62:'Tunceli',TR63:'Şanlıurfa',TR64:'Uşak',TR65:'Van',
+  TR66:'Yozgat',TR67:'Zonguldak',TR68:'Aksaray',TR69:'Bayburt',TR70:'Karaman',
+  TR71:'Kırıkkale',TR72:'Batman',TR73:'Şırnak',TR74:'Bartın',TR75:'Ardahan',
+  TR76:'Iğdır',TR77:'Yalova',TR78:'Karabük',TR79:'Kilis',TR80:'Osmaniye',TR81:'Düzce'
+};
+
+const UNITE_ICONS = {0:'🗺️',1:'🌊',2:'⛰️',3:'🌾',4:'💧',5:'⚓',6:'🗾'};
+const UNITE_NAMES = {0:'Tüm Sorular',1:'Akarsular',2:'Dağlar & Volkanlar',3:'Ovalar & Platolar',4:'Göller',5:'Boğazlar & Kıyılar',6:'Coğrafi Bölgeler'};
+
+let selectedUnite = 0;
+let currentQuestions = [];
+let currentIdx = 0;
+let score = 0;
+let answered = false;
+let svgDoc = null;
+
+// Update total count on load
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('totalCount').textContent = QUESTIONS.length;
+});
+
+function toggleUnite(btn) {
+  document.querySelectorAll('.unite-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  selectedUnite = parseInt(btn.dataset.unite);
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}
+  return a;
+}
+
+function startQuiz() {
+  let pool = selectedUnite === 0 ? QUESTIONS : QUESTIONS.filter(q => q.unite === selectedUnite);
+  currentQuestions = shuffle(pool).slice(0, Math.min(20, pool.length));
+  currentIdx = 0;
+  score = 0;
+  answered = false;
+  showScreen('quiz');
+  loadQuestion();
+}
+
+function goHome() { showScreen('home'); }
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function loadQuestion() {
+  if(currentIdx >= currentQuestions.length) { showResult(); return; }
+  answered = false;
+  const q = currentQuestions[currentIdx];
+  const total = currentQuestions.length;
+
+  // Header
+  document.getElementById('qCounter').textContent = `Soru ${currentIdx+1} / ${total}`;
+  document.getElementById('uniteNameBadge').textContent = UNITE_ICONS[q.unite] + ' ' + q.uniteName;
+  document.getElementById('progressBar').style.width = ((currentIdx/total)*100)+'%';
+  document.getElementById('scoreBadge').textContent = `${score} / ${currentIdx}`;
+
+  // Build body
+  const body = document.getElementById('quizBody');
+
+  // Map HTML (inline SVG)
+  const svgContent = getSVGContent();
+  const mapHtml = `
+    <div class="map-card">
+      <span class="map-label">Harita İpucu</span>
+      <div class="map-wrapper" id="mapWrap">${svgContent}</div>
+    </div>`;
+
+  // Options
+  const letters = ['A','B','C','D'];
+  const optHtml = q.secenekler.map((opt, i) => `
+    <button class="opt-btn" id="opt${i}" onclick="selectAnswer(${i})">
+      <span class="opt-letter">${letters[i]}</span>
+      <span>${opt}</span>
+    </button>`).join('');
+
+  body.innerHTML = `
+    ${mapHtml}
+    <div class="q-card">
+      <div class="q-unite-tag">${UNITE_ICONS[q.unite]} ${q.uniteName}</div>
+      <p class="q-text">${q.soru}</p>
+      <div class="options-list">${optHtml}</div>
+    </div>
+    <div class="explain-card" id="explainCard">
+      <strong>Açıklama:</strong> ${q.aciklama}
+    </div>
+    <button class="next-btn" id="nextBtn" onclick="nextQuestion()">
+      ${currentIdx+1 < total ? 'Sonraki Soru →' : 'Sonuçları Gör →'}
+    </button>`;
+
+  // Highlight relevant provinces
+  setTimeout(() => highlightProvinces(q.iller), 100);
+}
+
+function getSVGContent() {
+  // Return cached or load from DOM
+  if(!window._svgCache) {
+    // The SVG is embedded inline via the load
+    return window._svgString || '<p style="color:var(--muted);text-align:center;padding:1rem;font-size:0.8rem;">Harita yükleniyor...</p>';
+  }
+  return window._svgCache;
+}
+
+function highlightProvinces(iller) {
+  const wrap = document.getElementById('mapWrap');
+  if(!wrap) return;
+  const paths = wrap.querySelectorAll('path[id^="TR"]');
+  paths.forEach(p => {
+    p.style.fill = '';
+    p.classList.remove('highlighted','correct-flash','wrong-flash');
+  });
+  if(!iller || iller.length === 0) return;
+  iller.forEach(id => {
+    const el = wrap.querySelector(`#${id}`);
+    if(el) el.classList.add('highlighted');
+  });
+}
+
+function selectAnswer(idx) {
+  if(answered) return;
+  answered = true;
+  const q = currentQuestions[currentIdx];
+  const isCorrect = idx === q.dogru;
+  if(isCorrect) score++;
+
+  // Style options
+  for(let i=0; i<q.secenekler.length; i++) {
+    const btn = document.getElementById(`opt${i}`);
+    btn.classList.add('disabled');
+    if(i === q.dogru) btn.classList.add('correct');
+    else if(i === idx && !isCorrect) btn.classList.add('wrong');
+  }
+
+  // Flash map
+  if(q.iller && q.iller.length > 0) {
+    const wrap = document.getElementById('mapWrap');
+    if(wrap) {
+      q.iller.forEach(id => {
+        const el = wrap.querySelector(`#${id}`);
+        if(el) {
+          el.classList.remove('highlighted');
+          el.classList.add(isCorrect ? 'correct-flash' : 'wrong-flash');
+        }
+      });
+    }
+  }
+
+  // Show explanation
+  document.getElementById('explainCard').classList.add('show');
+  document.getElementById('nextBtn').classList.add('show');
+  document.getElementById('scoreBadge').textContent = `${score} / ${currentIdx+1}`;
+}
+
+function nextQuestion() {
+  currentIdx++;
+  loadQuestion();
+  document.getElementById('quizBody').scrollTop = 0;
+  // Also scroll the window to top
+  window.scrollTo(0,0);
+}
+
+function showResult() {
+  const total = currentQuestions.length;
+  const pct = Math.round((score/total)*100);
+  const unite = UNITE_NAMES[selectedUnite];
+
+  document.getElementById('resultScore').innerHTML = `${score} <span>/ ${total}</span>`;
+  document.getElementById('resultGrade').textContent = `Puan: ${pct}`;
+  document.getElementById('statCorrect').textContent = score;
+  document.getElementById('statWrong').textContent = total - score;
+  document.getElementById('statPct').textContent = pct + '%';
+  document.getElementById('resultDetail').innerHTML = `Çalıştığın ünite: <strong>${unite}</strong>`;
+  document.getElementById('progressBar').style.width = '100%';
+
+  if(pct >= 85) {
+    document.getElementById('resultIcon').textContent = '🏆';
+    document.getElementById('resultTitle').textContent = 'Mükemmel!';
+  } else if(pct >= 65) {
+    document.getElementById('resultIcon').textContent = '🎯';
+    document.getElementById('resultTitle').textContent = 'İyi İş!';
+  } else if(pct >= 45) {
+    document.getElementById('resultIcon').textContent = '📚';
+    document.getElementById('resultTitle').textContent = 'Çalışmaya Devam';
+  } else {
+    document.getElementById('resultIcon').textContent = '💪';
+    document.getElementById('resultTitle').textContent = 'Daha Fazla Pratik!';
+  }
+
+  showScreen('result');
+}
+</script>
+
+<!-- Load SVG and store it -->
+<script>
+(async function() {
+  try {
+    const resp = await fetch('tr.svg');
+    const txt = await resp.text();
+    // Remove XML declaration
+    const clean = txt.replace(/<\?xml[^?]*\?>/,'').trim();
+    // Modify SVG for responsive use
+    const svgFixed = clean
+      .replace(/width="1000"/, 'width="100%"')
+      .replace(/height="422"/, 'height="auto"')
+      .replace(/viewbox=/, 'viewBox=');
+    window._svgCache = svgFixed;
+    window._svgString = svgFixed;
+  } catch(e) {
+    console.warn('SVG yüklenemedi:', e);
+  }
+})();
+</script>
+</body>
+</html>
