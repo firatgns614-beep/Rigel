@@ -528,7 +528,14 @@ gap:1.2rem;
 </div>
 
 <script src="questions.js"></script>
-
+  
+<script>
+window.onerror = function(msg, src, line, col, err) {
+  document.body.innerHTML = '<div style="color:red;padding:20px;font-size:14px;">HATA: ' + msg + '<br>Satır: ' + line + '</div>';
+  return false;
+};
+</script>
+  
 <script>
 const UNITE_ICONS = {0:'🗺️',1:'🌊',2:'⛰️',3:'🌾',4:'💧',5:'⚓',6:'🗾'};
 const UNITE_NAMES = {0:'Tüm Sorular',1:'Akarsular',2:'Dağlar & Volkanlar',3:'Ovalar & Platolar',4:'Göller',5:'Boğazlar & Kıyılar',6:'Coğrafi Bölgeler'};
