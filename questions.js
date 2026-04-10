@@ -1,5 +1,4 @@
 const QUESTIONS = [
-  const QUESTIONS = [
 // ===== ÜNİTE 1: AKARSULAR =====
 // Test 1
 { id: 1, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’nin en uzun akarsuyu hangisidir?”, secenekler: [“Fırat”, “Kızılırmak”, “Sakarya”, “Seyhan”], dogru: 1, aciklama: “Kızılırmak, yaklaşık 1355 km uzunluğuyla Türkiye’nin en uzun akarsuyu ve Anadolu yarımadasının en uzun ırmağıdır.”, iller: [“TR68”, “TR71”, “TR18”] },
