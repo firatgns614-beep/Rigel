@@ -31,7 +31,7 @@
   }
 
   /* PARTICLES */
-  .leaf { position:fixed; pointer-events:none; opacity:0; font-size:18px; z-index:0; animation: leaffall linear infinite; }
+  .leaf { position:fixed; pointer-events:none; opacity:0; font-size:18px; z-index:-1; animation: leaffall linear infinite; }
   @keyframes leaffall {
     0% { transform: translateY(-30px) rotate(0deg); opacity:0.6; }
     100% { transform: translateY(110vh) rotate(720deg); opacity:0; }
