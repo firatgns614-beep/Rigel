@@ -1,1257 +1,278 @@
 const QUESTIONS = [
-  // ===== ÜNİTE 1: AKARSULAR =====
-  {
-    id: 1, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'nin en uzun akarsuyu hangisidir?",
-    secenekler: ["Fırat", "Kızılırmak", "Sakarya", "Seyhan"],
-    dogru: 1,
-    aciklama: "Kızılırmak, yaklaşık 1355 km uzunluğuyla Türkiye'nin en uzun akarsuyu ve aynı zamanda Anadolu yarımadasının en uzun ırmağıdır.",
-    iller: ["TR68", "TR71", "TR18"]
-  },
-  {
-    id: 2, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'nin en büyük havzasına sahip akarsuyu hangisidir?",
-    secenekler: ["Kızılırmak", "Fırat", "Sakarya", "Dicle"],
-    dogru: 1,
-    aciklama: "Fırat, yaklaşık 184.918 km² ile Türkiye'nin en büyük havzasına sahip akarsuyu olup sınır ötesi bir nehirdir.",
-    iller: ["TR44", "TR02", "TR63"]
-  },
-  {
-    id: 3, unite: 1, uniteName: "Akarsular",
-    soru: "Aşağıdaki hangi ırmak, Karadeniz'e dökülmez?",
-    secenekler: ["Kızılırmak", "Yeşilırmak", "Sakarya", "Ceyhan"],
-    dogru: 3,
-    aciklama: "Ceyhan Nehri Akdeniz'e dökülür. Kızılırmak, Yeşilırmak ve Sakarya ise Karadeniz'e dökülen nehirlerdir.",
-    iller: ["TR01", "TR46"]
-  },
-  {
-    id: 4, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'nin rejimi en düzenli akarsuyu hangisidir?",
-    secenekler: ["Kızılırmak", "Fırat", "Sakarya", "Çoruh"],
-    dogru: 2,
-    aciklama: "Sakarya Nehri, beslenme havzasının geniş olması ve kar-yağmur dengeli beslenmesi nedeniyle en düzenli rejimli akarsulardan biridir.",
-    iller: ["TR54", "TR41"]
-  },
-  {
-    id: 5, unite: 1, uniteName: "Akarsular",
-    soru: "Dicle ve Fırat nehirlerinin birleştiği yer hangisidir?",
-    secenekler: ["Basra Körfezi yakınları", "Şattülarap", "Bağdat", "Musul"],
-    dogru: 1,
-    aciklama: "Dicle ve Fırat, Irak'ta Kurnah yakınlarında birleşerek Şattülarap adını alır ve Basra Körfezi'ne dökülür.",
-    iller: ["TR65", "TR73"]
-  },
-  {
-    id: 6, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsu boylarının en kısa olduğu bölge hangisidir?",
-    secenekler: ["İç Anadolu", "Ege", "Karadeniz", "Güneydoğu Anadolu"],
-    dogru: 2,
-    aciklama: "Karadeniz kıyılarında dağlar denize yakın olduğundan akarsu boyları kısadır fakat debi oranları yüksektir.",
-    iller: ["TR61", "TR52"]
-  },
-  {
-    id: 7, unite: 1, uniteName: "Akarsular",
-    soru: "Meriç Nehri hangi denize dökülür?",
-    secenekler: ["Karadeniz", "Ege Denizi", "Marmara Denizi", "Akdeniz"],
-    dogru: 1,
-    aciklama: "Meriç Nehri, Ege Denizi'ne dökülür ve Türkiye-Yunanistan sınırını oluşturur.",
-    iller: ["TR22"]
-  },
-  {
-    id: 8, unite: 1, uniteName: "Akarsular",
-    soru: "Aşağıdakilerden hangisi, akarsuyun aşındırma gücünü artıran bir faktör değildir?",
-    secenekler: ["Eğimin fazla olması", "Debinin fazla olması", "Taşınan malzemenin sert olması", "Arazinin düz olması"],
-    dogru: 3,
-    aciklama: "Arazinin düz olması, akışı yavaşlatır ve aşındırma gücünü azaltır. Eğim, debi ve sert malzeme aşındırmayı artıran faktörlerdir.",
-    iller: []
-  },
-  {
-    id: 9, unite: 1, uniteName: "Akarsular",
-    soru: "Yeşilırmak'ın döküldüğü yer hangisidir?",
-    secenekler: ["Samsun - Bafra", "Ordu", "Sinop", "Trabzon"],
-    dogru: 0,
-    aciklama: "Yeşilırmak, Samsun ili yakınında Bafra ovasını oluşturarak Karadeniz'e dökülür.",
-    iller: ["TR55", "TR60"]
-  },
-  {
-    id: 10, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de en fazla enerji potansiyeline sahip akarsu hangisidir?",
-    secenekler: ["Kızılırmak", "Sakarya", "Fırat", "Seyhan"],
-    dogru: 2,
-    aciklama: "Fırat Nehri, akış hızı ve debisi nedeniyle Türkiye'de en fazla hidroelektrik enerji potansiyeline sahip nehirdir.",
-    iller: ["TR44", "TR02"]
-  },
-  {
-    id: 11, unite: 1, uniteName: "Akarsular",
-    soru: "Delta oluşumu için hangi koşullar gereklidir?",
-    secenekler: ["Hızlı akış ve sığ deniz", "Yavaş akış, bol alüvyon ve sığ kıyı", "Derin deniz ve bol yağış", "Eğimli arazi ve bol taşınan malzeme"],
-    dogru: 1,
-    aciklama: "Delta oluşumu için nehrin yavaşlaması (alüvyon bırakması), bol alüvyon taşıması ve denizin sığ olması gerekir.",
-    iller: []
-  },
-  {
-    id: 12, unite: 1, uniteName: "Akarsular",
-    soru: "Çoruh Nehri hangi denize dökülür?",
-    secenekler: ["Karadeniz", "Hazar Denizi", "Akdeniz", "Basra Körfezi"],
-    dogru: 0,
-    aciklama: "Çoruh Nehri, Artvin ilinden geçerek Gürcistan'dan Karadeniz'e dökülür.",
-    iller: ["TR08"]
-  },
-  {
-    id: 13, unite: 1, uniteName: "Akarsular",
-    soru: "Menderes Nehri hangi denize dökülür?",
-    secenekler: ["Karadeniz", "Marmara", "Ege", "Akdeniz"],
-    dogru: 2,
-    aciklama: "Büyük Menderes Nehri, Ege Denizi'ne dökülür. Kıvrımlı akarsu yataklarına 'menderesli akarsu' denmesinin kaynağı bu nehirdir.",
-    iller: ["TR09", "TR20"]
-  },
-  {
-    id: 14, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsular genel olarak hangi yönde akar?",
-    secenekler: ["Kuzeyden güneye", "Güneyden kuzeye", "Batıdan doğuya", "Her yöne"],
-    dogru: 3,
-    aciklama: "Türkiye'nin topoğrafyası nedeniyle akarsular farklı yönlerde akmaktadır; doğudan batıya, kuzeyden güneye ve güneyden kuzeye akan nehirler mevcuttur.",
-    iller: []
-  },
-  {
-    id: 15, unite: 1, uniteName: "Akarsular",
-    soru: "Aşağıdaki hangisi Akdeniz'e dökülen bir akarsudur?",
-    secenekler: ["Sakarya", "Kızılırmak", "Seyhan", "Yeşilırmak"],
-    dogru: 2,
-    aciklama: "Seyhan Nehri, Adana ovasını sulayarak Akdeniz'e dökülür. Seyhan Barajı bu nehir üzerinde kurulmuştur.",
-    iller: ["TR01"]
-  },
+  const QUESTIONS = [
+// ===== ÜNİTE 1: AKARSULAR =====
+// Test 1
+{ id: 1, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’nin en uzun akarsuyu hangisidir?”, secenekler: [“Fırat”, “Kızılırmak”, “Sakarya”, “Seyhan”], dogru: 1, aciklama: “Kızılırmak, yaklaşık 1355 km uzunluğuyla Türkiye’nin en uzun akarsuyu ve Anadolu yarımadasının en uzun ırmağıdır.”, iller: [“TR68”, “TR71”, “TR18”] },
+{ id: 2, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’nin en büyük havzasına sahip akarsuyu hangisidir?”, secenekler: [“Kızılırmak”, “Fırat”, “Sakarya”, “Dicle”], dogru: 1, aciklama: “Fırat, yaklaşık 184.918 km² ile Türkiye’nin en büyük havzasına sahip akarsuyu olup sınır ötesi bir nehirdir.”, iller: [“TR44”, “TR02”, “TR63”] },
+{ id: 3, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Aşağıdaki hangi ırmak, Karadeniz’e dökülmez?”, secenekler: [“Kızılırmak”, “Yeşilırmak”, “Sakarya”, “Ceyhan”], dogru: 3, aciklama: “Ceyhan Nehri Akdeniz’e dökülür. Kızılırmak, Yeşilırmak ve Sakarya ise Karadeniz’e dökülen nehirlerdir.”, iller: [“TR01”, “TR46”] },
+{ id: 4, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’nin rejimi en düzenli akarsuyu hangisidir?”, secenekler: [“Kızılırmak”, “Fırat”, “Sakarya”, “Çoruh”], dogru: 2, aciklama: “Sakarya Nehri, beslenme havzasının geniş olması ve kar-yağmur dengeli beslenmesi nedeniyle en düzenli rejimli akarsulardan biridir.”, iller: [“TR54”, “TR41”] },
+{ id: 5, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Dicle ve Fırat nehirlerinin birleştiği yer hangisidir?”, secenekler: [“Basra Körfezi yakınları”, “Şattülarap”, “Bağdat”, “Musul”], dogru: 1, aciklama: “Dicle ve Fırat, Irak’ta Kurnah yakınlarında birleşerek Şattülarap adını alır ve Basra Körfezi’ne dökülür.”, iller: [“TR65”, “TR73”] },
+{ id: 6, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’nin en hızlı akan nehri hangisidir?”, secenekler: [“Fırat”, “Çoruh”, “Kızılırmak”, “Dicle”], dogru: 1, aciklama: “Çoruh Nehri, dik yamaçlardan geçmesi nedeniyle Türkiye’nin en hızlı akan nehri olarak bilinir.”, iller: [“TR08”] },
+{ id: 7, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Sakarya Nehri hangi denize dökülür?”, secenekler: [“Ege Denizi”, “Akdeniz”, “Karadeniz”, “Marmara Denizi”], dogru: 2, aciklama: “Sakarya Nehri, Karadeniz’e dökülür ve Türkiye’nin üçüncü uzun nehridir.”, iller: [“TR54”, “TR41”] },
+{ id: 8, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Menderes Nehri hangi denize dökülür?”, secenekler: [“Karadeniz”, “Akdeniz”, “Marmara”, “Ege”], dogru: 3, aciklama: “Büyük Menderes Nehri, Ege Denizi’ne dökülür. Adından ‘menderesli’ kelimesi türemiştir.”, iller: [“TR09”, “TR20”, “TR48”] },
+{ id: 9, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’de en çok hidroelektrik santrali hangi nehir üzerindedir?”, secenekler: [“Sakarya”, “Fırat”, “Kızılırmak”, “Seyhan”], dogru: 1, aciklama: “Fırat Nehri üzerinde Atatürk, Karakaya, Keban gibi büyük barajlar bulunur ve Türkiye’nin en fazla enerji üretilen nehridir.”, iller: [“TR44”, “TR02”, “TR63”] },
+{ id: 10, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Yeşilırmak hangi denize dökülür?”, secenekler: [“Ege”, “Akdeniz”, “Karadeniz”, “Marmara”], dogru: 2, aciklama: “Yeşilırmak, Karadeniz’e dökülür ve Samsun iline yakın bir noktada denize ulaşır.”, iller: [“TR05”, “TR55”, “TR60”] },
+{ id: 11, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’de akarsular genellikle hangi mevsimde en fazla su taşır?”, secenekler: [“Yaz”, “Sonbahar”, “İlkbahar”, “Kış”], dogru: 2, aciklama: “Türkiye’de kar suları ve yağmurların etkisiyle akarsular genellikle ilkbaharda en yüksek seviyeye ulaşır.”, iller: [] },
+{ id: 12, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Aşağıdaki nehirlerin hangisi Akdeniz’e dökülmez?”, secenekler: [“Seyhan”, “Ceyhan”, “Göksu”, “Kızılırmak”], dogru: 3, aciklama: “Kızılırmak, Karadeniz’e dökülür. Seyhan, Ceyhan ve Göksu ise Akdeniz’e dökülen nehirlerdir.”, iller: [“TR68”] },
+{ id: 13, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Aras Nehri hangi ülkeler arasında sınır oluşturur?”, secenekler: [“Türkiye-Irak”, “Türkiye-Ermenistan”, “Türkiye-Suriye”, “Türkiye-İran”], dogru: 1, aciklama: “Aras Nehri, Türkiye ile Ermenistan ve aynı zamanda İran sınırını oluşturur; doğuya doğru akar.”, iller: [“TR04”, “TR75”, “TR76”] },
+{ id: 14, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye-Suriye sınırını oluşturan nehir hangisidir?”, secenekler: [“Fırat”, “Dicle”, “Asi”, “Ceyhan”], dogru: 2, aciklama: “Asi Nehri, Türkiye ile Suriye arasında kısmen sınır oluşturur ve Akdeniz’e dökülür.”, iller: [“TR31”] },
+{ id: 15, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’nin en kısa nehri hangisidir?”, secenekler: [“Göksu”, “Köprüçay”, “Dalaman”, “Bartın”], dogru: 3, aciklama: “Bartın Çayı, yaklaşık 68 km uzunluğuyla Türkiye’nin en kısa nehirlerinden biridir.”, iller: [“TR74”] },
+{ id: 16, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Atatürk Barajı hangi nehir üzerinde kurulmuştur?”, secenekler: [“Dicle”, “Sakarya”, “Fırat”, “Kızılırmak”], dogru: 2, aciklama: “Atatürk Barajı, Fırat Nehri üzerinde kurulmuş olup Türkiye’nin en büyük barajıdır.”, iller: [“TR63”, “TR02”] },
+{ id: 17, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’de delta ovası oluşturan nehir hangisidir?”, secenekler: [“Sakarya”, “Seyhan”, “Kızılırmak”, “Fırat”], dogru: 1, aciklama: “Seyhan Nehri, Adana’da geniş bir delta ovası oluşturmuştur ve Akdeniz’e dökülür.”, iller: [“TR01”] },
+{ id: 18, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Meriç Nehri hangi denize dökülür?”, secenekler: [“Karadeniz”, “Ege”, “Akdeniz”, “Marmara”], dogru: 1, aciklama: “Meriç Nehri, Ege Denizi’ne dökülür ve Türkiye-Yunanistan-Bulgaristan sınırlarında yer alır.”, iller: [“TR22”, “TR39”] },
+{ id: 19, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’de akarsular üzerindeki barajların temel amacı nedir?”, secenekler: [“Sadece sulama”, “Enerji üretimi ve sulama”, “Sadece içme suyu”, “Turizm”], dogru: 1, aciklama: “Türkiye’deki barajlar genellikle hem hidroelektrik enerji üretimi hem de tarımsal sulama amacıyla inşa edilmiştir.”, iller: [] },
+{ id: 20, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Dicle Nehri’nin kaynağı neresidir?”, secenekler: [“Ağrı Dağı”, “Hazar Gölü yakınları”, “Van Gölü”, “Toros Dağları”], dogru: 1, aciklama: “Dicle Nehri, Hazar Gölü yakınlarından doğar ve güneydoğu yönünde Irak’a geçer.”, iller: [“TR23”] },
+{ id: 21, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’de hangi bölgede akarsu ağı en sıktır?”, secenekler: [“İç Anadolu”, “Karadeniz”, “Güneydoğu Anadolu”, “Ege”], dogru: 1, aciklama: “Karadeniz Bölgesi’nde yağışların fazla olması nedeniyle akarsu ağı en sık olan bölgedir.”, iller: [] },
+{ id: 22, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Aşağıdaki hangi nehir Marmara Denizi’ne dökülür?”, secenekler: [“Sakarya”, “Susurluk”, “Gediz”, “Seyhan”], dogru: 1, aciklama: “Susurluk Çayı, Marmara Denizi’ne dökülür ve Balıkesir ile Bursa illerinden geçer.”, iller: [“TR10”, “TR16”] },
+{ id: 23, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’de hangi nehir üzerinde Keban Barajı bulunmaktadır?”, secenekler: [“Dicle”, “Sakarya”, “Fırat”, “Kızılırmak”], dogru: 2, aciklama: “Keban Barajı, Elazığ ilinde Fırat Nehri üzerinde kurulmuş önemli bir hidroelektrik barajdır.”, iller: [“TR23”] },
+{ id: 24, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Türkiye’nin en uzun ikinci nehri hangisidir?”, secenekler: [“Fırat”, “Sakarya”, “Yeşilırmak”, “Dicle”], dogru: 0, aciklama: “Fırat Nehri, yaklaşık 1263 km’lik Türkiye sınırları içindeki uzunluğuyla ikinci uzun nehir olarak kabul edilir.”, iller: [“TR44”, “TR02”, “TR63”] },
+{ id: 25, unite: 1, test: 1, uniteName: “Akarsular”, soru: “Gediz Nehri hangi denize dökülür?”, secenekler: [“Akdeniz”, “Karadeniz”, “Marmara”, “Ege”], dogru: 3, aciklama: “Gediz Nehri, İzmir körfezine yakın bir noktada Ege Denizi’ne dökülür.”, iller: [“TR35”, “TR45”] },
 
-  // ===== ÜNİTE 2: DAĞLAR & VOLKANLAR =====
-  {
-    id: 16, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'nin en yüksek dağı hangisidir?",
-    secenekler: ["Süphan Dağı", "Erciyes Dağı", "Ağrı Dağı", "Hasan Dağı"],
-    dogru: 2,
-    aciklama: "Ağrı Dağı (5137 m), Türkiye'nin ve aynı zamanda Türkiye ile çevre ülkeler arasında Kafkasya'nın en yüksek zirvesidir.",
-    iller: ["TR04"]
-  },
-  {
-    id: 17, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Kapadokya'daki peri bacaları oluşumunda hangi volkanik dağ etkilidir?",
-    secenekler: ["Ağrı Dağı", "Erciyes Dağı", "Süphan Dağı", "Nemrut Dağı"],
-    dogru: 1,
-    aciklama: "Erciyes Dağı'nın püskürttüğü volkanik tüf ve lavların aşınmasıyla Kapadokya'daki peri bacaları oluşmuştur.",
-    iller: ["TR38"]
-  },
-  {
-    id: 18, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de Pontik (Kuzey Anadolu) dağları genel olarak hangi yönde uzanır?",
-    secenekler: ["Kuzey - Güney", "Doğu - Batı", "Kuzeydoğu - Güneybatı", "Kuzeybatı - Güneydoğu"],
-    dogru: 1,
-    aciklama: "Kuzey Anadolu Dağları (Pontik Dağlar), Karadeniz kıyısı boyunca genel olarak Doğu-Batı yönünde uzanır.",
-    iller: ["TR61", "TR52", "TR55"]
-  },
-  {
-    id: 19, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de Toroslar genel olarak hangi yönde uzanır?",
-    secenekler: ["Kuzey - Güney", "Doğu - Batı", "Kuzeybatı - Güneydoğu", "Batı - Doğu"],
-    dogru: 3,
-    aciklama: "Toroslar (Toros Dağları) genel olarak Batı-Doğu yönünde uzanır ve Akdeniz kıyısıyla iç bölgeler arasında doğal bir bariyer oluşturur.",
-    iller: ["TR07", "TR33"]
-  },
-  {
-    id: 20, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Süphan Dağı hangi ilin sınırları içindedir?",
-    secenekler: ["Van", "Bitlis", "Muş", "Ağrı"],
-    dogru: 1,
-    aciklama: "Süphan Dağı (4058 m), Van Gölü'nün kuzeyinde, Bitlis iline bağlıdır ve söndürülmüş bir volkandır.",
-    iller: ["TR13"]
-  },
-  {
-    id: 21, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de volkanik kökenli dağların en yoğun bulunduğu bölge hangisidir?",
-    secenekler: ["Ege", "Marmara", "Doğu Anadolu", "İç Anadolu"],
-    dogru: 2,
-    aciklama: "Doğu Anadolu Bölgesi'nde Ağrı, Süphan, Nemrut (Bitlis), Tendürek gibi volkanik dağlar yoğun olarak bulunmaktadır.",
-    iller: ["TR04", "TR65"]
-  },
-  {
-    id: 22, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Erciyes Dağı hangi ilde bulunur?",
-    secenekler: ["Sivas", "Kayseri", "Niğde", "Nevşehir"],
-    dogru: 1,
-    aciklama: "Erciyes Dağı (3917 m), Kayseri ilinde yer alan söndürülmüş bir yanardağdır.",
-    iller: ["TR38"]
-  },
-  {
-    id: 23, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Hasan Dağı hangi iller arasında yer alır?",
-    secenekler: ["Aksaray - Niğde", "Konya - Karaman", "Kayseri - Sivas", "Ankara - Konya"],
-    dogru: 0,
-    aciklama: "Hasan Dağı (3268 m), Aksaray ve Niğde illeri arasında yer alan söndürülmüş bir yanardağdır.",
-    iller: ["TR68", "TR51"]
-  },
-  {
-    id: 24, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de kuzey-güney yönünde uzanan tek önemli dağ silsilesi hangisidir?",
-    secenekler: ["Toroslar", "Kuzey Anadolu Dağları", "Küre Dağları", "Amanos Dağları"],
-    dogru: 3,
-    aciklama: "Amanos Dağları (Nur Dağları), Türkiye'de istisna olarak kuzey-güney yönünde uzanan önemli bir dağ silsilesidir.",
-    iller: ["TR46"]
-  },
-  {
-    id: 25, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Nemrut Dağı kalderası üzerinde oluşan krater gölünün adı nedir?",
-    secenekler: ["Van Gölü", "Hazar Gölü", "Nemrut Gölü", "Nazik Gölü"],
-    dogru: 2,
-    aciklama: "Nemrut Dağı (Bitlis), Türkiye'nin en büyük kalderası içinde Nemrut Gölü (Nemrut Krater Gölü) barındırmaktadır.",
-    iller: ["TR13"]
-  },
-  {
-    id: 26, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'nin en uzun dağ silsilesi hangisidir?",
-    secenekler: ["Kuzey Anadolu Dağları", "Toroslar", "Güneydoğu Torosları", "Küre Dağları"],
-    dogru: 1,
-    aciklama: "Toros Dağları, batıdan doğuya yaklaşık 1500 km uzunluğuyla Türkiye'nin en uzun dağ silsilesidir.",
-    iller: ["TR07", "TR33", "TR01"]
-  },
-  {
-    id: 27, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Ağrı Dağı'nın büyük ve küçük zirveleri arasındaki mesafe yaklaşık kaç km'dir?",
-    secenekler: ["5 km", "11 km", "20 km", "30 km"],
-    dogru: 1,
-    aciklama: "Büyük Ağrı (5137 m) ve Küçük Ağrı (3896 m) yaklaşık 11 km mesafede birbirinden ayrılmaktadır.",
-    iller: ["TR04"]
-  },
-  {
-    id: 28, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Aşağıdakilerden hangisi volkanik bir dağ değildir?",
-    secenekler: ["Ağrı Dağı", "Erciyes Dağı", "Uludağ", "Süphan Dağı"],
-    dogru: 2,
-    aciklama: "Uludağ, granitik (püsküreç) kayaçlardan oluşan horst tipi bir dağdır, volkanik değildir.",
-    iller: ["TR16"]
-  },
-  {
-    id: 29, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Doğu Anadolu'da yer alan Tendürek Dağı hangi ilde bulunur?",
-    secenekler: ["Ağrı", "Van", "Muş", "Bitlis"],
-    dogru: 0,
-    aciklama: "Tendürek Dağı (2983 m), Ağrı iline bağlı olup aktif volkanik özellikler taşıyan bir dağdır.",
-    iller: ["TR04"]
-  },
-  {
-    id: 30, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de Anadolu Yarımadası genel hatlarıyla hangi tektonik levha üzerindedir?",
-    secenekler: ["Avrasya Levhası", "Afrika Levhası", "Anadolu Levhası", "Arap Levhası"],
-    dogru: 2,
-    aciklama: "Türkiye büyük ölçüde Anadolu Levhası üzerinde yer almakta, kuzeyde Avrasya ve güneyde Afrika/Arap levhaları arasında sıkışmaktadır.",
-    iller: []
-  },
+// Test 2
+{ id: 26, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de hangi nehir GAP projesi kapsamında değerlendirilmektedir?”, secenekler: [“Sakarya ve Kızılırmak”, “Fırat ve Dicle”, “Seyhan ve Ceyhan”, “Yeşilırmak ve Kızılırmak”], dogru: 1, aciklama: “GAP (Güneydoğu Anadolu Projesi), Fırat ve Dicle nehirleri üzerindeki baraj ve sulama projelerini kapsamaktadır.”, iller: [“TR63”, “TR21”, “TR56”] },
+{ id: 27, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Aşağıdaki hangisi bir iç drenaj havzasıdır?”, secenekler: [“Sakarya Havzası”, “Konya Kapalı Havzası”, “Fırat Havzası”, “Kızılırmak Havzası”], dogru: 1, aciklama: “Konya Kapalı Havzası, sularının denize ulaşmadığı iç drenaj havzasıdır. Türkiye’nin en büyük kapalı havzasıdır.”, iller: [“TR42”] },
+{ id: 28, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de akarsular hangi bölgede en az su taşır?”, secenekler: [“Karadeniz”, “İç Anadolu”, “Marmara”, “Doğu Anadolu”], dogru: 1, aciklama: “İç Anadolu Bölgesi’nde yağışların az olması nedeniyle akarsular düşük debilidir ve yazın kuruma yaşanır.”, iller: [] },
+{ id: 29, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Çoruh Nehri hangi ülkeye geçer?”, secenekler: [“İran”, “Gürcistan”, “Ermenistan”, “Azerbaycan”], dogru: 1, aciklama: “Çoruh Nehri, Artvin’den geçtikten sonra Gürcistan’a geçer ve Karadeniz’e dökülür.”, iller: [“TR08”] },
+{ id: 30, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de rejimi en düzensiz nehirler hangi bölgededir?”, secenekler: [“Karadeniz”, “Akdeniz”, “İç Anadolu”, “Marmara”], dogru: 1, aciklama: “Akdeniz ikliminin etkisindeki nehirler, yazın neredeyse kurur, kışın ise yüksek su taşır. Bu nedenle rejimi en düzensiz nehirler Akdeniz çevresindedir.”, iller: [] },
+{ id: 31, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Fırat Nehri kaç ülkeden geçer?”, secenekler: [“2”, “3”, “4”, “5”], dogru: 1, aciklama: “Fırat Nehri, Türkiye, Suriye ve Irak olmak üzere 3 ülkeden geçer.”, iller: [“TR44”, “TR02”, “TR63”] },
+{ id: 32, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de akarsu boyuna profili en sarp olan bölge hangisidir?”, secenekler: [“İç Anadolu”, “Ege”, “Karadeniz”, “Güneydoğu Anadolu”], dogru: 2, aciklama: “Karadeniz Bölgesi’nde kıyıya paralel dağlar nedeniyle akarsular çok kısa mesafede büyük yükseklik farkı aşar.”, iller: [] },
+{ id: 33, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Asi Nehri hangi denize dökülür?”, secenekler: [“Karadeniz”, “Ege”, “Akdeniz”, “Marmara”], dogru: 2, aciklama: “Asi Nehri (Orontes), Hatay’dan geçerek Akdeniz’e dökülür. Türkiye’de kuzeyden güneye akan nadir nehirlerdendir.”, iller: [“TR31”] },
+{ id: 34, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de taşıma gücü en fazla olan nehir hangisidir?”, secenekler: [“Sakarya”, “Kızılırmak”, “Fırat”, “Dicle”], dogru: 2, aciklama: “Fırat Nehri, büyük havzası ve yüksek debisi sayesinde Türkiye’nin en fazla su taşıyan nehirlerinden biridir.”, iller: [“TR44”, “TR02”, “TR63”] },
+{ id: 35, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de hangi nehir üzerinde Hirfanlı Barajı kurulmuştur?”, secenekler: [“Sakarya”, “Fırat”, “Kızılırmak”, “Yeşilırmak”], dogru: 2, aciklama: “Hirfanlı Barajı, Kızılırmak Nehri üzerinde Kırşehir iline yakın bir konumda yer alır.”, iller: [“TR40”] },
+{ id: 36, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’nin güneyinde yer alan Seyhan ve Ceyhan nehirleri hangi ova üzerinde birleşir?”, secenekler: [“Konya Ovası”, “Adana Ovası”, “Çukurova”, “Harran Ovası”], dogru: 2, aciklama: “Seyhan ve Ceyhan nehirleri, Çukurova’da birbirine yaklaşır ve Akdeniz’e dökülür.”, iller: [“TR01”] },
+{ id: 37, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de hangi nehir üzerinde Ilısu Barajı bulunmaktadır?”, secenekler: [“Fırat”, “Kızılırmak”, “Dicle”, “Sakarya”], dogru: 2, aciklama: “Ilısu Barajı, Dicle Nehri üzerinde Şırnak ilinde inşa edilmiş büyük bir barajdır.”, iller: [“TR73”] },
+{ id: 38, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Aşağıdakilerden hangisi Türkiye’nin en uzun üçüncü nehridir?”, secenekler: [“Dicle”, “Yeşilırmak”, “Sakarya”, “Seyhan”], dogru: 2, aciklama: “Sakarya Nehri, yaklaşık 824 km uzunluğuyla Türkiye’nin en uzun üçüncü nehridir.”, iller: [“TR54”, “TR41”] },
+{ id: 39, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de iç drenaj havzası bulunduran bölge hangisidir?”, secenekler: [“Karadeniz Bölgesi”, “Doğu Anadolu”, “İç Anadolu”, “Marmara”], dogru: 2, aciklama: “İç Anadolu Bölgesi’nde Konya Kapalı Havzası bulunur; bu havzadaki sular denize ulaşamaz.”, iller: [“TR42”] },
+{ id: 40, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de hangi akarsu üzerinde Sarıyar Barajı bulunmaktadır?”, secenekler: [“Fırat”, “Kızılırmak”, “Sakarya”, “Dicle”], dogru: 2, aciklama: “Sarıyar Barajı, Sakarya Nehri üzerinde Ankara iline yakın bir konumda yer alır.”, iller: [“TR06”] },
+{ id: 41, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de akarsular üzerindeki enerji potansiyeli açısından hangi havza birinci sıradadır?”, secenekler: [“Sakarya Havzası”, “Kızılırmak Havzası”, “Fırat-Dicle Havzası”, “Yeşilırmak Havzası”], dogru: 2, aciklama: “Fırat-Dicle havzası, Türkiye’nin hidroelektrik enerji potansiyelinin büyük bölümünü oluşturur.”, iller: [] },
+{ id: 42, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Büyük Menderes Nehri’nin kaynağı neresidir?”, secenekler: [“Toros Dağları”, “Uşak Platosu”, “Ege kıyıları”, “İç Anadolu Platosu”], dogru: 1, aciklama: “Büyük Menderes, Uşak Platosu’ndan kaynaklanır ve batıya doğru akarak Ege Denizi’ne dökülür.”, iller: [“TR64”, “TR20”, “TR09”] },
+{ id: 43, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de hangi nehir üzerinde Demirköprü Barajı kurulmuştur?”, secenekler: [“Büyük Menderes”, “Gediz”, “Küçük Menderes”, “Bakırçay”], dogru: 1, aciklama: “Demirköprü Barajı, Gediz Nehri üzerinde Manisa iline bağlı Salihli ilçesinde yer alır.”, iller: [“TR45”] },
+{ id: 44, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’deki nehirler içinde hangisi en fazla kıvrım yaparak akar?”, secenekler: [“Fırat”, “Büyük Menderes”, “Kızılırmak”, “Sakarya”], dogru: 1, aciklama: “Büyük Menderes Nehri, çok sayıda kıvrım yapmasıyla ünlüdür ve ‘menderesli akarsu’ kavramı bu nehirden gelir.”, iller: [“TR09”, “TR20”] },
+{ id: 45, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de su potansiyeli en düşük nehirler hangi iklim bölgesindedir?”, secenekler: [“Karadeniz”, “Akdeniz”, “Karasal iklim”, “Marmara”], dogru: 2, aciklama: “Karasal iklimin hâkim olduğu iç kesimlerde yağış az olduğundan nehirler düşük su potansiyeline sahiptir.”, iller: [] },
+{ id: 46, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Kızılırmak Nehri’nin döküldüğü yer hangisidir?”, secenekler: [“Samsun yakınları”, “Sinop kıyıları”, “Kastamonu kıyıları”, “Trabzon”], dogru: 0, aciklama: “Kızılırmak, Bafra (Samsun) yakınlarında Karadeniz’e dökülür ve burada geniş bir delta oluşturur.”, iller: [“TR55”] },
+{ id: 47, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de nehirler üzerinde kurulan barajların en önemli zararı nedir?”, secenekler: [“Enerji azalması”, “Delta ve taşkın ovalarının azalması”, “Su kirliliği”, “İklim değişikliği”], dogru: 1, aciklama: “Barajlar, mansap tarafında alüvyon birikimine engel olarak delta ve taşkın ovalarının küçülmesine yol açar.”, iller: [] },
+{ id: 48, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de hangi nehir ‘kızıl’ renkli sularıyla bilinir?”, secenekler: [“Sakarya”, “Fırat”, “Kızılırmak”, “Seyhan”], dogru: 2, aciklama: “Kızılırmak, geçtiği arazilerden taşıdığı kırmızı renkli kil nedeniyle bu adı almıştır.”, iller: [“TR68”, “TR71”, “TR18”] },
+{ id: 49, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de akarsu havzaları arasında en küçüğü hangisidir?”, secenekler: [“Marmara Havzası”, “Burdur Havzası”, “Konya Havzası”, “Antalya Havzası”], dogru: 1, aciklama: “Burdur Kapalı Havzası, Türkiye’nin en küçük havzalarından biridir.”, iller: [“TR15”] },
+{ id: 50, unite: 1, test: 2, uniteName: “Akarsular”, soru: “Türkiye’de yaz aylarında en az suyu taşıyan nehir tipi hangisidir?”, secenekler: [“Karadeniz’e dökülenler”, “Ege’ye dökülenler”, “Akdeniz’e dökülenler”, “Marmara’ya dökülenler”], dogru: 2, aciklama: “Akdeniz ikliminin etkisiyle yağışlar kış mevsiminde olur; yaz aylarında Akdeniz’e dökülen nehirler neredeyse kurur.”, iller: [] },
 
-  // ===== ÜNİTE 3: OVALAR & PLATOLAR =====
-  {
-    id: 31, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'nin en büyük ovası hangisidir?",
-    secenekler: ["Bafra Ovası", "Çukurova", "Konya Ovası", "Gediz Ovası"],
-    dogru: 2,
-    aciklama: "Konya Ovası, yaklaşık 4.500 km² ile Türkiye'nin en büyük iç ovası ve kapalı havzasıdır.",
-    iller: ["TR42"]
-  },
-  {
-    id: 32, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Çukurova hangi nehirlerin taşıdığı alüvyonlarla oluşmuştur?",
-    secenekler: ["Fırat - Dicle", "Seyhan - Ceyhan", "Menderes - Gediz", "Sakarya - Kızılırmak"],
-    dogru: 1,
-    aciklama: "Çukurova (Adana Ovası), Seyhan ve Ceyhan nehirlerinin taşıdığı alüvyon birikintileriyle oluşmuş delta ovasıdır.",
-    iller: ["TR01"]
-  },
-  {
-    id: 33, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'nin en yüksek platosu hangisidir?",
-    secenekler: ["Uzunyayla Platosu", "Erzurum-Kars Platosu", "Haymana Platosu", "Obruk Platosu"],
-    dogru: 1,
-    aciklama: "Erzurum-Kars Platosu, ortalama 1800-2000 m yüksekliğiyle Türkiye'nin en yüksek platosudur.",
-    iller: ["TR25", "TR36"]
-  },
-  {
-    id: 34, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Bafra Ovası hangi nehrin delta ovasıdır?",
-    secenekler: ["Kızılırmak", "Yeşilırmak", "Sakarya", "Filyos"],
-    dogru: 0,
-    aciklama: "Bafra Ovası, Kızılırmak Nehri'nin Karadeniz'e döküldüğü yerde oluşturduğu delta ovasıdır.",
-    iller: ["TR55"]
-  },
-  {
-    id: 35, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Harran Ovası hangi ilimizde bulunur?",
-    secenekler: ["Gaziantep", "Adıyaman", "Şanlıurfa", "Mardin"],
-    dogru: 2,
-    aciklama: "Harran Ovası, Şanlıurfa iline bağlı olup GAP projesi kapsamında sulanan verimli bir ovadır.",
-    iller: ["TR63"]
-  },
-  {
-    id: 36, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de 'peneplen' oluşumuna örnek gösterilebilecek alan hangisidir?",
-    secenekler: ["Erzurum-Kars Platosu", "Konya Ovası", "Haymana Platosu", "Çukurova"],
-    dogru: 2,
-    aciklama: "Haymana Platosu, aşınmış ve düzleşmiş yüzeyiyle peneplen özelliği gösteren bir platodur.",
-    iller: ["TR06"]
-  },
-  {
-    id: 37, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "İç Anadolu'da 'obruk' oluşumları hangi kayaç türüyle ilgilidir?",
-    secenekler: ["Granit", "Kireçtaşı (karsik)", "Bazalt", "Şist"],
-    dogru: 1,
-    aciklama: "Obruklar, kireçtaşı arazilerde karstlaşma sonucu oluşan çöküntü çukurlukları ile gölleridir.",
-    iller: ["TR42"]
-  },
-  {
-    id: 38, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Gediz Ovası hangi nehrin oluşturduğu ovadır?",
-    secenekler: ["Büyük Menderes", "Gediz", "Bakırçay", "Küçük Menderes"],
-    dogru: 1,
-    aciklama: "Gediz Ovası, Gediz Nehri'nin taşıdığı alüvyonlarla doldurulmuş, graben üzerinde yer alan bir ovadır.",
-    iller: ["TR35"]
-  },
-  {
-    id: 39, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Ege Bölgesi'ndeki ovaların çoğu nasıl bir oluşuma sahiptir?",
-    secenekler: ["Alüvyal ova", "Graben ovası", "Delta ovası", "Lös ovası"],
-    dogru: 1,
-    aciklama: "Ege Bölgesi'ndeki ovalar (Gediz, Büyük Menderes, Küçük Menderes) tektonik çöküntü (graben) alanlarının alüvyonla dolmasıyla oluşmuştur.",
-    iller: ["TR35", "TR09"]
-  },
-  {
-    id: 40, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de kıyı ovalarının en geniş yer kapladığı bölge hangisidir?",
-    secenekler: ["Karadeniz", "Marmara", "Akdeniz", "Ege"],
-    dogru: 2,
-    aciklama: "Akdeniz Bölgesi'nde Çukurova (Adana), Amik, Silifke gibi geniş kıyı ovaları yer almaktadır.",
-    iller: ["TR01", "TR33"]
-  },
-  {
-    id: 41, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Uzunyayla Platosu hangi bölgede bulunur?",
-    secenekler: ["İç Anadolu", "Doğu Anadolu", "Karadeniz", "Marmara"],
-    dogru: 0,
-    aciklama: "Uzunyayla Platosu, Sivas ve Kayseri illeri arasında İç Anadolu'da yer alan önemli bir platodur.",
-    iller: ["TR58", "TR38"]
-  },
-  {
-    id: 42, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de tarım alanı en geniş ova hangisidir?",
-    secenekler: ["Harran Ovası", "Çukurova", "Konya Ovası", "Bafra Ovası"],
-    dogru: 2,
-    aciklama: "Konya Ovası, Türkiye'nin en büyük iç ovası olup geniş tarım arazilerine sahiptir.",
-    iller: ["TR42"]
-  },
-  {
-    id: 43, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Aşağıdakilerden hangisi bir delta ovası değildir?",
-    secenekler: ["Bafra Ovası", "Çarşamba Ovası", "Harran Ovası", "Çukurova"],
-    dogru: 2,
-    aciklama: "Harran Ovası, nehir taşıması ile oluşmamış, kara içinde yer alan allüvyal bir çöküntü ovasıdır.",
-    iller: ["TR63"]
-  },
-  {
-    id: 44, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Büyük Menderes Ovası hangi denize komşudur?",
-    secenekler: ["Marmara", "Karadeniz", "Ege", "Akdeniz"],
-    dogru: 2,
-    aciklama: "Büyük Menderes Ovası, Ege Denizi'ne paralel uzanan bir graben ovası olup ağzı Ege'ye açılır.",
-    iller: ["TR09"]
-  },
-  {
-    id: 45, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de 'kapalı havza' özelliği gösteren ova hangisidir?",
-    secenekler: ["Çukurova", "Konya Ovası", "Bafra Ovası", "Gediz Ovası"],
-    dogru: 1,
-    aciklama: "Konya Ovası, sularını denize ulaştıramayan kapalı havza özelliğine sahip Türkiye'nin en büyük iç ovasıdır.",
-    iller: ["TR42"]
-  },
+// ===== ÜNİTE 2: DAĞLAR & VOLKANLAR =====
+// Test 1
+{ id: 51, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’nin en yüksek dağı hangisidir?”, secenekler: [“Süphan Dağı”, “Ağrı Dağı”, “Erciyes Dağı”, “Uludağ”], dogru: 1, aciklama: “Ağrı Dağı, 5137 metre yüksekliğiyle Türkiye’nin en yüksek dağıdır ve sönmüş bir volkandır.”, iller: [“TR04”] },
+{ id: 52, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’deki en büyük volkanik dağ hangisidir?”, secenekler: [“Erciyes”, “Ağrı”, “Nemrut”, “Tendürek”], dogru: 1, aciklama: “Ağrı Dağı, Türkiye’nin en büyük volkanik dağıdır ve kalkan volkan özelliği taşır.”, iller: [“TR04”] },
+{ id: 53, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Erciyes Dağı hangi ilde bulunmaktadır?”, secenekler: [“Sivas”, “Nevşehir”, “Kayseri”, “Niğde”], dogru: 2, aciklama: “Erciyes Dağı, 3917 metre yüksekliğiyle Kayseri iline yakın konumdadır ve sönmüş bir volkandır.”, iller: [“TR38”] },
+{ id: 54, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Kapadokya bölgesinin oluşmasında hangi dağ etkili olmuştur?”, secenekler: [“Ağrı Dağı”, “Erciyes ve Hasan Dağı”, “Süphan Dağı”, “Nemrut Dağı”], dogru: 1, aciklama: “Kapadokya’nın peri bacaları, Erciyes ve Hasan Dağı’nın volkanik tüflerinin aşınmasıyla oluşmuştur.”, iller: [“TR38”, “TR50”] },
+{ id: 55, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Toroslar hangi yönde uzanır?”, secenekler: [“Kuzey-Güney”, “Doğu-Batı”, “Kuzeydoğu-Güneybatı”, “Güneydoğu-Kuzeybatı”], dogru: 1, aciklama: “Toros Dağları, Akdeniz kıyısına paralel olarak kabaca doğu-batı yönünde uzanır.”, iller: [] },
+{ id: 56, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Kuzey Anadolu Dağları hangi kıyıya paralel uzanır?”, secenekler: [“Ege kıyısı”, “Akdeniz kıyısı”, “Karadeniz kıyısı”, “Marmara kıyısı”], dogru: 2, aciklama: “Kuzey Anadolu Dağları (Pontus Dağları), Karadeniz kıyısına paralel olarak doğu-batı yönünde uzanır.”, iller: [] },
+{ id: 57, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’nin ikinci en yüksek dağı hangisidir?”, secenekler: [“Erciyes”, “Süphan”, “Uludağ”, “Cilo”], dogru: 1, aciklama: “Süphan Dağı, 4058 metre yüksekliğiyle Türkiye’nin ikinci en yüksek dağıdır ve Van Gölü kuzeyinde yer alır.”, iller: [“TR13”] },
+{ id: 58, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Nemrut Dağı (volkanik) hangi ilde bulunur?”, secenekler: [“Adıyaman”, “Van”, “Bitlis”, “Muş”], dogru: 2, aciklama: “Volkanik Nemrut Dağı, Bitlis ilinde Van Gölü’nün batısında yer alır; krater gölüyle ünlüdür.”, iller: [“TR13”] },
+{ id: 59, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Alp kıvrımlarının bir parçası olan dağ sistemi hangisidir?”, secenekler: [“Kuzey Anadolu Dağları”, “Toros Dağları”, “Her ikisi”, “Hiçbiri”], dogru: 2, aciklama: “Hem Kuzey Anadolu (Pontus) hem de Güney Anadolu (Toroslar) dağları Alp-Himalaya kıvrım kuşağının parçasıdır.”, iller: [] },
+{ id: 60, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Uludağ hangi ilde bulunmaktadır?”, secenekler: [“İstanbul”, “Ankara”, “Bursa”, “Balıkesir”], dogru: 2, aciklama: “Uludağ, 2543 metre yüksekliğiyle Bursa iline yakındır ve önemli bir kayak merkezidir.”, iller: [“TR16”] },
+{ id: 61, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de volkanik dağların yoğun olduğu bölge hangisidir?”, secenekler: [“Marmara”, “Karadeniz”, “Doğu Anadolu”, “Ege”], dogru: 2, aciklama: “Doğu Anadolu, Ağrı, Süphan, Nemrut, Tendürek gibi pek çok volkanik dağa ev sahipliği yapar.”, iller: [] },
+{ id: 62, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Cilo Dağı hangi ilde yer alır?”, secenekler: [“Van”, “Hakkari”, “Şırnak”, “Siirt”], dogru: 1, aciklama: “Cilo Dağı, 4135 metre ile Hakkari ilinde yer alır ve Türkiye’nin en yüksek dağları arasındadır.”, iller: [“TR30”] },
+{ id: 63, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de dağların genel uzanış yönü nasıldır?”, secenekler: [“Kuzey-Güney”, “Doğu-Batı”, “Kuzeybatı-Güneydoğu”, “Kuzeydoğu-Güneybatı”], dogru: 1, aciklama: “Türkiye’deki başlıca dağlar doğu-batı yönünde uzanır; bu durum kuzeyden ve güneyden gelen etkileri engeller.”, iller: [] },
+{ id: 64, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Hasan Dağı hangi ilde bulunur?”, secenekler: [“Kayseri”, “Aksaray”, “Niğde”, “Konya”], dogru: 1, aciklama: “Hasan Dağı, 3268 metre ile Aksaray iline yakın konumdadır ve sönmüş bir volkandır.”, iller: [“TR68”] },
+{ id: 65, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Kaçkar Dağları hangi bölgededir?”, secenekler: [“Doğu Anadolu”, “Karadeniz”, “Güneydoğu Anadolu”, “İç Anadolu”], dogru: 1, aciklama: “Kaçkar Dağları, Karadeniz Bölgesi’nde Rize ve Artvin illeri arasında yer alır; en yüksek noktası 3932 metredir.”, iller: [“TR53”, “TR08”] },
+{ id: 66, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’nin en uzun dağ sırası hangisidir?”, secenekler: [“Kuzey Anadolu Dağları”, “Toros Dağları”, “Güneydoğu Torosları”, “Doğu Anadolu Dağları”], dogru: 1, aciklama: “Toros Dağları, Türkiye’nin en uzun dağ sırasıdır ve Akdeniz kıyısı boyunca yaklaşık 1500 km uzanır.”, iller: [] },
+{ id: 67, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Tendürek Dağı hangi ilde yer alır?”, secenekler: [“Ağrı”, “Van”, “Muş”, “Bitlis”], dogru: 0, aciklama: “Tendürek Dağı, Ağrı ve Van illeri arasında yer alan aktif bir volkandır.”, iller: [“TR04”, “TR65”] },
+{ id: 68, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de dağların denize dik uzandığı kıyı hangisidir?”, secenekler: [“Karadeniz kıyısı”, “Akdeniz kıyısı”, “Ege kıyısı”, “Marmara kıyısı”], dogru: 2, aciklama: “Ege kıyısında dağlar denize dik uzanır; bu durum koy ve yarımadaların oluşmasına yol açmıştır.”, iller: [] },
+{ id: 69, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Bolkar Dağları hangi dağ sistemine bağlıdır?”, secenekler: [“Kuzey Anadolu Dağları”, “Toros Dağları”, “Doğu Anadolu Dağları”, “Güneydoğu Torosları”], dogru: 1, aciklama: “Bolkar Dağları, Orta Toroslar’ın bir parçasıdır ve Niğde ile Mersin arasında yer alır.”, iller: [“TR51”, “TR33”] },
+{ id: 70, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de dağların yüksekliği doğuya doğru nasıl değişir?”, secenekler: [“Azalır”, “Değişmez”, “Artar”, “Önce artar sonra azalır”], dogru: 2, aciklama: “Türkiye’de dağların ortalama yüksekliği doğuya gidildikçe artar; doğu kesim ortalama 2000 metre üzerindedir.”, iller: [] },
+{ id: 71, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’deki dağların kıyı bölgelere etkisi nedir?”, secenekler: [“Yağışları azaltır”, “Deniz etkisini iç kesimlere taşır”, “Deniz etkisini iç kesimlere engeller”, “Hiçbir etkisi yoktur”], dogru: 2, aciklama: “Kıyıya paralel uzanan dağlar, denizden gelen ılık ve nemli havanın iç kesimlere geçmesini engeller.”, iller: [] },
+{ id: 72, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Aladağlar hangi dağ sistemine aittir?”, secenekler: [“Kuzey Anadolu”, “Toros”, “Güneydoğu Toros”, “Pontus”], dogru: 1, aciklama: “Aladağlar, Orta Toroslar’ın bir kesimini oluşturur ve Adana-Kayseri-Niğde üçgeninde yer alır.”, iller: [“TR01”, “TR38”, “TR51”] },
+{ id: 73, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de hangi dağ buzul göllerine ev sahipliği yapar?”, secenekler: [“Ağrı Dağı”, “Kaçkar Dağları”, “Erciyes Dağı”, “Uludağ”], dogru: 1, aciklama: “Kaçkar Dağları’nda pek çok buzul gölü (gölet) bulunur; bu göller dağcılık ve doğa turizmi açısından önemlidir.”, iller: [“TR53”] },
+{ id: 74, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Murat Dağı hangi ilde yer alır?”, secenekler: [“Kütahya”, “Afyon”, “Uşak”, “Manisa”], dogru: 0, aciklama: “Murat Dağı, 2309 metre ile Kütahya iline bağlıdır ve İç Batı Anadolu’da yer alır.”, iller: [“TR43”] },
+{ id: 75, unite: 2, test: 1, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’nin güneyindeki dağların ormanlarla kaplı yamaçları hangi yöndedir?”, secenekler: [“Güney yamaçlar”, “Kuzey yamaçlar”, “Her iki yön”, “Doğu yamaçlar”], dogru: 0, aciklama: “Toroslar’ın Akdeniz’e bakan güney yamaçları bol yağış aldığından yoğun ormanlarla kaplıdır.”, iller: [] },
 
-  // ===== ÜNİTE 4: GÖLLER =====
-  {
-    id: 46, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'nin ve Ortadoğu'nun en büyük gölü hangisidir?",
-    secenekler: ["Tuz Gölü", "Van Gölü", "Eğirdir Gölü", "Beşehir Gölü"],
-    dogru: 1,
-    aciklama: "Van Gölü, yaklaşık 3.713 km² yüzey alanıyla Türkiye'nin ve Ortadoğu'nun en büyük gölüdür.",
-    iller: ["TR65"]
-  },
-  {
-    id: 47, unite: 4, uniteName: "Göller",
-    soru: "Tuz Gölü hangi bölgede yer alır?",
-    secenekler: ["Doğu Anadolu", "Karadeniz", "İç Anadolu", "Güneydoğu Anadolu"],
-    dogru: 2,
-    aciklama: "Tuz Gölü, İç Anadolu Bölgesi'nde Konya, Aksaray ve Ankara illeri arasında yer alan kapalı havza gölüdür.",
-    iller: ["TR68"]
-  },
-  {
-    id: 48, unite: 4, uniteName: "Göller",
-    soru: "Van Gölü nasıl bir göl türüdür?",
-    secenekler: ["Tektonik göl", "Volkanik set gölü", "Karstik göl", "Buzul gölü"],
-    dogru: 1,
-    aciklama: "Van Gölü, volkanik faaliyetler sonucu lav akışlarının akarsuyu kapatması ile oluşan volkanik set gölüdür.",
-    iller: ["TR65"]
-  },
-  {
-    id: 49, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de en fazla göl hangi bölgededir?",
-    secenekler: ["Ege", "Akdeniz", "İç Anadolu", "Göller Yöresi (Güneybatı)"],
-    dogru: 3,
-    aciklama: "Göller Yöresi olarak da bilinen Güneybatı Anadolu (Isparta, Burdur, Antalya çevresi) Türkiye'de göl yoğunluğunun en fazla olduğu bölgedir.",
-    iller: ["TR32", "TR15"]
-  },
-  {
-    id: 50, unite: 4, uniteName: "Göller",
-    soru: "Aşağıdaki göllerden hangisi tektonik göl değildir?",
-    secenekler: ["Tuz Gölü", "Eğirdir Gölü", "Karagöl (Artvin)", "Beşehir Gölü"],
-    dogru: 2,
-    aciklama: "Karagöl (Artvin), heyelan set gölü olup tektonik hareketlerle değil, kütlesel hareket sonucu oluşmuştur.",
-    iller: ["TR08"]
-  },
-  {
-    id: 51, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'nin en derin gölü hangisidir?",
-    secenekler: ["Van Gölü", "Hazar Gölü", "Eğirdir Gölü", "Burdur Gölü"],
-    dogru: 0,
-    aciklama: "Van Gölü, maksimum 451 m derinliğiyle Türkiye'nin en derin gölüdür.",
-    iller: ["TR65"]
-  },
-  {
-    id: 52, unite: 4, uniteName: "Göller",
-    soru: "Hazar Gölü hangi ilde bulunur?",
-    secenekler: ["Elazığ", "Tunceli", "Bingöl", "Diyarbakır"],
-    dogru: 0,
-    aciklama: "Hazar Gölü, Elazığ iline bağlı Doğu Anadolu'da tektonik bir göldür.",
-    iller: ["TR23"]
-  },
-  {
-    id: 53, unite: 4, uniteName: "Göller",
-    soru: "Sapanca Gölü hangi bölgede yer alır?",
-    secenekler: ["İç Anadolu", "Marmara", "Karadeniz", "Ege"],
-    dogru: 1,
-    aciklama: "Sapanca Gölü, Marmara Bölgesi'nde Sakarya ilinde yer alır ve İstanbul ile Kocaeli'nin içme suyu kaynakları arasındadır.",
-    iller: ["TR54"]
-  },
-  {
-    id: 54, unite: 4, uniteName: "Göller",
-    soru: "Eğirdir Gölü hangi ilde bulunur?",
-    secenekler: ["Burdur", "Isparta", "Antalya", "Konya"],
-    dogru: 1,
-    aciklama: "Eğirdir Gölü, Isparta iline bağlı olup Türkiye'nin tatlı su göllerinden birincisidir.",
-    iller: ["TR32"]
-  },
-  {
-    id: 55, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de karstik (çözünme) kökenli göllerin en fazla bulunduğu bölge hangisidir?",
-    secenekler: ["Doğu Anadolu", "İç Anadolu", "Akdeniz (Toros etekleri)", "Ege"],
-    dogru: 2,
-    aciklama: "Toros Dağları'nın kireçtaşı arazi yapısı nedeniyle Akdeniz Bölgesi'nde karstik göller (obruk gölleri, polye gölleri) fazla sayıdadır.",
-    iller: ["TR07"]
-  },
-  {
-    id: 56, unite: 4, uniteName: "Göller",
-    soru: "Van Gölü'nün suyu neden acıdır?",
-    secenekler: ["Denizle bağlantısı olduğu için", "Kapalı havza olduğundan buharlaşma ile tuz birikimi", "İçine dökülen ırmakların tuzlu olması", "Volkanik kökenli olduğu için"],
-    dogru: 1,
-    aciklama: "Van Gölü, kapalı havza özelliğinde olduğundan suları buharlaşmakta ve tuzluluk oranı artmaktadır; sodaca ve acı bir göldür.",
-    iller: ["TR65"]
-  },
-  {
-    id: 57, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de yapay (baraj) gölleri yoğunlukla hangi ırmaklar üzerinde kurulmuştur?",
-    secenekler: ["Kızılırmak - Yeşilırmak", "Fırat - Dicle", "Sakarya - Meriç", "Seyhan - Ceyhan"],
-    dogru: 1,
-    aciklama: "Fırat ve Dicle nehirleri üzerinde Atatürk Barajı, Keban Barajı, Ilısu Barajı gibi büyük baraj gölleri kurulmuştur.",
-    iller: ["TR02", "TR21"]
-  },
-  {
-    id: 58, unite: 4, uniteName: "Göller",
-    soru: "Burdur Gölü hangi tür göldür?",
-    secenekler: ["Karstik göl", "Volkanik set gölü", "Tektonik göl", "Delta gölü"],
-    dogru: 2,
-    aciklama: "Burdur Gölü, tektonik çöküntü ile oluşmuş, tuzlu ve acı bir kapalı havza gölüdür.",
-    iller: ["TR15"]
-  },
-  {
-    id: 59, unite: 4, uniteName: "Göller",
-    soru: "Abant Gölü hangi ilde bulunur?",
-    secenekler: ["Sakarya", "Bolu", "Düzce", "Zonguldak"],
-    dogru: 1,
-    aciklama: "Abant Gölü, Bolu iline bağlı olup heyelan set gölü özelliği taşıyan turizm amaçlı bir göldür.",
-    iller: ["TR14"]
-  },
-  {
-    id: 60, unite: 4, uniteName: "Göller",
-    soru: "Aşağıdaki göllerden hangisi tuzlu değildir?",
-    secenekler: ["Van Gölü", "Tuz Gölü", "Burdur Gölü", "Eğirdir Gölü"],
-    dogru: 3,
-    aciklama: "Eğirdir Gölü, açık havza özelliği taşıdığından tatlı su gölüdür. Diğerleri kapalı havza ya da tuz birikimli gölleridir.",
-    iller: ["TR32"]
-  },
+// Test 2
+{ id: 76, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de hangi volkan çevresinde Göbeklitepe bulunmaktadır?”, secenekler: [“Ağrı Dağı”, “Karacadağ”, “Erciyes”, “Nemrut”], dogru: 1, aciklama: “Göbeklitepe, Karacadağ volkanik kütlesinin eteklerinde, Şanlıurfa iline yakın konumdadır.”, iller: [“TR63”] },
+{ id: 77, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de hangi dağda hem kayak hem de termal turizm bir arada bulunur?”, secenekler: [“Uludağ”, “Erciyes”, “Palandöken”, “Kaçkar”], dogru: 2, aciklama: “Palandöken, Erzurum’da kayak merkeziyle ünlüdür; yakın çevresinde de termal kaynaklar mevcuttur.”, iller: [“TR25”] },
+{ id: 78, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Doğu Anadolu’nun ortalama yüksekliği kaç metredir?”, secenekler: [“1000 m”, “1500 m”, “2000 m”, “2500 m”], dogru: 2, aciklama: “Doğu Anadolu Bölgesi, yaklaşık 2000 metre ortalama yüksekliğiyle Türkiye’nin en yüksek bölgesidir.”, iller: [] },
+{ id: 79, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de hangi dağ silsilesinde demir yolu geçirmek en zordur?”, secenekler: [“Toros Dağları”, “Kuzey Anadolu Dağları”, “Doğu Anadolu Dağları”, “İç Anadolu düzlükleri”], dogru: 0, aciklama: “Toros Dağları, Akdeniz kıyısı ile iç kesimler arasındaki keskin engel oluşturması nedeniyle demiryolu güzergâhında büyük tünel ve viyadük yapımını zorunlu kılar.”, iller: [] },
+{ id: 80, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Ilgaz Dağları hangi bölgededir?”, secenekler: [“Karadeniz”, “İç Anadolu”, “Marmara”, “Doğu Anadolu”], dogru: 0, aciklama: “Ilgaz Dağları, Karadeniz Bölgesi’nde Kastamonu ve Çankırı illeri arasında yer alır.”, iller: [“TR37”, “TR18”] },
+{ id: 81, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Köroğlu Dağları hangi bölgede yer alır?”, secenekler: [“Karadeniz”, “İç Anadolu”, “Marmara”, “Ege”], dogru: 0, aciklama: “Köroğlu Dağları, Batı Karadeniz Bölgesi’nde Bolu ve Zonguldak illeri arasında uzanır.”, iller: [“TR14”, “TR67”] },
+{ id: 82, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de volkanik faaliyetler en çok hangi dönemde gerçekleşmiştir?”, secenekler: [“Paleozoyik”, “Mezozoyik”, “Neojen”, “Kuvaterner”], dogru: 2, aciklama: “Türkiye’deki büyük volkanik faaliyetler çoğunlukla Neojen ve Kuvaterner dönemlerinde gerçekleşmiştir.”, iller: [] },
+{ id: 83, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de hangi dağ Küçük Ağrı olarak da bilinir?”, secenekler: [“Süphan”, “Tendürek”, “Küçük Ağrı Dağı”, “Ararat”], dogru: 2, aciklama: “Küçük Ağrı, Büyük Ağrı Dağı’nın yanında yer alır ve yaklaşık 3896 metre yüksekliğindedir.”, iller: [“TR04”] },
+{ id: 84, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de dağların ulaşıma etkisi nedir?”, secenekler: [“Ulaşımı kolaylaştırır”, “Ulaşımı zorlaştırır”, “Hiçbir etkisi yoktur”, “Deniz ulaşımını zorlaştırır”], dogru: 1, aciklama: “Kıyıya paralel uzanan dağlar, iç kesimlerle kıyı arasındaki ulaşımı zorlaştırır ve tünel yapımını zorunlu kılar.”, iller: [] },
+{ id: 85, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de hangi dağ, Nuh’un Gemisi efsanesiyle ilişkilendirilir?”, secenekler: [“Süphan”, “Erciyes”, “Ağrı”, “Nemrut”], dogru: 2, aciklama: “Ağrı Dağı, Nuh’un Gemisi efsanesiyle özdeşleşmiştir ve pek çok kutsal kitapta bu bağlantıya atıfta bulunulur.”, iller: [“TR04”] },
+{ id: 86, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Spil Dağı hangi ilde bulunur?”, secenekler: [“İzmir”, “Manisa”, “Balıkesir”, “Uşak”], dogru: 1, aciklama: “Spil Dağı, Manisa iline bağlıdır ve yaklaşık 1517 metre yüksekliğindedir.”, iller: [“TR45”] },
+{ id: 87, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Bozdağlar hangi bölgededir?”, secenekler: [“Marmara”, “Ege”, “Akdeniz”, “İç Anadolu”], dogru: 1, aciklama: “Bozdağlar, Ege Bölgesi’nde İzmir ve Manisa illeri arasında yer alır.”, iller: [“TR35”, “TR45”] },
+{ id: 88, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Sündiken Dağları hangi ilde yer alır?”, secenekler: [“Afyon”, “Eskişehir”, “Kütahya”, “Bilecik”], dogru: 1, aciklama: “Sündiken Dağları, Eskişehir iline yakın konumdadır.”, iller: [“TR26”] },
+{ id: 89, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Yunt Dağı hangi ilde yer alır?”, secenekler: [“İzmir”, “Manisa”, “Balıkesir”, “Çanakkale”], dogru: 1, aciklama: “Yunt Dağı, Manisa iline bağlı olup Ege Bölgesi’nin önemli dağlarından biridir.”, iller: [“TR45”] },
+{ id: 90, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de aktif volkan sayısı kaçtır?”, secenekler: [“0”, “1”, “2”, “3”], dogru: 0, aciklama: “Türkiye’de şu an aktif volkan bulunmamaktadır; Tendürek ise potansiyel olarak aktif kabul edilir.”, iller: [] },
+{ id: 91, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Munzur Dağları hangi bölgededir?”, secenekler: [“İç Anadolu”, “Doğu Anadolu”, “Karadeniz”, “Güneydoğu Anadolu”], dogru: 1, aciklama: “Munzur Dağları, Doğu Anadolu Bölgesi’nde Tunceli ve Erzincan illeri arasında yer alır.”, iller: [“TR62”, “TR24”] },
+{ id: 92, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Giresun Dağları hangi bölgededir?”, secenekler: [“İç Anadolu”, “Karadeniz”, “Doğu Anadolu”, “Marmara”], dogru: 1, aciklama: “Giresun Dağları, Karadeniz Bölgesi’nde Giresun iline bağlı olup yaklaşık 3000 metre yüksekliğe ulaşır.”, iller: [“TR28”] },
+{ id: 93, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Nur Dağları (Amanos) hangi ilde yer alır?”, secenekler: [“Adana”, “Hatay”, “Osmaniye”, “Gaziantep”], dogru: 1, aciklama: “Nur Dağları (Amanos Dağları), Hatay ve Osmaniye illeri arasında uzanır.”, iller: [“TR31”, “TR80”] },
+{ id: 94, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Küre Dağları hangi ilde bulunur?”, secenekler: [“Kastamonu”, “Sinop”, “Bartın”, “Zonguldak”], dogru: 0, aciklama: “Küre Dağları Milli Parkı, Kastamonu ve Bartın illeri arasında yer alır.”, iller: [“TR37”, “TR74”] },
+{ id: 95, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de dağlar tarım açısından nasıl bir rol oynar?”, secenekler: [“Tarımı tamamen engeller”, “Yüksek kesimlerde mera ve alpin tarıma imkân tanır”, “Sadece ormancılığa uygundur”, “Tarım üzerinde etkisi yoktur”], dogru: 1, aciklama: “Dağların yüksek kesimleri yaylacılık, mera hayvancılığı ve alpin bitki yetiştiriciliği için elverişlidir.”, iller: [] },
+{ id: 96, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Aydın Dağları hangi bölgededir?”, secenekler: [“Ege”, “Akdeniz”, “Marmara”, “İç Anadolu”], dogru: 0, aciklama: “Aydın Dağları, Ege Bölgesi’nde Büyük Menderes ile Küçük Menderes vadileri arasında yer alır.”, iller: [“TR09”] },
+{ id: 97, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Tahtalı Dağı hangi ilde bulunur?”, secenekler: [“Muğla”, “Antalya”, “Isparta”, “Burdur”], dogru: 1, aciklama: “Tahtalı Dağı, yaklaşık 2366 metre ile Antalya iline bağlıdır ve teleferik turizmiyle ünlüdür.”, iller: [“TR07”] },
+{ id: 98, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de en fazla buzul kalıntısı hangi dağda bulunur?”, secenekler: [“Uludağ”, “Erciyes”, “Ağrı”, “Kaçkar”], dogru: 2, aciklama: “Ağrı Dağı, yüksekliği nedeniyle günümüzde de buzul kalıntılarına sahip olan başlıca dağdır.”, iller: [“TR04”] },
+{ id: 99, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Rize Dağları hangi bölgededir?”, secenekler: [“Doğu Anadolu”, “Karadeniz”, “Marmara”, “İç Anadolu”], dogru: 1, aciklama: “Rize Dağları, Karadeniz Bölgesi’nde Rize iline bağlıdır ve Kaçkar Dağları ile iç içe geçer.”, iller: [“TR53”] },
+{ id: 100, unite: 2, test: 2, uniteName: “Dağlar & Volkanlar”, soru: “Türkiye’de Kaz Dağları (Ida) hangi ilde yer alır?”, secenekler: [“İzmir”, “Balıkesir”, “Çanakkale”, “Bursa”], dogru: 2, aciklama: “Kaz Dağları, Çanakkale ve Balıkesir illeri arasında yer alır; mitolojide Truva Savaşı ile bağlantılıdır.”, iller: [“TR17”, “TR10”] },
 
-  // ===== ÜNİTE 5: BOĞAZLAR & KIYI =====
-  {
-    id: 61, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "İstanbul Boğazı'nın uzunluğu yaklaşık kaç km'dir?",
-    secenekler: ["17 km", "31 km", "56 km", "8 km"],
-    dogru: 1,
-    aciklama: "İstanbul Boğazı (Karadeniz Boğazı) yaklaşık 31 km uzunluğundadır.",
-    iller: ["TR34"]
-  },
-  {
-    id: 62, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Çanakkale Boğazı'nın en dar yeri kaç metredir?",
-    secenekler: ["700 m", "1200 m", "1800 m", "3500 m"],
-    dogru: 0,
-    aciklama: "Çanakkale Boğazı'nın en dar yeri yaklaşık 1200 m civarındadır (bazı kaynaklarda 750 m olarak da belirtilir); genel olarak 1,2-7 km arası değişir.",
-    iller: ["TR17"]
-  },
-  {
-    id: 63, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin kıyı şeridinin en uzun olduğu deniz hangisidir?",
-    secenekler: ["Ege Denizi", "Akdeniz", "Karadeniz", "Marmara Denizi"],
-    dogru: 0,
-    aciklama: "Ege Denizi kıyıları, girinti-çıkıntı ve adalar nedeniyle Türkiye'nin en uzun kıyı şeridine sahip denizidir.",
-    iller: ["TR09", "TR35"]
-  },
-  {
-    id: 64, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin toplam kıyı uzunluğu yaklaşık kaç km'dir?",
-    secenekler: ["4800 km", "7200 km", "8333 km", "10000 km"],
-    dogru: 2,
-    aciklama: "Türkiye'nin toplam kıyı uzunluğu yaklaşık 8333 km'dir (adalar dahil).",
-    iller: []
-  },
-  {
-    id: 65, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Karadeniz kıyıları nasıl bir kıyı tipine örnek gösterilebilir?",
-    secenekler: ["Ria kıyısı", "Fiord kıyısı", "Düz (boyuna) kıyı", "Limanlı kıyı"],
-    dogru: 2,
-    aciklama: "Karadeniz kıyıları, dağların denize paralel uzanması nedeniyle liman imkânları sınırlı, düz (boyuna) kıyı özelliği taşır.",
-    iller: ["TR61"]
-  },
-  {
-    id: 66, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Ege kıyıları nasıl bir kıyı tipine örnek gösterilebilir?",
-    secenekler: ["Ria (enine) kıyısı", "Boyuna kıyı", "Delta kıyısı", "Falezli kıyı"],
-    dogru: 0,
-    aciklama: "Ege kıyıları, vadilerin denizle dik açı yapmasıyla çok sayıda körfez, yarımada ve ada oluşturan ria (enine) kıyı tipine örnek gösterilir.",
-    iller: ["TR09", "TR48"]
-  },
-  {
-    id: 67, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "İskenderun Körfezi hangi bölgede yer alır?",
-    secenekler: ["Ege", "Akdeniz", "Marmara", "Karadeniz"],
-    dogru: 1,
-    aciklama: "İskenderun Körfezi, Akdeniz Bölgesi'nde Hatay ve Adana illeri kıyısında yer alan büyük bir körfezdir.",
-    iller: ["TR31"]
-  },
-  {
-    id: 68, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin güneybatısında bulunan ve derin girintiler oluşturan kıyı tipi hangisidir?",
-    secenekler: ["Haliç", "Ria", "Fjord", "Tombolo"],
-    dogru: 1,
-    aciklama: "Türkiye'nin güneybatısında (Muğla çevresi) aşınan vadi ağızlarının sular altında kalmasıyla ria kıyı tipi oluşmuştur.",
-    iller: ["TR48"]
-  },
-  {
-    id: 69, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Marmara Denizi kaç metre derinliktedir (ortalama)?",
-    secenekler: ["100 m", "250 m", "500 m", "850 m"],
-    dogru: 1,
-    aciklama: "Marmara Denizi'nin ortalama derinliği yaklaşık 250 metredir; en derin yeri ise 1355 m'dir.",
-    iller: ["TR34"]
-  },
-  {
-    id: 70, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'de falezler (yalıyarlar) en fazla hangi kıyılarda görülür?",
-    secenekler: ["Ege kıyıları", "Akdeniz batı kıyıları (Antalya)", "Karadeniz kıyıları", "Marmara kıyıları"],
-    dogru: 1,
-    aciklama: "Antalya körfezi gibi Akdeniz batı kıyılarında kireçtaşı kayalıkların dalgalarla aşınmasıyla dik falezler oluşmuştur.",
-    iller: ["TR07"]
-  },
-  {
-    id: 71, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Çanakkale Boğazı hangi iki denizi birbirine bağlar?",
-    secenekler: ["Karadeniz - Marmara", "Marmara - Ege", "Ege - Akdeniz", "Karadeniz - Ege"],
-    dogru: 1,
-    aciklama: "Çanakkale Boğazı (Dardaneller), Marmara Denizi ile Ege Denizi'ni birbirine bağlar.",
-    iller: ["TR17"]
-  },
-  {
-    id: 72, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "İstanbul Boğazı hangi iki denizi birbirine bağlar?",
-    secenekler: ["Karadeniz - Ege", "Marmara - Ege", "Karadeniz - Marmara", "Akdeniz - Marmara"],
-    dogru: 2,
-    aciklama: "İstanbul Boğazı (Boğaziçi), Karadeniz ile Marmara Denizi'ni birbirine bağlar.",
-    iller: ["TR34"]
-  },
-  {
-    id: 73, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin kıyılarının en az girintili-çıkıntılı olduğu bölge hangisidir?",
-    secenekler: ["Ege", "Marmara", "Akdeniz", "Karadeniz"],
-    dogru: 3,
-    aciklama: "Karadeniz kıyıları, dağların kıyıya paralel uzanması ve tektonik yapısı nedeniyle az girintili-çıkıntılı düz bir kıyı çizgisine sahiptir.",
-    iller: ["TR61", "TR52"]
-  },
-  {
-    id: 74, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin kıta sahanlığı en geniş olan denizi hangisidir?",
-    secenekler: ["Karadeniz", "Ege", "Marmara", "Akdeniz"],
-    dogru: 1,
-    aciklama: "Ege Denizi'nde Türkiye'nin kıta sahanlığı geniş tutulmakta; bu nedenle Türkiye-Yunanistan arasında sıkça kıta sahanlığı anlaşmazlıkları yaşanmaktadır.",
-    iller: ["TR35"]
-  },
-  {
-    id: 75, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Marmara Denizi'nin Türkiye açısından önemi nedir?",
-    secenekler: ["En derin denizdir", "Boğazlarla bağlantı kurarak hem Karadeniz hem Ege'ye erişim sağlar", "Balıkçılık açısından en verimlidir", "En büyük denizdir"],
-    dogru: 1,
-    aciklama: "Marmara Denizi, Türk Boğazları Sistemi'nin merkezinde yer alarak Karadeniz ile Akdeniz-Ege arasındaki geçiş yolunu oluşturur.",
-    iller: ["TR34"]
-  },
+// ===== ÜNİTE 3: OVALAR & PLATOLAR =====
+// Test 1
+{ id: 101, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’nin en büyük ovası hangisidir?”, secenekler: [“Çukurova”, “Konya Ovası”, “Harran Ovası”, “Gediz Ovası”], dogru: 1, aciklama: “Konya Ovası, yaklaşık 4500 km² ile Türkiye’nin en büyük ovası kabul edilmektedir.”, iller: [“TR42”] },
+{ id: 102, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Çukurova hangi ilde yer alır?”, secenekler: [“Mersin”, “Adana”, “Hatay”, “Osmaniye”], dogru: 1, aciklama: “Çukurova, Seyhan ve Ceyhan nehirlerinin getirdiği alüvyonlarla oluşmuş ve Adana çevresinde yer alır.”, iller: [“TR01”] },
+{ id: 103, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Harran Ovası hangi ilde bulunur?”, secenekler: [“Gaziantep”, “Adıyaman”, “Şanlıurfa”, “Mardin”], dogru: 2, aciklama: “Harran Ovası, Şanlıurfa iline bağlıdır ve GAP projesi kapsamında sulama sistemleriyle tarıma açılmıştır.”, iller: [“TR63”] },
+{ id: 104, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’nin en yüksek platosu hangisidir?”, secenekler: [“Obruk Platosu”, “Erzurum-Kars Platosu”, “Uzunyayla”, “Haymana Platosu”], dogru: 1, aciklama: “Erzurum-Kars Platosu, ortalama 1800-2000 metre yüksekliğiyle Türkiye’nin en yüksek platosu olarak bilinir.”, iller: [“TR25”, “TR36”] },
+{ id: 105, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “İç Anadolu’daki kapalı ovalar nasıl oluşmuştur?”, secenekler: [“Volkanik faaliyetler”, “Tektonik çökmeler”, “Aşınma ve birikim”, “Buzul faaliyetleri”], dogru: 1, aciklama: “İç Anadolu’daki kapalı ovalar, tektonik hareketler sonucu çöken alanların zamanla alüvyonla dolmasıyla oluşmuştur.”, iller: [] },
+{ id: 106, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Gediz Ovası hangi bölgededir?”, secenekler: [“Akdeniz”, “Ege”, “Marmara”, “İç Anadolu”], dogru: 1, aciklama: “Gediz Ovası, Ege Bölgesi’nde Gediz Nehri’nin oluşturduğu alüvyal bir ovadır.”, iller: [“TR35”, “TR45”] },
+{ id: 107, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Büyük Menderes Ovası hangi ilde yer alır?”, secenekler: [“Denizli”, “Aydın”, “Muğla”, “Manisa”], dogru: 1, aciklama: “Büyük Menderes Ovası, Aydın iline yakın konumdadır ve verimli tarım arazileriyle ünlüdür.”, iller: [“TR09”] },
+{ id: 108, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Bafra Ovası hangi nehrin delta ovasıdır?”, secenekler: [“Yeşilırmak”, “Sakarya”, “Kızılırmak”, “Filyos”], dogru: 2, aciklama: “Bafra Ovası, Kızılırmak Nehri’nin Karadeniz’e döküldüğü yerde oluşan delta ovasıdır.”, iller: [“TR55”] },
+{ id: 109, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Alaşehir (Gediz) Ovası hangi ilde bulunur?”, secenekler: [“İzmir”, “Manisa”, “Uşak”, “Kütahya”], dogru: 1, aciklama: “Alaşehir Ovası, Manisa iline bağlıdır ve bölge üzüm bağlarıyla meşhurdur.”, iller: [“TR45”] },
+{ id: 110, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Ankara Ovası hangi platoya bağlıdır?”, secenekler: [“Obruk”, “Haymana”, “Bozok”, “Uzunyayla”], dogru: 1, aciklama: “Ankara Ovası ve çevresi, İç Anadolu’nun Haymana Platosu’na bağlı geniş düzlükler üzerindedir.”, iller: [“TR06”] },
+{ id: 111, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Amik Ovası hangi ilde yer alır?”, secenekler: [“Adana”, “Mersin”, “Hatay”, “Osmaniye”], dogru: 2, aciklama: “Amik Ovası, Hatay iline bağlıdır ve Türkiye’nin önemli tarım ovalarından biridir.”, iller: [“TR31”] },
+{ id: 112, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de platolarda yaygın olan tarım faaliyeti hangisidir?”, secenekler: [“Narenciye”, “Tahıl tarımı ve hayvancılık”, “Çay tarımı”, “Muz yetiştiriciliği”], dogru: 1, aciklama: “Yüksek platolarda genellikle tahıl (buğday, arpa) tarımı ve küçükbaş hayvancılık yapılır.”, iller: [] },
+{ id: 113, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de İskenderun Ovası hangi ilde bulunur?”, secenekler: [“Adana”, “Osmaniye”, “Hatay”, “Mersin”], dogru: 2, aciklama: “İskenderun Ovası, Hatay iline bağlıdır ve İskenderun Körfezi kıyısında yer alır.”, iller: [“TR31”] },
+{ id: 114, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Polatlı Ovası hangi ile bağlıdır?”, secenekler: [“Konya”, “Ankara”, “Afyon”, “Eskişehir”], dogru: 1, aciklama: “Polatlı Ovası, Ankara iline bağlı olup İç Anadolu’daki geniş tahıl ekiliş alanlarından biridir.”, iller: [“TR06”] },
+{ id: 115, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’nin güneydoğusundaki en geniş ova hangisidir?”, secenekler: [“Konya Ovası”, “Harran Ovası”, “Amik Ovası”, “Diyarbakır Ovası”], dogru: 1, aciklama: “Harran Ovası, Güneydoğu Anadolu’nun en geniş ovasıdır ve verimli topraklarıyla GAP’ın önemli bir parçasıdır.”, iller: [“TR63”] },
+{ id: 116, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Obruk Platosu hangi bölgededir?”, secenekler: [“Doğu Anadolu”, “İç Anadolu”, “Akdeniz”, “Güneydoğu Anadolu”], dogru: 1, aciklama: “Obruk Platosu, İç Anadolu Bölgesi’nde Konya ile Karaman arasında yer alır ve karstik çukurlarıyla (obruk) ünlüdür.”, iller: [“TR42”, “TR70”] },
+{ id: 117, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de alüvyal ova oluşumu için ne gereklidir?”, secenekler: [“Dağlık arazi”, “Akarsu ve düz zemin”, “Karstik yapı”, “Buzul”], dogru: 1, aciklama: “Alüvyal ovalar, akarsuların taşıdığı kum, çakıl ve kilden oluşur; düz ya da hafif eğimli zeminlerde birikir.”, iller: [] },
+{ id: 118, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Muş Ovası hangi bölgededir?”, secenekler: [“Güneydoğu Anadolu”, “Doğu Anadolu”, “İç Anadolu”, “Karadeniz”], dogru: 1, aciklama: “Muş Ovası, Doğu Anadolu Bölgesi’nde Muş iline bağlıdır ve Murat Nehri boyunca uzanır.”, iller: [“TR49”] },
+{ id: 119, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Burdur Ovası hangi bölgededir?”, secenekler: [“Ege”, “Akdeniz”, “İç Anadolu”, “Marmara”], dogru: 1, aciklama: “Burdur Ovası, Akdeniz Bölgesi’nin iç kesimlerinde Burdur Gölü çevresinde yer alır.”, iller: [“TR15”] },
+{ id: 120, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Ergene Ovası hangi bölgededir?”, secenekler: [“Marmara”, “Karadeniz”, “Ege”, “İç Anadolu”], dogru: 0, aciklama: “Ergene Ovası, Marmara Bölgesi’nde Trakya kesiminde yer alır ve tahıl üretimiyle önemlidir.”, iller: [“TR22”, “TR39”, “TR59”] },
+{ id: 121, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Erzincan Ovası hangi nehir boyunca uzanır?”, secenekler: [“Aras”, “Fırat”, “Karasu”, “Çoruh”], dogru: 2, aciklama: “Erzincan Ovası, Fırat’ın kolu olan Karasu (Fırat’ın üst kesimi) vadisinde yer alır.”, iller: [“TR24”] },
+{ id: 122, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Çarşamba Ovası hangi nehrin delta ovasıdır?”, secenekler: [“Kızılırmak”, “Yeşilırmak”, “Sakarya”, “Filyos”], dogru: 1, aciklama: “Çarşamba Ovası, Yeşilırmak Nehri’nin delta ovasıdır ve Samsun iline bağlıdır.”, iller: [“TR55”] },
+{ id: 123, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Elbistan Ovası hangi ilde yer alır?”, secenekler: [“Sivas”, “Kayseri”, “K.Maraş”, “Adıyaman”], dogru: 2, aciklama: “Elbistan Ovası, K.Maraş (Kahramanmaraş) iline bağlıdır ve linyit rezervleriyle bilinir.”, iller: [“TR46”] },
+{ id: 124, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de tektonik ova nedir?”, secenekler: [“Akarsuların oluşturduğu ova”, “Fay hatlarıyla çöken alanlar”, “Delta ovaları”, “Rüzgar birikimi”], dogru: 1, aciklama: “Tektonik ovalar, fay hatları boyunca çöken arazilerin zamanla dolmasıyla oluşur; Ege’deki ova-çukurlar buna örnektir.”, iller: [] },
+{ id: 125, unite: 3, test: 1, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Bakırçay Ovası hangi ilde yer alır?”, secenekler: [“İzmir”, “Balıkesir”, “Çanakkale”, “Manisa”], dogru: 1, aciklama: “Bakırçay Ovası, Balıkesir ve İzmir illeri arasında Bakırçay Nehri boyunca uzanır.”, iller: [“TR10”, “TR35”] },
 
-  // ===== ÜNİTE 6: COĞRAFİ BÖLGELER =====
-  {
-    id: 76, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye kaç coğrafi bölgeye ayrılmaktadır?",
-    secenekler: ["5", "6", "7", "8"],
-    dogru: 2,
-    aciklama: "Türkiye, 1941 yılında Birinci Coğrafya Kongresi'nde 7 coğrafi bölgeye ayrılmıştır.",
-    iller: []
-  },
-  {
-    id: 77, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin en büyük coğrafi bölgesi hangisidir?",
-    secenekler: ["İç Anadolu", "Doğu Anadolu", "Karadeniz", "Ege"],
-    dogru: 1,
-    aciklama: "Doğu Anadolu Bölgesi, yaklaşık 164.000 km² ile Türkiye'nin en büyük coğrafi bölgesidir.",
-    iller: ["TR25", "TR65"]
-  },
-  {
-    id: 78, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin en küçük coğrafi bölgesi hangisidir?",
-    secenekler: ["Marmara", "Ege", "Güneydoğu Anadolu", "Karadeniz"],
-    dogru: 2,
-    aciklama: "Güneydoğu Anadolu Bölgesi, yaklaşık 61.000 km² ile Türkiye'nin en küçük coğrafi bölgesidir.",
-    iller: ["TR63", "TR21"]
-  },
-  {
-    id: 79, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin en kalabalık nüfuslu bölgesi hangisidir?",
-    secenekler: ["İç Anadolu", "Doğu Anadolu", "Marmara", "Ege"],
-    dogru: 2,
-    aciklama: "Marmara Bölgesi, İstanbul başta olmak üzere Türkiye'nin en kalabalık nüfusuna sahip bölgesidir.",
-    iller: ["TR34", "TR16"]
-  },
-  {
-    id: 80, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin en seyrek nüfuslu bölgesi hangisidir?",
-    secenekler: ["Güneydoğu Anadolu", "İç Anadolu", "Doğu Anadolu", "Karadeniz"],
-    dogru: 2,
-    aciklama: "Doğu Anadolu Bölgesi, zorlu coğrafi koşullar ve iklim nedeniyle nüfus yoğunluğunun en düşük olduğu bölgedir.",
-    iller: ["TR25", "TR65"]
-  },
-  {
-    id: 81, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Akdeniz Bölgesi'nin önemli tarım ürünleri arasında hangisi yer almaz?",
-    secenekler: ["Turunçgiller", "Pamuk", "Çay", "Muz"],
-    dogru: 2,
-    aciklama: "Çay, Karadeniz Bölgesi'nin özellikle Rize ve Artvin illerinde yetiştirilen bir üründür. Akdeniz'de turunçgiller, pamuk, muz ve zeytin öne çıkar.",
-    iller: ["TR07"]
-  },
-  {
-    id: 82, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "GAP (Güneydoğu Anadolu Projesi) hangi iki nehri kapsar?",
-    secenekler: ["Kızılırmak - Yeşilırmak", "Fırat - Dicle", "Sakarya - Meriç", "Seyhan - Ceyhan"],
-    dogru: 1,
-    aciklama: "GAP Projesi, Fırat ve Dicle nehirleri üzerinde kurulu barajlar ve sulama kanallarını kapsayan Güneydoğu Anadolu'nun kalkınma projesidir.",
-    iller: ["TR21", "TR63"]
-  },
-  {
-    id: 83, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Karadeniz Bölgesi'nde hangi ürün dünyada önemli üretim miktarına sahiptir?",
-    secenekler: ["Buğday", "Fındık", "Pamuk", "Şeker pancarı"],
-    dogru: 1,
-    aciklama: "Türkiye, dünya fındık üretiminin yaklaşık %65-70'ini karşılamakta olup bu üretimin büyük çoğunluğu Karadeniz Bölgesi'nden sağlanmaktadır.",
-    iller: ["TR52"]
-  },
-  {
-    id: 84, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "İç Anadolu Bölgesi'nin en önemli tarım ürünü hangisidir?",
-    secenekler: ["Mısır", "Buğday", "Zeytin", "Çay"],
-    dogru: 1,
-    aciklama: "İç Anadolu Bölgesi, Türkiye'nin 'tahıl ambarı' olarak bilinir; özellikle buğday ve arpa üretimi ön plandadır.",
-    iller: ["TR42", "TR06"]
-  },
-  {
-    id: 85, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin en fazla yağış alan bölgesi hangisidir?",
-    secenekler: ["Akdeniz", "Marmara", "Doğu Karadeniz", "Ege"],
-    dogru: 2,
-    aciklama: "Doğu Karadeniz (Rize çevresi) yılda ortalama 2000-3000 mm yağış alarak Türkiye'nin en yağışlı bölgesidir.",
-    iller: ["TR53"]
-  },
-  {
-    id: 86, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin en az yağış alan bölgesi hangisidir?",
-    secenekler: ["İç Anadolu", "Güneydoğu Anadolu", "Doğu Anadolu", "Ege"],
-    dogru: 1,
-    aciklama: "Güneydoğu Anadolu Bölgesi, özellikle Şanlıurfa ve Mardin çevresi yılda 300-400 mm yağış ile Türkiye'nin en kurak bölgesidir.",
-    iller: ["TR63"]
-  },
-  {
-    id: 87, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Ege Bölgesi'nde öne çıkan tarım ürünleri hangileridir?",
-    secenekler: ["Çay - Fındık", "Zeytin - Üzüm - İncir - Tütün", "Buğday - Arpa", "Pamuk - Mısır"],
-    dogru: 1,
-    aciklama: "Ege Bölgesi; zeytin, üzüm, incir ve tütün gibi değerli tarım ürünleriyle ön plana çıkar.",
-    iller: ["TR09", "TR35"]
-  },
-  {
-    id: 88, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin sanayi açısından en gelişmiş bölgesi hangisidir?",
-    secenekler: ["İç Anadolu", "Ege", "Marmara", "Karadeniz"],
-    dogru: 2,
-    aciklama: "Marmara Bölgesi, İstanbul, Bursa, Kocaeli gibi sanayi şehirleriyle Türkiye'nin sanayi üretiminin yaklaşık %40'ını gerçekleştiren bölgedir.",
-    iller: ["TR34", "TR16"]
-  },
-  {
-    id: 89, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de tekstil sanayisi en yoğun hangi bölgede gelişmiştir?",
-    secenekler: ["Karadeniz", "Doğu Anadolu", "Marmara ve Ege", "Güneydoğu Anadolu"],
-    dogru: 2,
-    aciklama: "Türkiye'nin tekstil sanayisi, ham madde (pamuk, ipek) ve insan kaynağı açısından Marmara ve Ege bölgelerinde yoğunlaşmıştır.",
-    iller: ["TR34", "TR35"]
-  },
-  {
-    id: 90, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Doğu Anadolu Bölgesi'nin en önemli tarımsal faaliyeti hangisidir?",
-    secenekler: ["Tahıl üretimi", "Hayvancılık (büyükbaş)", "Narenciye", "Zeytin"],
-    dogru: 1,
-    aciklama: "Doğu Anadolu Bölgesi, geniş yaylalar ve mera alanları nedeniyle büyükbaş hayvancılığın Türkiye'de en fazla yapıldığı bölgedir.",
-    iller: ["TR25", "TR65"]
-  },
+// Test 2
+{ id: 126, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Karapınar Ovası hangi bölgededir?”, secenekler: [“İç Anadolu”, “Akdeniz”, “Güneydoğu Anadolu”, “Ege”], dogru: 0, aciklama: “Karapınar Ovası, Konya iline bağlı olup İç Anadolu Bölgesi’ndedir; rüzgar erozyonu açısından önemli bir alandır.”, iller: [“TR42”] },
+{ id: 127, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Elazığ Ovası hangi bölgededir?”, secenekler: [“Güneydoğu Anadolu”, “Doğu Anadolu”, “İç Anadolu”, “Karadeniz”], dogru: 1, aciklama: “Elazığ Ovası, Doğu Anadolu Bölgesi’nde Elazığ iline bağlıdır.”, iller: [“TR23”] },
+{ id: 128, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de alüvyal ovalar en çok hangi bölgede bulunur?”, secenekler: [“Karadeniz”, “Ege”, “Akdeniz”, “Doğu Anadolu”], dogru: 2, aciklama: “Akdeniz Bölgesi, Çukurova gibi geniş ve verimli alüvyal ovalara sahiptir.”, iller: [] },
+{ id: 129, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Soma Ovası hangi ilde yer alır?”, secenekler: [“İzmir”, “Manisa”, “Balıkesir”, “Çanakkale”], dogru: 1, aciklama: “Soma Ovası, Manisa iline bağlıdır ve kömür madenciliğiyle bilinir.”, iller: [“TR45”] },
+{ id: 130, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Türkiye’nin en doğusundaki büyük ova hangisidir?”, secenekler: [“Erzurum Ovası”, “Iğdır Ovası”, “Ağrı Ovası”, “Kars Platosu”], dogru: 1, aciklama: “Iğdır Ovası, Türkiye’nin en doğusunda Aras Nehri kıyısında yer alır ve ılıman iklimiyle dikkat çeker.”, iller: [“TR76”] },
+{ id: 131, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Nizip Ovası hangi ilde bulunur?”, secenekler: [“Şanlıurfa”, “Gaziantep”, “Adıyaman”, “Kilis”], dogru: 1, aciklama: “Nizip Ovası, Gaziantep iline bağlıdır ve Fırat Nehri’ne yakın konumdadır.”, iller: [“TR27”] },
+{ id: 132, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Uzunyayla Platosu hangi ilde yer alır?”, secenekler: [“Sivas”, “Erzincan”, “K.Maraş”, “Kayseri”], dogru: 0, aciklama: “Uzunyayla, Sivas iline bağlı geniş bir yüksek platodur.”, iller: [“TR58”] },
+{ id: 133, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Tokat Ovası hangi nehir boyunca uzanır?”, secenekler: [“Kızılırmak”, “Yeşilırmak”, “Kelkit”, “Fırat”], dogru: 1, aciklama: “Tokat Ovası, Yeşilırmak ve kolları boyunca oluşmuştur.”, iller: [“TR60”] },
+{ id: 134, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Alaşehir Ovası hangi ürünüyle ünlüdür?”, secenekler: [“Pamuk”, “Çay”, “Üzüm”, “Mısır”], dogru: 2, aciklama: “Alaşehir ve Manisa çevresi, sultani üzüm üretimiyle dünyaca tanınmaktadır.”, iller: [“TR45”] },
+{ id: 135, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de ovalar arasında deniz seviyesinin altında olanı hangisidir?”, secenekler: [“Konya Ovası”, “Tuz Gölü çevresi”, “Çukurova”, “Harran Ovası”], dogru: 1, aciklama: “Tuz Gölü çevresindeki bazı kesimler deniz seviyesine çok yakın ya da altındadır.”, iller: [“TR42”] },
+{ id: 136, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Develi Ovası hangi ilde yer alır?”, secenekler: [“Niğde”, “Kayseri”, “Sivas”, “Aksaray”], dogru: 1, aciklama: “Develi Ovası, Kayseri iline bağlıdır ve Sultan Sazlığı ile birlikte önemli bir doğal yaşam alanıdır.”, iller: [“TR38”] },
+{ id: 137, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Afyon Ovası hangi bölgededir?”, secenekler: [“Ege”, “İç Anadolu”, “Akdeniz”, “Marmara”], dogru: 1, aciklama: “Afyon Ovası, İç Anadolu Bölgesi’nde Afyonkarahisar iline bağlıdır.”, iller: [“TR03”] },
+{ id: 138, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Göller Yöresi hangi bölgededir?”, secenekler: [“Ege”, “Akdeniz”, “İç Anadolu”, “Marmara”], dogru: 1, aciklama: “Göller Yöresi, Akdeniz Bölgesi’nin iç kesimlerinde Isparta ve Burdur çevresinde yer alır.”, iller: [“TR32”, “TR15”] },
+{ id: 139, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Malatya Ovası hangi nehir kıyısındadır?”, secenekler: [“Fırat”, “Dicle”, “Kızılırmak”, “Seyhan”], dogru: 0, aciklama: “Malatya Ovası, Fırat Nehri’nin kolları kıyısında yer alır ve kayısı üretimiyle ünlüdür.”, iller: [“TR44”] },
+{ id: 140, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Bursa Ovası hangi dağın eteklerindedir?”, secenekler: [“Kaz Dağı”, “Uludağ”, “Katırlı”, “Samanlı”], dogru: 1, aciklama: “Bursa Ovası, Uludağ’ın kuzey eteklerinde yer alır ve verimli tarım arazileriyle bilinir.”, iller: [“TR16”] },
+{ id: 141, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de plato ile ova arasındaki temel fark nedir?”, secenekler: [“Plato daha küçüktür”, “Plato daha yüksekte ve düzdür, ova alçakta”, “Ova volkanik oluşumdur”, “Hiçbir fark yoktur”], dogru: 1, aciklama: “Platolar yüksekte yer alan geniş düzlüklerdir; ovalar ise alçak, genellikle akarsu birikimiyle oluşmuş verimli alanlardır.”, iller: [] },
+{ id: 142, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de İznik Ovası hangi ilde yer alır?”, secenekler: [“İstanbul”, “Bursa”, “Kocaeli”, “Yalova”], dogru: 1, aciklama: “İznik Ovası, Bursa iline bağlı İznik Gölü çevresinde yer alır.”, iller: [“TR16”] },
+{ id: 143, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Adapazarı Ovası hangi nehir kıyısındadır?”, secenekler: [“Kızılırmak”, “Sakarya”, “Filyos”, “Bartın”], dogru: 1, aciklama: “Adapazarı Ovası, Sakarya Nehri kıyısında yer alır ve Sakarya iline bağlıdır.”, iller: [“TR54”] },
+{ id: 144, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Sivas Ovası hangi bölgededir?”, secenekler: [“Doğu Anadolu”, “İç Anadolu”, “Karadeniz”, “Güneydoğu Anadolu”], dogru: 1, aciklama: “Sivas Ovası, İç Anadolu’nun doğu kesiminde yer alır.”, iller: [“TR58”] },
+{ id: 145, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Karstik ova nasıl oluşur?”, secenekler: [“Nehir birikimiyle”, “Kireçtaşının erimesiyle”, “Buzullarla”, “Rüzgar birikimiyle”], dogru: 1, aciklama: “Karstik ovalar, kireçtaşlarının yağmur suyu tarafından eritilmesiyle oluşan çukurların dolmasıyla meydana gelir.”, iller: [] },
+{ id: 146, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Kızılcahamam hangi platonun üzerindedir?”, secenekler: [“Haymana”, “Bozok”, “Köroğlu”, “Obruk”], dogru: 2, aciklama: “Kızılcahamam, Köroğlu Dağları eteklerinde, Ankara iline bağlıdır.”, iller: [“TR06”] },
+{ id: 147, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de en verimli tarım ovası hangisidir?”, secenekler: [“Konya Ovası”, “Çukurova”, “Harran Ovası”, “Gediz Ovası”], dogru: 1, aciklama: “Çukurova, ılıman iklimi, zengin alüvyonu ve sulama imkânlarıyla Türkiye’nin en verimli tarım ovalarından biridir.”, iller: [“TR01”] },
+{ id: 148, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Iğdır Ovası hangi ürünüyle bilinir?”, secenekler: [“Fındık”, “Pamuk ve kayısı”, “Çay”, “Buğday”], dogru: 1, aciklama: “Iğdır Ovası, ılıman iklimi sayesinde pamuk ve kayısı yetiştiriciliğiyle öne çıkar.”, iller: [“TR76”] },
+{ id: 149, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Orta Anadolu’daki geniş düzlüklerin genel adı nedir?”, secenekler: [“Yüksek plato”, “Step ovalar”, “Bozkır plato”, “Alüvyal düzlükler”], dogru: 2, aciklama: “İç Anadolu’nun geniş düzlükleri, bozkır örtüsüyle kaplı platolar olarak bilinir.”, iller: [] },
+{ id: 150, unite: 3, test: 2, uniteName: “Ovalar & Platolar”, soru: “Türkiye’de Erzurum Ovası hangi bölgededir?”, secenekler: [“İç Anadolu”, “Doğu Anadolu”, “Güneydoğu Anadolu”, “Karadeniz”], dogru: 1, aciklama: “Erzurum Ovası, Doğu Anadolu’da yaklaşık 1800-2000 metre yükseklikte yer alır.”, iller: [“TR25”] },
 
-  // ===== BONUS SORULAR (Karma Coğrafya) =====
-  {
-    id: 91, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsular üzerinde kurulan barajların temel amacı nedir?",
-    secenekler: ["Sadece sulama", "Enerji üretimi", "Sulama, enerji üretimi ve içme suyu", "Sadece taşkın kontrolü"],
-    dogru: 2,
-    aciklama: "Türkiye'deki barajlar çok amaçlı olup sulama, hidroelektrik enerji, içme suyu ve taşkın kontrolü gibi birden fazla amaca hizmet eder.",
-    iller: []
-  },
-  {
-    id: 92, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Kuzey Anadolu Fay Hattı (KAF) hangi yönde uzanır?",
-    secenekler: ["Kuzey - Güney", "Doğu - Batı", "Kuzeydoğu - Güneybatı", "Kuzeybatı - Güneydoğu"],
-    dogru: 1,
-    aciklama: "Kuzey Anadolu Fay Hattı (KAF), Erzincan'dan İzmit Körfezi'ne kadar Doğu-Batı yönünde uzanır.",
-    iller: ["TR24", "TR41"]
-  },
-  {
-    id: 93, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de 'yeniden gençleşme' sonucu boğaz vadisi oluşumu en çok hangi bölgede görülür?",
-    secenekler: ["Karadeniz", "Ege", "Akdeniz", "İç Anadolu"],
-    dogru: 1,
-    aciklama: "Ege Bölgesi'nde Menderes, Gediz gibi nehirler yeniden gençleşme sonucu boğaz vadileri ve teraslar oluşturmuştur.",
-    iller: ["TR09"]
-  },
-  {
-    id: 94, unite: 4, uniteName: "Göller",
-    soru: "Karakaya Baraj Gölü hangi nehir üzerinde kurulmuştur?",
-    secenekler: ["Dicle", "Fırat", "Kızılırmak", "Sakarya"],
-    dogru: 1,
-    aciklama: "Karakaya Baraj Gölü, Fırat Nehri üzerinde Malatya ve Elazığ illeri arasında kurulmuştur.",
-    iller: ["TR44", "TR23"]
-  },
-  {
-    id: 95, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye kıyılarında en çok hangi kıyı şekli görülür?",
-    secenekler: ["Tombolo", "Lagün", "Delta", "Kıyı kordonları ve kumullar"],
-    dogru: 3,
-    aciklama: "Türkiye kıyılarında kıyı kordonları ve kumullar oldukça yaygındır; Karadeniz başta olmak üzere birçok kıyıda görülür.",
-    iller: []
-  },
-  {
-    id: 96, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Marmara Bölgesi'nde öne çıkan hayvancılık ürünü hangisidir?",
-    secenekler: ["Büyükbaş süt hayvancılığı", "Koyun yetiştiriciliği", "Tavukçuluk", "Arıcılık"],
-    dogru: 0,
-    aciklama: "Marmara Bölgesi'nde yoğun nüfus ve sanayiye bağlı olarak süt hayvancılığı (inek) ön plana çıkmaktadır.",
-    iller: ["TR34"]
-  },
-  {
-    id: 97, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsuların debisi en düşük olduğu mevsim hangisidir?",
-    secenekler: ["Kış", "İlkbahar", "Yaz", "Sonbahar"],
-    dogru: 2,
-    aciklama: "İç Anadolu ve Güneydoğu Anadolu'da yazın yüksek sıcaklık ve düşük yağış nedeniyle akarsuların debisi en düşük seviyeye iner.",
-    iller: []
-  },
-  {
-    id: 98, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de deprem riski en yüksek fay hattı hangisidir?",
-    secenekler: ["Doğu Anadolu Fay Hattı", "Kuzey Anadolu Fay Hattı", "Batı Anadolu Fayları", "Hepsi aynı risk taşır"],
-    dogru: 1,
-    aciklama: "Kuzey Anadolu Fay Hattı (KAF), tarihsel süreçte en fazla yıkıcı deprem üreten fay olarak bilinmekte ve İstanbul başta olmak üzere büyük nüfus merkezlerine yakın geçmektedir.",
-    iller: []
-  },
-  {
-    id: 99, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Çarşamba Ovası hangi nehrin oluşturduğu delta ovasıdır?",
-    secenekler: ["Kızılırmak", "Yeşilırmak", "Sakarya", "Bartın"],
-    dogru: 1,
-    aciklama: "Çarşamba Ovası, Yeşilırmak Nehri'nin Karadeniz'e döküldüğü yerde oluşturduğu delta ovasıdır.",
-    iller: ["TR55"]
-  },
-  {
-    id: 100, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'nin ikinci büyük gölü hangisidir?",
-    secenekler: ["Tuz Gölü", "Eğirdir Gölü", "Beşehir Gölü", "Burdur Gölü"],
-    dogru: 0,
-    aciklama: "Tuz Gölü, yaklaşık 1500 km² ile Van Gölü'nden sonra Türkiye'nin ikinci büyük gölüdür.",
-    iller: ["TR68"]
-  },
-  {
-    id: 101, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin Akdeniz kıyılarında sıkça görülen bir kıyı şekli olan 'haliç' nasıl oluşur?",
-    secenekler: ["Volkanik faaliyetlerle", "Akarsuların denize döküldüğü yerlerde dalga ve akıntı etkisiyle", "Buzul erimesiyle", "Okyanus akıntılarıyla"],
-    dogru: 1,
-    aciklama: "Haliçler; nehir ağızlarında tatlı su ile tuzlu suyun karıştığı, gelgit ve dalgaların etkisiyle şekillenen kıyı yapılarıdır.",
-    iller: []
-  },
-  {
-    id: 102, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de turizm gelirlerinin en yüksek olduğu bölge hangisidir?",
-    secenekler: ["Marmara", "Karadeniz", "Akdeniz", "Ege"],
-    dogru: 2,
-    aciklama: "Akdeniz Bölgesi; Antalya başta olmak üzere Alanya, Kemer, Side gibi turistik merkezleriyle Türkiye'nin en fazla turizm geliri elde ettiği bölgesidir.",
-    iller: ["TR07"]
-  },
-  {
-    id: 103, unite: 1, uniteName: "Akarsular",
-    soru: "Sakarya Nehri hangi gölden doğar?",
-    secenekler: ["Abant Gölü", "Sapanca Gölü", "Porsuk Çayı'ndan", "Kaynaklardan doğar - gölden değil"],
-    dogru: 3,
-    aciklama: "Sakarya Nehri, Afyonkarahisar'daki kaynaklardan doğar; herhangi bir gölden kaynaklanmaz.",
-    iller: ["TR03"]
-  },
-  {
-    id: 104, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de dağlık alanların yüzölçüme oranı yaklaşık kaçtır?",
-    secenekler: ["%25", "%40", "%55", "%70"],
-    dogru: 2,
-    aciklama: "Türkiye yüzölçümünün yaklaşık %55'i dağlık ve engebeli arazilerden oluşmaktadır.",
-    iller: []
-  },
-  {
-    id: 105, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Polderler hangi ülkenin coğrafyasıyla özdeşleşmiş olsa da Türkiye'de hangi bölgede küçük ölçekli benzeri görülür?",
-    secenekler: ["Karadeniz delta ovaları", "İç Anadolu ovaları", "Ege graben ovaları", "Güneydoğu platoları"],
-    dogru: 0,
-    aciklama: "Karadeniz'deki delta ovalarında (Bafra, Çarşamba) deniz seviyesine yakın düzlükler polder benzeri özellikler taşır.",
-    iller: ["TR55"]
-  },
-  {
-    id: 106, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de sulama amacıyla kurulan en büyük baraj hangisidir?",
-    secenekler: ["Keban Barajı", "Atatürk Barajı", "Ilısu Barajı", "Karakaya Barajı"],
-    dogru: 1,
-    aciklama: "Atatürk Barajı, Fırat Nehri üzerinde kurulu olup sulama ve enerji açısından Türkiye'nin en büyük barajıdır.",
-    iller: ["TR02"]
-  },
-  {
-    id: 107, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin dört denizle çevrili olması coğrafi açıdan ne anlama gelir?",
-    secenekler: ["Deniz ikliminin her yerde egemen olması", "Üç tarafının denizle çevrilmesi nedeniyle yarımada özelliği taşıması", "Dağlık arazinin az olması", "Tarım alanlarının fazla olması"],
-    dogru: 1,
-    aciklama: "Türkiye, üç tarafı denizle çevrili (kuzey, batı, güney) bir yarımada üzerinde yer alır ve stratejik konumu nedeniyle üç denize kıyısı vardır.",
-    iller: []
-  },
-  {
-    id: 108, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de 'Birinci Coğrafya Kongresi' hangi yılda yapılmış ve 7 bölge belirlenmiştir?",
-    secenekler: ["1923", "1930", "1941", "1950"],
-    dogru: 2,
-    aciklama: "1941 yılında Ankara'da düzenlenen Birinci Coğrafya Kongresi'nde Türkiye 7 coğrafi bölgeye ve bölümlerine ayrılmıştır.",
-    iller: []
-  },
-  {
-    id: 109, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsu havzaları arasında en küçük olan hangisidir?",
-    secenekler: ["Meriç Havzası", "Susurluk Havzası", "Akarçay Havzası (kapalı)", "Büyük Menderes Havzası"],
-    dogru: 2,
-    aciklama: "Akarçay Havzası, sularını denize ulaştıramayan kapalı bir havzadır ve Türkiye'nin en küçük havzaları arasındadır.",
-    iller: ["TR03"]
-  },
-  {
-    id: 110, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Uludağ hangi ilde bulunur?",
-    secenekler: ["İstanbul", "Bursa", "Balıkesir", "Kocaeli"],
-    dogru: 1,
-    aciklama: "Uludağ (2543 m), Bursa iline bağlı olup kış turizmi ve kayak merkezi olarak ünlüdür.",
-    iller: ["TR16"]
-  },
+// ===== ÜNİTE 4: GÖLLER =====
+// Test 1
+{ id: 151, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’nin en büyük gölü hangisidir?”, secenekler: [“Tuz Gölü”, “Beyşehir Gölü”, “Van Gölü”, “Eğirdir Gölü”], dogru: 2, aciklama: “Van Gölü, yaklaşık 3755 km² yüzey alanıyla Türkiye’nin en büyük gölüdür.”, iller: [“TR65”] },
+{ id: 152, unite: 4, test: 1, uniteName: “Göller”, soru: “Tuz Gölü hangi ilde yer alır?”, secenekler: [“Ankara”, “Konya”, “Aksaray”, “Konya ve Aksaray sınırında”], dogru: 3, aciklama: “Tuz Gölü, Konya, Ankara ve Aksaray illerinin sınırında yer alan sığ bir göldür.”, iller: [“TR42”, “TR68”] },
+{ id: 153, unite: 4, test: 1, uniteName: “Göller”, soru: “Van Gölü hangi tür göldür?”, secenekler: [“Tektonik göl”, “Volkanik set gölü”, “Karstik göl”, “Delta gölü”], dogru: 1, aciklama: “Van Gölü, volkanik lavların önünü kapatmasıyla oluşmuş bir set gölüdür.”, iller: [“TR65”] },
+{ id: 154, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’nin tatlı su göllerinin en büyüğü hangisidir?”, secenekler: [“Eğirdir Gölü”, “Beyşehir Gölü”, “Sapanca Gölü”, “İznik Gölü”], dogru: 1, aciklama: “Beyşehir Gölü, yaklaşık 650 km² ile Türkiye’nin en büyük tatlı su gölüdür.”, iller: [“TR32”] },
+{ id: 155, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de karstik göllerin en çok bulunduğu bölge hangisidir?”, secenekler: [“Karadeniz”, “Akdeniz”, “İç Anadolu”, “Doğu Anadolu”], dogru: 1, aciklama: “Akdeniz Bölgesi’nde kireçtaşlarının erimesiyle oluşan pek çok karstik göl bulunur.”, iller: [] },
+{ id: 156, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Sapanca Gölü hangi işlev için kullanılır?”, secenekler: [“Sulama”, “İçme suyu”, “Hidroelektrik”, “Turizm”], dogru: 1, aciklama: “Sapanca Gölü, İstanbul ve Kocaeli’nin içme suyu kaynağı olarak kullanılmaktadır.”, iller: [“TR41”, “TR54”] },
+{ id: 157, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de İznik Gölü hangi ilde yer alır?”, secenekler: [“İstanbul”, “Kocaeli”, “Bursa”, “Yalova”], dogru: 2, aciklama: “İznik Gölü, Bursa iline bağlıdır ve Türkiye’nin önemli tektonik göllerinden biridir.”, iller: [“TR16”] },
+{ id: 158, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Akşehir Gölü hangi ilde yer alır?”, secenekler: [“Afyon”, “Konya”, “Isparta”, “Ankara”], dogru: 1, aciklama: “Akşehir Gölü, Konya iline bağlıdır ve son yıllarda kuruma tehlikesiyle karşı karşıyadır.”, iller: [“TR42”] },
+{ id: 159, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Eber Gölü hangi ilde bulunur?”, secenekler: [“Konya”, “Isparta”, “Afyon”, “Ankara”], dogru: 2, aciklama: “Eber Gölü, Afyonkarahisar iline bağlı bir göldür.”, iller: [“TR03”] },
+{ id: 160, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’deki göllerin suyu neden genellikle tuzlu ya da acıdır?”, secenekler: [“Denize yakınlığından”, “Kapalı havzada olduğundan”, “Volkanik etkiden”, “Kirlilikten”], dogru: 1, aciklama: “Kapalı havzalardaki göllerde su buharlaşır, ancak tuz birikmeye devam eder; bu nedenle göl suyu zamanla tuzlanır.”, iller: [] },
+{ id: 161, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Ulubat (Uluabat) Gölü hangi ilde yer alır?”, secenekler: [“İstanbul”, “Kocaeli”, “Bursa”, “Balıkesir”], dogru: 2, aciklama: “Uluabat Gölü, Bursa iline bağlı olup su kuşları açısından zengin bir sulak alandır.”, iller: [“TR16”] },
+{ id: 162, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Manyas Gölü (Kuş Cenneti) hangi ilde yer alır?”, secenekler: [“Çanakkale”, “Balıkesir”, “İzmir”, “Bursa”], dogru: 1, aciklama: “Manyas Gölü, Balıkesir iline bağlıdır ve kuş cenneti olarak ünlü bir doğal koruma alanıdır.”, iller: [“TR10”] },
+{ id: 163, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Eğirdir Gölü hangi ilde yer alır?”, secenekler: [“Antalya”, “Burdur”, “Afyon”, “Isparta”], dogru: 3, aciklama: “Eğirdir Gölü, Isparta iline bağlıdır ve Türkiye’nin ikinci büyük tatlı su gölüdür.”, iller: [“TR32”] },
+{ id: 164, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Burdur Gölü hangi tür göldür?”, secenekler: [“Tatlı su gölü”, “Tuzlu göl”, “Karstik göl”, “Volkanik göl”], dogru: 1, aciklama: “Burdur Gölü, kapalı havzada yer aldığından tuzlu-acı sulu bir göldür.”, iller: [“TR15”] },
+{ id: 165, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Van Gölü’nün suyu neden acıdır?”, secenekler: [“Volkanik ısıdan”, “Kapalı havzada olmasından”, “Denizle bağlantısından”, “Kirlenmeden”], dogru: 1, aciklama: “Van Gölü kapalı havzada yer aldığından soda (sodyum karbonat) içerir ve suyu acıdır.”, iller: [“TR65”] },
+{ id: 166, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Köyceğiz Gölü hangi ilde bulunur?”, secenekler: [“Antalya”, “Muğla”, “Fethiye”, “Marmaris”], dogru: 1, aciklama: “Köyceğiz Gölü, Muğla iline bağlıdır ve Akdeniz’e bir kanalla bağlıdır.”, iller: [“TR48”] },
+{ id: 167, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Nemrut Krater Gölü hangi ilde yer alır?”, secenekler: [“Van”, “Ağrı”, “Bitlis”, “Muş”], dogru: 2, aciklama: “Nemrut Krater Gölü, Bitlis iline yakın Nemrut volkanının kraterinde oluşmuş bir göldür.”, iller: [“TR13”] },
+{ id: 168, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Gölcük Gölü hangi ilde yer alır?”, secenekler: [“Kocaeli”, “Sakarya”, “Isparta”, “Bolu”], dogru: 2, aciklama: “Gölcük Gölü, Isparta iline bağlı olup krater gölü özelliği taşır.”, iller: [“TR32”] },
+{ id: 169, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Hazar Gölü hangi ilde yer alır?”, secenekler: [“Elazığ”, “Malatya”, “Tunceli”, “Bingöl”], dogru: 0, aciklama: “Hazar Gölü, Elazığ iline bağlı olup Dicle Nehri’nin kaynağına yakındır.”, iller: [“TR23”] },
+{ id: 170, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Abant Gölü hangi ilde bulunur?”, secenekler: [“Zonguldak”, “Bolu”, “Sakarya”, “Düzce”], dogru: 1, aciklama: “Abant Gölü, Bolu iline bağlıdır ve doğal güzelliğiyle önemli bir turizm merkezidir.”, iller: [“TR14”] },
+{ id: 171, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de set gölü nasıl oluşur?”, secenekler: [“Tektonik çökmeyle”, “Volkanik ya da heyelan setiyle”, “Karstik erimesiyle”, “Buzulların çekilmesiyle”], dogru: 1, aciklama: “Set gölleri, akarsuların volkanik lav ya da heyelan malzemeleriyle engellenerek birikmesiyle oluşur.”, iller: [] },
+{ id: 172, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Tortum Gölü hangi ilde yer alır?”, secenekler: [“Artvin”, “Erzurum”, “Trabzon”, “Rize”], dogru: 1, aciklama: “Tortum Gölü, Erzurum iline bağlı bir heyelan set gölüdür.”, iller: [“TR25”] },
+{ id: 173, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Sığla (Köyceğiz) Gölü’nde yetiştirilen ünlü ürün hangisidir?”, secenekler: [“Zeytin”, “Sığla yağı (Liquidambar)”, “Pamuk”, “Portakal”], dogru: 1, aciklama: “Köyceğiz çevresinde sığla ağacı (günlük ağacı) yetişir; bu ağaçtan elde edilen sığla yağı dünyada nadir bir üründür.”, iller: [“TR48”] },
+{ id: 174, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’de Karamuk Gölü hangi ilde yer alır?”, secenekler: [“Isparta”, “Burdur”, “Afyon”, “Denizli”], dogru: 1, aciklama: “Karamuk Gölü, Burdur iline bağlı küçük bir göldür.”, iller: [“TR15”] },
+{ id: 175, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’deki göller içinde yüzey alanı en küçüğü hangisidir?”, secenekler: [“Abant Gölü”, “Gölcük Gölü”, “Tortum Gölü”, “Karamuk Gölü”], dogru: 0, aciklama: “Abant Gölü ve Gölcük Gölü gibi küçük göller, Türkiye’nin küçük yüzey alanlı gölleri arasındadır.”, iller: [] },
 
-  // Ek sorular (111-150)
-  {
-    id: 111, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'deki en önemli uluslararası su anlaşmazlığı hangi nehirler üzerindedir?",
-    secenekler: ["Kızılırmak - Yeşilırmak", "Meriç - Tunca", "Fırat - Dicle", "Sakarya - Çoruh"],
-    dogru: 2,
-    aciklama: "Türkiye, Suriye ve Irak arasında Fırat ve Dicle nehirlerinin suları konusunda su anlaşmazlıkları yaşanmaktadır.",
-    iller: ["TR63"]
-  },
-  {
-    id: 112, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de 'Ilgaz Dağları' hangi bölgede yer alır?",
-    secenekler: ["Ege", "Marmara", "Karadeniz (iç kesim)", "İç Anadolu"],
-    dogru: 2,
-    aciklama: "Ilgaz Dağları, Karabük ve Kastamonu illeri arasında Karadeniz Bölgesi'nin güney kesiminde yer alır.",
-    iller: ["TR37"]
-  },
-  {
-    id: 113, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "GAP Projesi'nde sulanan Harran Ovası'nın sulama suyu nereden sağlanır?",
-    secenekler: ["Dicle Nehri", "Fırat Nehri (Atatürk Barajı)", "Ceyhan Nehri", "Yeraltı suları"],
-    dogru: 1,
-    aciklama: "Harran Ovası, Fırat Nehri üzerindeki Atatürk Barajı'ndan çekilen sularla GAP kapsamında sulanmaktadır.",
-    iller: ["TR63", "TR02"]
-  },
-  {
-    id: 114, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de en fazla balık üretilen doğal göl hangisidir?",
-    secenekler: ["Van Gölü", "Tuz Gölü", "Eğirdir Gölü", "Beşehir Gölü"],
-    dogru: 2,
-    aciklama: "Eğirdir Gölü, tatlı su balıkçılığı açısından Türkiye'nin en verimli doğal göllerinden biridir.",
-    iller: ["TR32"]
-  },
-  {
-    id: 115, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin en büyük körfezi hangisidir?",
-    secenekler: ["İskenderun Körfezi", "İzmir Körfezi", "Antalya Körfezi", "Edremit Körfezi"],
-    dogru: 2,
-    aciklama: "Antalya Körfezi, yaklaşık 350 km genişliğiyle Türkiye'nin en büyük körfezidir.",
-    iller: ["TR07"]
-  },
-  {
-    id: 116, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Erzurum hangi coğrafi bölgede yer alır?",
-    secenekler: ["İç Anadolu", "Güneydoğu Anadolu", "Doğu Anadolu", "Karadeniz"],
-    dogru: 2,
-    aciklama: "Erzurum, Doğu Anadolu Bölgesi'nde Erzurum-Kars Bölümü'nde yer alır.",
-    iller: ["TR25"]
-  },
-  {
-    id: 117, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de hangi bölge 'Orta Karadeniz Bölümü' olarak adlandırılır?",
-    secenekler: ["Samsun - Sinop çevresi", "Rize - Trabzon çevresi", "Bartın - Zonguldak çevresi", "Kastamonu - Bolu çevresi"],
-    dogru: 0,
-    aciklama: "Karadeniz Bölgesi, Batı, Orta ve Doğu Karadeniz bölümleri olarak ayrılır; Orta Karadeniz Bölümü Samsun çevresini kapsar.",
-    iller: ["TR55"]
-  },
-  {
-    id: 118, unite: 1, uniteName: "Akarsular",
-    soru: "Porsuk Çayı hangi büyük nehrin koludur?",
-    secenekler: ["Kızılırmak", "Sakarya", "Fırat", "Yeşilırmak"],
-    dogru: 1,
-    aciklama: "Porsuk Çayı, Eskişehir'den geçen ve Sakarya Nehri'ne katılan bir koldur.",
-    iller: ["TR26", "TR54"]
-  },
-  {
-    id: 119, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de fay hatlarının en yoğun geçtiği bölge hangisidir?",
-    secenekler: ["Marmara ve Kuzey Anadolu", "Ege ve Marmara", "Kuzey Anadolu ve Doğu Anadolu", "Hepsi eşit yoğunlukta"],
-    dogru: 2,
-    aciklama: "Kuzey Anadolu Fay Hattı (KAF) ve Doğu Anadolu Fay Hattı (DAF), Türkiye'nin en aktif sismik kuşaklarını oluşturur.",
-    iller: []
-  },
-  {
-    id: 120, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de 'polye' oluşumları hangi arazi tipinde yaygındır?",
-    secenekler: ["Alüvyal araziler", "Karstik (kireçtaşı) araziler", "Volkanik araziler", "Killi araziler"],
-    dogru: 1,
-    aciklama: "Polyeler, karstik bölgelerde kireçtaşının çözünmesiyle oluşan kapalı havzalardır; Türkiye'de Toros Dağları eteklerinde yaygındır.",
-    iller: ["TR07", "TR42"]
-  },
-  {
-    id: 121, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de tuz üretiminin büyük kısmı hangi gölden sağlanır?",
-    secenekler: ["Van Gölü", "Burdur Gölü", "Tuz Gölü", "Eğirdir Gölü"],
-    dogru: 2,
-    aciklama: "Tuz Gölü, Türkiye'nin ihtiyaç duyduğu sofra tuzunun önemli bir kısmını karşılayan büyük bir tuz kaynağıdır.",
-    iller: ["TR68"]
-  },
-  {
-    id: 122, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'de 'lagün' oluşumlarına en fazla hangi kıyılarda rastlanır?",
-    secenekler: ["Karadeniz kıyıları", "Ege kıyıları", "Marmara kıyıları", "Akdeniz batısı"],
-    dogru: 0,
-    aciklama: "Karadeniz kıyılarında kıyı kordonları arkasında lagünler (koy gölleri) oluşmuştur; Karasu, Kızılırmak ağzı örnek gösterilebilir.",
-    iller: ["TR61"]
-  },
-  {
-    id: 123, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Güneydoğu Anadolu Bölgesi'nin arazi yapısı nasıldır?",
-    secenekler: ["Dağlık ve engebeli", "Geniş platolar ve ovalardan oluşur", "Kıyı ovaları egemendir", "Alüvyal düzlükler yoktur"],
-    dogru: 1,
-    aciklama: "Güneydoğu Anadolu Bölgesi, geniş platolar (Mardin, Gaziantep) ve düz ovalardan (Harran, Dicle) oluşan görece düz bir yapıya sahiptir.",
-    iller: ["TR21", "TR63"]
-  },
-  {
-    id: 124, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsular hangi mevsimde en yüksek debiye ulaşır?",
-    secenekler: ["Kış", "Yaz", "Sonbahar", "İlkbahar"],
-    dogru: 3,
-    aciklama: "İlkbaharda karların erimesi ve yağışların artmasıyla akarsular en yüksek debiye ulaşır.",
-    iller: []
-  },
-  {
-    id: 125, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'deki Bolkar Dağları hangi sisteme aittir?",
-    secenekler: ["Kuzey Anadolu Dağları", "Toros Dağları (Orta Toroslar)", "Ege Dağları", "Kürdistan Dağları"],
-    dogru: 1,
-    aciklama: "Bolkar Dağları, Toros Dağları sisteminin Orta Toroslar bölümünde yer alır ve Mersin iline bağlıdır.",
-    iller: ["TR33"]
-  },
-  {
-    id: 126, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de 'Menteşe yöresi' hangi bölgede yer alır?",
-    secenekler: ["Karadeniz", "Ege güneyi", "Akdeniz batısı", "İç Anadolu"],
-    dogru: 1,
-    aciklama: "Menteşe Yöresi, Muğla ilini kapsayan Ege Bölgesi'nin güney kesiminde engebeli ve dağlık bir alandır.",
-    iller: ["TR48"]
-  },
-  {
-    id: 127, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de yüzölçümü bakımından en büyük baraj gölü hangisidir?",
-    secenekler: ["Keban Barajı", "Atatürk Barajı", "Karakaya Barajı", "Ilısu Barajı"],
-    dogru: 1,
-    aciklama: "Atatürk Barajı, yaklaşık 817 km² yüzölçümü ile Türkiye'nin en büyük baraj gölüdür.",
-    iller: ["TR02"]
-  },
-  {
-    id: 128, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin Karadeniz kıyılarında doğal limanların az olmasının temel nedeni nedir?",
-    secenekler: ["Denizin sığ olması", "Kıyının düz ve girintisiz olması", "Fırtınaların sık olması", "Nüfusun az olması"],
-    dogru: 1,
-    aciklama: "Kuzey Anadolu Dağları'nın Karadeniz'e paralel uzanması, kıyı şeridini düz ve girintisiz kılmakta; bu da doğal liman oluşumunu engellemektedir.",
-    iller: ["TR61"]
-  },
-  {
-    id: 129, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'nin 'Akdeniz iklimi' etkisindeki bölgeleri hangileridir?",
-    secenekler: ["Karadeniz ve Marmara", "Akdeniz ve Ege kıyıları", "İç Anadolu ve Doğu Anadolu", "Güneydoğu ve Doğu Anadolu"],
-    dogru: 1,
-    aciklama: "Akdeniz ve Ege kıyıları; yazları sıcak-kurak, kışları ılık-yağışlı Akdeniz ikliminin etkisindedir.",
-    iller: ["TR07", "TR09"]
-  },
-  {
-    id: 130, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsular üzerindeki en eski su değirmenleri en fazla hangi bölgede kullanılmıştır?",
-    secenekler: ["Karadeniz", "Ege", "İç Anadolu", "Akdeniz"],
-    dogru: 0,
-    aciklama: "Karadeniz Bölgesi'nin hızlı akan dere ve çaylarında tarihsel olarak su değirmenleri (su değirmeni kültürü) yaygın biçimde kullanılmıştır.",
-    iller: ["TR61"]
-  },
-  {
-    id: 131, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de kalker (kireçtaşı) kökenli doğal köprüler ve mağaralar hangi bölgede yoğundur?",
-    secenekler: ["Karadeniz", "Marmara", "Akdeniz (Toros)", "Ege"],
-    dogru: 2,
-    aciklama: "Toros Dağları kireçtaşı yapısı nedeniyle karst oluşumları (mağara, düden, dolina) Akdeniz Bölgesi'nde en yoğun şekilde görülür.",
-    iller: ["TR07"]
-  },
-  {
-    id: 132, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "İç Anadolu'daki geniş düzlüklerin oluşmasında temel etken nedir?",
-    secenekler: ["Volkanik akıntılar", "Uzun süreli aşınma ve birikim süreçleri", "Tektonik çökmeler", "Buzullaşma"],
-    dogru: 1,
-    aciklama: "İç Anadolu'nun geniş düzlükleri, milyonlarca yıllık aşınma ve alüvyon birikim süreçleri sonucunda oluşmuştur.",
-    iller: ["TR42", "TR06"]
-  },
-  {
-    id: 133, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de Ramsar Sözleşmesi kapsamında koruma altına alınan sulak alan sayısı kaçtır? (yaklaşık)",
-    secenekler: ["5", "14", "25", "40"],
-    dogru: 1,
-    aciklama: "Türkiye, uluslararası öneme sahip sulak alanlar (Ramsar Sözleşmesi) kapsamında yaklaşık 14 alanı koruma altına almıştır.",
-    iller: []
-  },
-  {
-    id: 134, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Montrö Boğazlar Sözleşmesi hangi yılda imzalanmıştır?",
-    secenekler: ["1923", "1936", "1945", "1950"],
-    dogru: 1,
-    aciklama: "Montrö Boğazlar Sözleşmesi, 1936 yılında imzalanmış ve Türkiye'ye Boğazlar üzerinde egemenlik hakkı tanımıştır.",
-    iller: ["TR34"]
-  },
-  {
-    id: 135, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de hangi bölge 'karasal iklim' özelliklerini en belirgin şekilde gösterir?",
-    secenekler: ["Marmara", "Akdeniz", "Karadeniz", "İç Anadolu ve Doğu Anadolu"],
-    dogru: 3,
-    aciklama: "İç Anadolu ve Doğu Anadolu, denizden uzak ve yüksek konumları nedeniyle sıcaklık farklarının belirgin olduğu karasal iklimi en yoğun yaşayan bölgelerdir.",
-    iller: ["TR42", "TR25"]
-  },
-  {
-    id: 136, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de 'çığ' olayının en sık yaşandığı bölge hangisidir?",
-    secenekler: ["Ege", "Karadeniz", "Doğu Anadolu (yüksek dağlık kesimler)", "Güneydoğu Anadolu"],
-    dogru: 2,
-    aciklama: "Doğu Anadolu'nun yüksek dağlık kesimlerinde, özellikle Hakkari, Ağrı, Bitlis gibi illerde çığ olayları sık yaşanmaktadır.",
-    iller: ["TR30", "TR04"]
-  },
-  {
-    id: 137, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de 1999 Marmara Depremi'nin merkezi hangi ilçedeydi?",
-    secenekler: ["İstanbul Avcılar", "Kocaeli Gölcük", "Sakarya Adapazarı", "Bursa İnegöl"],
-    dogru: 1,
-    aciklama: "17 Ağustos 1999 Marmara Depremi'nin (7,6 Mw) merkez üssü Kocaeli'nin Gölcük ilçesiydi.",
-    iller: ["TR41"]
-  },
-  {
-    id: 138, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'deki en önemli linyit kömürü havzası hangi bölgededir?",
-    secenekler: ["İç Anadolu", "Ege", "Marmara", "Karadeniz"],
-    dogru: 1,
-    aciklama: "Ege Bölgesi'nde Soma (Manisa) ve Tunçbilek (Kütahya) gibi önemli linyit kömürü havzaları bulunmaktadır.",
-    iller: ["TR45", "TR43"]
-  },
-  {
-    id: 139, unite: 4, uniteName: "Göller",
-    soru: "Türkiye'de Keban Baraj Gölü'nün enerji üretimindeki önemi nedir?",
-    secenekler: ["Sulama amaçlıdır", "Türkiye'nin ilk büyük HES projesidir", "En büyük barajdır", "Su arıtma amaçlıdır"],
-    dogru: 1,
-    aciklama: "Keban Barajı (1974), Türkiye'de inşa edilen ilk büyük hidroelektrik santral projelerinden biri olup Fırat Nehri üzerindedir.",
-    iller: ["TR23"]
-  },
-  {
-    id: 140, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye kıyılarında en fazla turizm yatırımının yapıldığı kesim hangisidir?",
-    secenekler: ["Karadeniz kıyıları", "Marmara kıyıları", "Akdeniz ve Ege kıyıları", "İç kıyılar"],
-    dogru: 2,
-    aciklama: "Akdeniz ve Ege kıyıları, iklim koşulları ve sahil olanakları nedeniyle yoğun turizm yatırımlarına ev sahipliği yapar.",
-    iller: ["TR07", "TR48"]
-  },
-  {
-    id: 141, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de nüfus artış hızının en yüksek olduğu bölge tarihsel olarak hangisidir?",
-    secenekler: ["Doğu Anadolu", "Güneydoğu Anadolu", "Marmara", "İç Anadolu"],
-    dogru: 2,
-    aciklama: "Marmara Bölgesi, göç çeken sanayi ve hizmet sektörü nedeniyle nüfus artış hızının en yüksek olduğu bölgedir.",
-    iller: ["TR34"]
-  },
-  {
-    id: 142, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsular üzerindeki ilk büyük sulama kanalları hangi ovada açılmıştır?",
-    secenekler: ["Konya Ovası", "Çukurova", "Harran Ovası", "Gediz Ovası"],
-    dogru: 1,
-    aciklama: "Çukurova'da Seyhan ve Ceyhan nehirleri üzerinden açılan sulama kanalları Türkiye'nin ilk kapsamlı sulama altyapılarından biridir.",
-    iller: ["TR01"]
-  },
-  {
-    id: 143, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de demir cevheri üretiminin yoğunlaştığı bölge hangisidir?",
-    secenekler: ["Karadeniz (Zonguldak)", "İç Anadolu (Sivas-Divriği)", "Ege", "Akdeniz"],
-    dogru: 1,
-    aciklama: "Sivas-Divriği, Türkiye'nin en önemli demir cevheri kaynağıdır ve İç Anadolu Bölgesi'nde yer alır.",
-    iller: ["TR58"]
-  },
-  {
-    id: 144, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de 'taraça' (teras) oluşumları en fazla hangi nehir vadilerinde görülür?",
-    secenekler: ["Küçük dere yataklarında", "Büyük nehirlerin geniş vadilerinde", "Kapalı havza göllerinde", "Delta ovalarında"],
-    dogru: 1,
-    aciklama: "Fırat, Kızılırmak, Sakarya gibi büyük nehirlerin geniş vadilerinde nehir taraçaları yaygın olarak gözlemlenir.",
-    iller: []
-  },
-  {
-    id: 145, unite: 4, uniteName: "Göller",
-    soru: "Kovada Gölü hangi ilde bulunur?",
-    secenekler: ["Burdur", "Isparta", "Antalya", "Konya"],
-    dogru: 1,
-    aciklama: "Kovada Gölü, Isparta iline bağlı olup Eğirdir Gölü ile bağlantılı, küçük bir doğal göldür.",
-    iller: ["TR32"]
-  },
-  {
-    id: 146, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'nin Karadeniz kıyılarında en önemli liman kenti hangisidir?",
-    secenekler: ["Sinop", "Samsun", "Trabzon", "Zonguldak"],
-    dogru: 2,
-    aciklama: "Trabzon, doğal limana sahip olması ve Doğu Karadeniz'in ticaret merkezi konumuyla Karadeniz'in en önemli liman kentidir.",
-    iller: ["TR61"]
-  },
-  {
-    id: 147, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de 'Karadeniz iklimi'nin en belirgin yaşandığı iller hangileridir?",
-    secenekler: ["Kastamonu - Bartın", "Rize - Artvin", "Samsun - Ordu", "Trabzon - Giresun"],
-    dogru: 1,
-    aciklama: "Rize ve Artvin, yılın her mevsimi bol yağış alan Karadeniz ikliminin en belirgin özelliklerini gösteren illerdir.",
-    iller: ["TR53", "TR08"]
-  },
-  {
-    id: 148, unite: 1, uniteName: "Akarsular",
-    soru: "Türkiye'de akarsuların taşımacılık amacıyla kullanılamamasının temel nedeni nedir?",
-    secenekler: ["Suyun az olması", "Mevsimsele rejimleri ve eğimli yapıları", "Kirlilik", "Yasal düzenlemeler"],
-    dogru: 1,
-    aciklama: "Türkiye akarsularının mevsimsel değişken rejimleri, bol şelale ve hızlı akışlı kesimleri ulaşım açısından kullanımlarını engeller.",
-    iller: []
-  },
-  {
-    id: 149, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Munzur Dağları hangi bölgede bulunur?",
-    secenekler: ["İç Anadolu", "Karadeniz", "Doğu Anadolu", "Güneydoğu Anadolu"],
-    dogru: 2,
-    aciklama: "Munzur Dağları, Tunceli ve Erzincan illeri arasında Doğu Anadolu Bölgesi'nde yer alır.",
-    iller: ["TR62", "TR24"]
-  },
-  {
-    id: 150, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de tarımsal nüfus oranının en yüksek olduğu bölge hangisidir?",
-    secenekler: ["Marmara", "İç Anadolu", "Doğu Anadolu", "Karadeniz"],
-    dogru: 3,
-    aciklama: "Karadeniz Bölgesi, dağlık ve engebeli yapısı nedeniyle küçük aile çiftçiliğinin yaygın olduğu, tarımsal nüfus oranının yüksek olduğu bir bölgedir.",
-    iller: ["TR61", "TR52"]
-  },
-  {
-    id: 151, unite: 3, uniteName: "Ovalar & Platolar",
-    soru: "Türkiye'de 'Ergene Havzası' hangi bölgededir?",
-    secenekler: ["Karadeniz", "Marmara", "Ege", "İç Anadolu"],
-    dogru: 1,
-    aciklama: "Ergene Havzası, Tekirdağ ve Edirne illerini kapsayan Marmara Bölgesi'nde yer alır ve buğday üretimiyle öne çıkar.",
-    iller: ["TR59", "TR22"]
-  },
-  {
-    id: 152, unite: 4, uniteName: "Göller",
-    soru: "İznik Gölü hangi ilde bulunur?",
-    secenekler: ["İstanbul", "Bursa", "Kocaeli", "Balıkesir"],
-    dogru: 1,
-    aciklama: "İznik Gölü, Bursa iline bağlı tektonik kökenli bir göldür ve tarihi İznik şehrine yakın konumdadır.",
-    iller: ["TR16"]
-  },
-  {
-    id: 153, unite: 5, uniteName: "Boğazlar & Kıyılar",
-    soru: "Türkiye'de 'tombolo' oluşumuna en iyi örnek nerede görülür?",
-    secenekler: ["Sinop Yarımadası", "İstanbul Boğazı", "Akdeniz koyları", "Ege adaları"],
-    dogru: 0,
-    aciklama: "Sinop, kıyıya birleşmiş yarımada yapısıyla tombolo oluşumuna örnek gösterilen önemli bir coğrafi şekildir.",
-    iller: ["TR57"]
-  },
-  {
-    id: 154, unite: 6, uniteName: "Coğrafi Bölgeler",
-    soru: "Türkiye'de 'çeltik (pirinç)' tarımı en fazla hangi bölgede yapılır?",
-    secenekler: ["İç Anadolu", "Akdeniz", "Karadeniz (Samsun-Bafra)", "Ege"],
-    dogru: 2,
-    aciklama: "Çeltik tarımı, su ihtiyacı fazla olan bir ürün olduğundan Karadeniz'in delta ovalarında (Bafra, Çarşamba) yoğunlaşmıştır.",
-    iller: ["TR55"]
-  },
-  {
-    id: 155, unite: 2, uniteName: "Dağlar & Volkanlar",
-    soru: "Türkiye'de bor madeni üretiminde hangi bölge öne çıkar?",
-    secenekler: ["Karadeniz", "Ege (Balıkesir-Bursa)", "Akdeniz", "Doğu Anadolu"],
-    dogru: 1,
-    aciklama: "Dünya bor rezervlerinin büyük çoğunluğuna ev sahipliği yapan Türkiye'de bor madeni üretimi özellikle Balıkesir-Bursa çevresinde yoğunlaşmaktadır.",
-    iller: ["TR16", "TR10"]
-  }
+// ===== ÜNİTE 5: BOĞAZLAR & KIYILAR =====
+// Test 1
+{ id: 176, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’nin en uzun kıyısı hangi denize aittir?”, secenekler: [“Karadeniz”, “Ege”, “Akdeniz”, “Marmara”], dogru: 1, aciklama: “Ege Denizi kıyısı, koy ve yarımadaların çokluğu nedeniyle Türkiye’nin en uzun kıyı şeridine sahiptir.”, iller: [] },
+{ id: 177, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “İstanbul Boğazı hangi iki denizi birbirine bağlar?”, secenekler: [“Akdeniz-Ege”, “Karadeniz-Marmara”, “Marmara-Ege”, “Ege-Akdeniz”], dogru: 1, aciklama: “İstanbul Boğazı, Karadeniz ile Marmara Denizi’ni birbirine bağlar.”, iller: [“TR34”] },
+{ id: 178, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Çanakkale Boğazı hangi iki denizi birbirine bağlar?”, secenekler: [“Karadeniz-Marmara”, “Marmara-Ege”, “Ege-Akdeniz”, “Karadeniz-Ege”], dogru: 1, aciklama: “Çanakkale Boğazı, Marmara Denizi ile Ege Denizi’ni birbirine bağlar.”, iller: [“TR17”] },
+{ id: 179, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’nin toplam kıyı uzunluğu yaklaşık kaç km’dir?”, secenekler: [“4000 km”, “6000 km”, “8000 km”, “10000 km”], dogru: 2, aciklama: “Türkiye’nin adalarsız kıyı uzunluğu yaklaşık 8333 km olup adalarla birlikte bu rakam artmaktadır.”, iller: [] },
+{ id: 180, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de ria tipi kıyılar nerede bulunur?”, secenekler: [“Karadeniz kıyısı”, “Ege kıyısı”, “Akdeniz kıyısı”, “Marmara kıyısı”], dogru: 1, aciklama: “Ege kıyısında dağların denize dik uzanması sonucu vadilerin suya gömülmesiyle ria tipi kıyılar oluşmuştur.”, iller: [] },
+{ id: 181, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de boyuna kıyı tipi nerede görülür?”, secenekler: [“Ege kıyısı”, “Karadeniz kıyısı”, “Akdeniz kıyısı”, “Marmara kıyısı”], dogru: 1, aciklama: “Karadeniz kıyısında dağlar kıyıya paralel uzandığından boyuna (longitudinal) kıyı tipi görülür.”, iller: [] },
+{ id: 182, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “İstanbul Boğazı’nın uzunluğu yaklaşık kaç km’dir?”, secenekler: [“17 km”, “30 km”, “50 km”, “75 km”], dogru: 1, aciklama: “İstanbul Boğazı yaklaşık 30 km uzunluğundadır.”, iller: [“TR34”] },
+{ id: 183, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Çanakkale Boğazı’nın en dar yeri kaç km’dir?”, secenekler: [“1.2 km”, “4 km”, “8 km”, “12 km”], dogru: 0, aciklama: “Çanakkale Boğazı’nın en dar yeri yaklaşık 1.2-1.4 km’dir.”, iller: [“TR17”] },
+{ id: 184, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de liman sayısı en fazla olan kıyı hangisidir?”, secenekler: [“Karadeniz”, “Marmara”, “Ege”, “Akdeniz”], dogru: 2, aciklama: “Ege kıyısındaki girintili çıkıntılı yapı, liman kurulmasına elverişli çok sayıda doğal konak yeri sağlar.”, iller: [] },
+{ id: 185, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Karadeniz kıyısının özelliği nedir?”, secenekler: [“Çok girintili çıkıntılı”, “Sığ kıta sahanlığı”, “Derin ve sarp, düz kıyı”, “Bol koy ve körfez”], dogru: 2, aciklama: “Karadeniz kıyısı genellikle dağlara yakın, sarp ve düz bir boyuna kıyı özelliği taşır; doğal liman sayısı azdır.”, iller: [] },
+{ id: 186, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de İskenderun Körfezi hangi ilde yer alır?”, secenekler: [“Adana”, “Mersin”, “Hatay”, “Osmaniye”], dogru: 2, aciklama: “İskenderun Körfezi, Hatay iline bağlıdır ve Türkiye’nin güneydoğu Akdeniz çıkışını oluşturur.”, iller: [“TR31”] },
+{ id: 187, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Marmara Denizi’nin alanı yaklaşık kaç km²’dir?”, secenekler: [“4000 km²”, “11000 km²”, “20000 km²”, “35000 km²”], dogru: 1, aciklama: “Marmara Denizi yaklaşık 11.500 km² yüzey alanıyla dünyanın en küçük denizlerinden biridir.”, iller: [] },
+{ id: 188, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Bodrum Yarımadası hangi ilde yer alır?”, secenekler: [“Antalya”, “Muğla”, “Aydın”, “İzmir”], dogru: 1, aciklama: “Bodrum Yarımadası, Muğla iline bağlıdır ve Ege kıyısında önemli bir turizm merkezidir.”, iller: [“TR48”] },
+{ id: 189, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Karadeniz kıyısında doğal liman sayısının az olmasının sebebi nedir?”, secenekler: [“Denizin derin olması”, “Kıyının düz ve sarp olması”, “Yağışların fazla olması”, “Akıntıların kuvvetli olması”], dogru: 1, aciklama: “Karadeniz kıyısında dağların kıyıya paralel uzanması nedeniyle kıyı düz ve sarp olup doğal liman oluşumu azdır.”, iller: [] },
+{ id: 190, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Finike Körfezi hangi ilde yer alır?”, secenekler: [“Muğla”, “Burdur”, “Antalya”, “Isparta”], dogru: 2, aciklama: “Finike Körfezi, Antalya iline bağlı olup Akdeniz kıyısında yer alır.”, iller: [“TR07”] },
+{ id: 191, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Türk Boğazları hangi antlaşmayla yönetilmektedir?”, secenekler: [“Lozan Antlaşması”, “Montrö Sözleşmesi”, “Paris Antlaşması”, “Ankara Antlaşması”], dogru: 1, aciklama: “Türk Boğazları (İstanbul ve Çanakkale), 1936’da imzalanan Montrö Sözleşmesi ile düzenlenmektedir.”, iller: [] },
+{ id: 192, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Antalya Körfezi hangi denize aittir?”, secenekler: [“Ege”, “Marmara”, “Karadeniz”, “Akdeniz”], dogru: 3, aciklama: “Antalya Körfezi, Akdeniz’in bir körfezidir ve Türkiye’nin en büyük körfezlerinden biridir.”, iller: [“TR07”] },
+{ id: 193, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de İzmir Körfezi hangi denize aittir?”, secenekler: [“Marmara”, “Akdeniz”, “Karadeniz”, “Ege”], dogru: 3, aciklama: “İzmir Körfezi, Ege Denizi’ne ait olup İzmir ilinin kıyısında yer alır.”, iller: [“TR35”] },
+{ id: 194, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Karadeniz’e kıyısı olmayan il hangisidir?”, secenekler: [“Rize”, “Trabzon”, “Gümüşhane”, “Artvin”], dogru: 2, aciklama: “Gümüşhane, Karadeniz Bölgesi’nde yer almasına rağmen denize kıyısı olmayan bir iç ildir.”, iller: [“TR29”] },
+{ id: 195, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Saros Körfezi hangi ilde yer alır?”, secenekler: [“Tekirdağ”, “Edirne”, “Çanakkale”, “İstanbul”], dogru: 1, aciklama: “Saros Körfezi, Edirne iline bağlıdır ve Ege Denizi’nin kuzeyinde yer alır.”, iller: [“TR22”] },
+{ id: 196, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Akdeniz kıyısının genel özelliği nedir?”, secenekler: [“Düz ve girintisiz”, “Engebeli, yüksek kıyılar”, “Bol koy ve lagün”, “Delta ovaları”], dogru: 1, aciklama: “Akdeniz kıyısı, Toros Dağları’nın denize yakın uzanması nedeniyle engebeli ve yüksek kıyılar oluşturur.”, iller: [] },
+{ id: 197, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Edremit Körfezi hangi denize aittir?”, secenekler: [“Marmara”, “Karadeniz”, “Ege”, “Akdeniz”], dogru: 2, aciklama: “Edremit Körfezi, Ege Denizi’ne ait olup Balıkesir ve Çanakkale illeri arasında yer alır.”, iller: [“TR10”, “TR17”] },
+{ id: 198, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Gelibolu Yarımadası hangi ilde yer alır?”, secenekler: [“Edirne”, “Tekirdağ”, “İstanbul”, “Çanakkale”], dogru: 3, aciklama: “Gelibolu Yarımadası, Çanakkale iline bağlıdır ve Birinci Dünya Savaşı cephesiyle tarihi öneme sahiptir.”, iller: [“TR17”] },
+{ id: 199, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “İstanbul Boğazı’nın en dar yeri kaç metredir?”, secenekler: [“500 m”, “700 m”, “1000 m”, “2000 m”], dogru: 1, aciklama: “İstanbul Boğazı’nın Anadoluhisarı-Rumelihisarı arasındaki en dar kesimi yaklaşık 700 metredir.”, iller: [“TR34”] },
+{ id: 200, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Haliç nerede yer alır?”, secenekler: [“İzmir’de”, “Trabzon’da”, “İstanbul’da”, “Samsun’da”], dogru: 2, aciklama: “Haliç, İstanbul’da Avrupa yakasında yer alan ve İstanbul Boğazı’na bağlanan doğal bir haliçtir.”, iller: [“TR34”] },
+
+// ===== ÜNİTE 6: COĞRAFİ BÖLGELER =====
+// Test 1
+{ id: 201, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye kaç coğrafi bölgeye ayrılmaktadır?”, secenekler: [“5”, “6”, “7”, “8”], dogru: 2, aciklama: “Türkiye, 1941 Birinci Coğrafya Kongresi’nde 7 coğrafi bölgeye ayrılmıştır.”, iller: [] },
+{ id: 202, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’nin en büyük coğrafi bölgesi hangisidir?”, secenekler: [“Karadeniz”, “Ege”, “İç Anadolu”, “Doğu Anadolu”], dogru: 3, aciklama: “Doğu Anadolu Bölgesi, yaklaşık 163.000 km² ile Türkiye’nin en büyük coğrafi bölgesidir.”, iller: [] },
+{ id: 203, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’nin en küçük coğrafi bölgesi hangisidir?”, secenekler: [“Marmara”, “Güneydoğu Anadolu”, “Ege”, “Akdeniz”], dogru: 1, aciklama: “Marmara Bölgesi yaklaşık 67.000 km² ile Türkiye’nin en küçük bölgesi olmasına rağmen nüfus yoğunluğu en yüksek bölgedir.”, iller: [] },
+{ id: 204, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de nüfus yoğunluğu en yüksek bölge hangisidir?”, secenekler: [“Ege”, “Akdeniz”, “Marmara”, “İç Anadolu”], dogru: 2, aciklama: “Marmara Bölgesi, İstanbul başta olmak üzere sanayileşmiş kentleriyle Türkiye’nin en kalabalık bölgesidir.”, iller: [] },
+{ id: 205, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de tarım arazisi oranı en yüksek bölge hangisidir?”, secenekler: [“Karadeniz”, “İç Anadolu”, “Doğu Anadolu”, “Güneydoğu Anadolu”], dogru: 1, aciklama: “İç Anadolu, geniş düzlükleriyle Türkiye’nin en fazla tarım arazisine sahip bölgelerinden biridir.”, iller: [] },
+{ id: 206, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de ortalama yüksekliği en fazla olan bölge hangisidir?”, secenekler: [“İç Anadolu”, “Doğu Anadolu”, “Karadeniz”, “Güneydoğu Anadolu”], dogru: 1, aciklama: “Doğu Anadolu Bölgesi, ortalama 2000 metre yüksekliğiyle Türkiye’nin en yüksek bölgesidir.”, iller: [] },
+{ id: 207, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de en fazla yağış alan bölge hangisidir?”, secenekler: [“Marmara”, “Ege”, “Akdeniz”, “Karadeniz”], dogru: 3, aciklama: “Karadeniz Bölgesi, özellikle Rize çevresiyle Türkiye’nin en fazla yağış alan bölgesidir.”, iller: [] },
+{ id: 208, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de en az yağış alan bölge hangisidir?”, secenekler: [“İç Anadolu”, “Güneydoğu Anadolu”, “Doğu Anadolu”, “Ege”], dogru: 1, aciklama: “Güneydoğu Anadolu Bölgesi, Türkiye’nin en kurak bölgesi olup yıllık yağış miktarı oldukça düşüktür.”, iller: [] },
+{ id: 209, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de sanayi en çok hangi bölgede gelişmiştir?”, secenekler: [“İç Anadolu”, “Karadeniz”, “Marmara”, “Ege”], dogru: 2, aciklama: “Marmara Bölgesi, İstanbul, Kocaeli ve Bursa gibi sanayi şehirleriyle Türkiye’nin en sanayileşmiş bölgesidir.”, iller: [] },
+{ id: 210, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de çay üretiminin tamamına yakını hangi bölgede yapılır?”, secenekler: [“Marmara”, “Akdeniz”, “Karadeniz”, “Ege”], dogru: 2, aciklama: “Türkiye’nin çay üretiminin neredeyse tamamı Karadeniz Bölgesi’nde, özellikle Rize’de gerçekleşir.”, iller: [“TR53”] },
+{ id: 211, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de fındık üretiminin en fazla yapıldığı bölge hangisidir?”, secenekler: [“Ege”, “Akdeniz”, “Marmara”, “Karadeniz”], dogru: 3, aciklama: “Türkiye dünya fındık üretiminin yaklaşık %70’ini karşılar; üretimin büyük çoğunluğu Karadeniz Bölgesi’nde yapılır.”, iller: [] },
+{ id: 212, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de pamuk üretiminin en fazla yapıldığı bölge hangisidir?”, secenekler: [“Karadeniz”, “İç Anadolu”, “Ege ve Akdeniz”, “Güneydoğu Anadolu”], dogru: 2, aciklama: “Pamuk üretimi başta Ege (Aydın, Manisa) ve Akdeniz (Adana) bölgelerinde yoğunlaşır.”, iller: [] },
+{ id: 213, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de turizm gelirinin en fazla olduğu bölge hangisidir?”, secenekler: [“Marmara”, “Karadeniz”, “Ege ve Akdeniz”, “İç Anadolu”], dogru: 2, aciklama: “Ege ve Akdeniz bölgeleri, sahil turizmiyle Türkiye’nin en fazla turizm geliri elde ettiği bölgelerdir.”, iller: [] },
+{ id: 214, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Güneydoğu Anadolu Bölgesi’nin en önemli ekonomik faaliyeti nedir?”, secenekler: [“Hayvancılık”, “Sanayi”, “Tarım”, “Turizm”], dogru: 2, aciklama: “Güneydoğu Anadolu Bölgesi’nde GAP projesiyle birlikte tarım (pamuk, buğday, mercimek) en önemli ekonomik faaliyet haline gelmiştir.”, iller: [] },
+{ id: 215, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Doğu Anadolu Bölgesi’nde en yaygın hayvancılık türü hangisidir?”, secenekler: [“Kümes hayvancılığı”, “Büyükbaş ve küçükbaş hayvancılık”, “Su ürünleri”, “İpek böcekçiliği”], dogru: 1, aciklama: “Doğu Anadolu’nun yüksek yaylaları, büyükbaş ve küçükbaş hayvancılık için elverişlidir.”, iller: [] },
+{ id: 216, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de kış turizmi en çok hangi bölgede yapılır?”, secenekler: [“Akdeniz”, “Ege”, “Karadeniz”, “Doğu Anadolu”], dogru: 3, aciklama: “Doğu Anadolu’daki Palandöken (Erzurum), Sarıkamış (Kars) gibi merkezler kış turizmi açısından öne çıkar.”, iller: [“TR25”, “TR36”] },
+{ id: 217, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de zeytinyağı üretiminin en fazla yapıldığı bölge hangisidir?”, secenekler: [“Akdeniz”, “Marmara”, “Karadeniz”, “Ege”], dogru: 3, aciklama: “Ege Bölgesi, zeytinyağı üretiminde Türkiye’de birinci sıradadır.”, iller: [] },
+{ id: 218, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Karadeniz Bölgesi’nin en belirgin coğrafi özelliği nedir?”, secenekler: [“Düz arazi”, “Kıyıya paralel dağlar ve yoğun yağış”, “Sıcak ve kurak iklim”, “Geniş ovalar”], dogru: 1, aciklama: “Karadeniz Bölgesi, kıyıya paralel uzanan Pontus Dağları ve yüksek yağış miktarıyla ayırt edilir.”, iller: [] },
+{ id: 219, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de İç Anadolu Bölgesi’nin iklim özelliği nedir?”, secenekler: [“Akdeniz iklimi”, “Karasal iklim”, “Okyanus iklimi”, “Tundra iklimi”], dogru: 1, aciklama: “İç Anadolu’da karasal iklim hâkimdir; yazlar sıcak ve kurak, kışlar soğuk ve karlıdır.”, iller: [] },
+{ id: 220, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de hangi bölge iki denize kıyısı olan tek bölgedir?”, secenekler: [“Ege”, “Akdeniz”, “Marmara”, “Karadeniz”], dogru: 2, aciklama: “Marmara Bölgesi, hem Karadeniz’e hem de Marmara ve Ege denizlerine kıyısı olan bölgedir.”, iller: [] },
+{ id: 221, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Ege Bölgesi’nde görülen kıyı tipi hangisidir?”, secenekler: [“Boyuna kıyı”, “Delta kıyısı”, “Enine (ria) kıyısı”, “Lagün kıyısı”], dogru: 2, aciklama: “Ege’de dağlar denize dik uzandığından enine kıyı (ria tipi) görülür ve pek çok koy, körfez oluşur.”, iller: [] },
+{ id: 222, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de hangi bölge denize kıyısı yoktur?”, secenekler: [“Karadeniz”, “Ege”, “İç Anadolu”, “Akdeniz”], dogru: 2, aciklama: “İç Anadolu Bölgesi denize kıyısı olmayan tek coğrafi bölgedir.”, iller: [] },
+{ id: 223, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de tütün üretiminin en fazla yapıldığı bölgeler hangisidir?”, secenekler: [“İç Anadolu ve Doğu Anadolu”, “Ege ve Karadeniz”, “Akdeniz ve Güneydoğu”, “Marmara ve Ege”], dogru: 1, aciklama: “Tütün üretimi başta Ege (İzmir, Manisa) ve Karadeniz (Samsun, Trabzon) bölgelerinde yapılır.”, iller: [] },
+{ id: 224, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de hangi bölge en fazla orman örtüsüne sahiptir?”, secenekler: [“İç Anadolu”, “Güneydoğu Anadolu”, “Karadeniz”, “Doğu Anadolu”], dogru: 2, aciklama: “Karadeniz Bölgesi’nin yüksek yağışları gür orman örtüsünün oluşmasını sağlamıştır.”, iller: [] },
+{ id: 225, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Akdeniz Bölgesi’nde yetiştirilen başlıca subtropik ürün hangisidir?”, secenekler: [“Fındık”, “Çay”, “Narenciye”, “Şekerpancarı”], dogru: 2, aciklama: “Akdeniz Bölgesi’nin ılıman ve yağışlı iklimi, narenciye (portakal, mandalina, limon) yetiştiriciliğine uygundur.”, iller: [] },
+
+// Test 2
+{ id: 226, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Kapadokya hangi bölgede yer alır?”, secenekler: [“Akdeniz”, “Doğu Anadolu”, “İç Anadolu”, “Güneydoğu Anadolu”], dogru: 2, aciklama: “Kapadokya, İç Anadolu Bölgesi’nde Nevşehir, Kayseri ve Aksaray illerini kapsayan bir alandır.”, iller: [“TR50”, “TR38”, “TR68”] },
+{ id: 227, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Trakya bölümü hangi coğrafi bölgede yer alır?”, secenekler: [“Karadeniz”, “Ege”, “Marmara”, “İç Anadolu”], dogru: 2, aciklama: “Trakya, Türkiye’nin Avrupa yakasında Marmara Bölgesi’nin batı bölümünü oluşturur.”, iller: [“TR22”, “TR39”, “TR59”] },
+{ id: 228, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de nüfus yoğunluğunun en düşük olduğu bölge hangisidir?”, secenekler: [“Karadeniz”, “İç Anadolu”, “Doğu Anadolu”, “Güneydoğu Anadolu”], dogru: 2, aciklama: “Doğu Anadolu Bölgesi, zorlu iklim ve engebeli arazi nedeniyle Türkiye’nin en seyrek nüfuslu bölgesidir.”, iller: [] },
+{ id: 229, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de maden yatakları en çok hangi bölgede bulunur?”, secenekler: [“Marmara”, “Ege”, “İç Anadolu”, “Doğu Anadolu”], dogru: 3, aciklama: “Doğu Anadolu, bakır, demir, krom ve diğer metalik madenler bakımından Türkiye’nin en zengin bölgesidir.”, iller: [] },
+{ id: 230, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de kıyı uzunluğu en fazla olan bölge hangisidir?”, secenekler: [“Akdeniz”, “Karadeniz”, “Ege”, “Marmara”], dogru: 2, aciklama: “Ege kıyılarının girintili çıkıntılı yapısı nedeniyle Ege Bölgesi en uzun kıyı şeridine sahip bölgedir.”, iller: [] },
+{ id: 231, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de şekerpancarı üretiminin en yoğun olduğu bölge hangisidir?”, secenekler: [“Akdeniz”, “Ege”, “İç Anadolu ve Marmara”, “Karadeniz”], dogru: 2, aciklama: “Şekerpancarı, İç Anadolu ve Marmara bölgelerinde daha fazla üretilmektedir.”, iller: [] },
+{ id: 232, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Akdeniz Bölgesi’nde yaz aylarında hava nasıldır?”, secenekler: [“Serin ve yağışlı”, “Sıcak ve kurak”, “Soğuk ve karlı”, “Ilıman ve nemli”], dogru: 1, aciklama: “Akdeniz ikliminde yazlar sıcak ve kurak olur; yağışlar kış mevsiminde düşer.”, iller: [] },
+{ id: 233, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Güneydoğu Anadolu Bölgesi’nin başkenti niteliğindeki şehir hangisidir?”, secenekler: [“Gaziantep”, “Diyarbakır”, “Şanlıurfa”, “Mardin”], dogru: 1, aciklama: “Diyarbakır, Güneydoğu Anadolu Bölgesi’nin en büyük şehri olup bölgenin merkezi konumundadır.”, iller: [“TR21”] },
+{ id: 234, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Ege Bölgesi’nde en önemli liman şehri hangisidir?”, secenekler: [“Aydın”, “Manisa”, “İzmir”, “Denizli”], dogru: 2, aciklama: “İzmir, Ege Bölgesi’nin ve Türkiye’nin önemli liman şehirlerinden biridir.”, iller: [“TR35”] },
+{ id: 235, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Marmara Bölgesi’nde en önemli tarım ürünü hangisidir?”, secenekler: [“Narenciye”, “Ayçiçeği ve buğday”, “Fındık”, “Pamuk”], dogru: 1, aciklama: “Marmara Bölgesi’nde Trakya kesiminde ayçiçeği ve buğday tarımı yaygındır.”, iller: [] },
+{ id: 236, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de 1941 yılında yapılan coğrafya kongresi nerede gerçekleşti?”, secenekler: [“İstanbul”, “Ankara”, “İzmir”, “Bursa”], dogru: 1, aciklama: “Türkiye’yi coğrafi bölgelere ayıran Birinci Coğrafya Kongresi 1941’de Ankara’da yapılmıştır.”, iller: [“TR06”] },
+{ id: 237, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Karadeniz Bölgesi’nde en önemli liman şehri hangisidir?”, secenekler: [“Ordu”, “Giresun”, “Trabzon”, “Sinop”], dogru: 2, aciklama: “Trabzon, Karadeniz Bölgesi’nin en büyük ve önemli liman şehridir.”, iller: [“TR61”] },
+{ id: 238, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Doğu Anadolu’nun en önemli şehri hangisidir?”, secenekler: [“Malatya”, “Erzurum”, “Van”, “Elazığ”], dogru: 1, aciklama: “Erzurum, Doğu Anadolu’nun en büyük ve tarihsel açıdan en önemli şehirlerindendir.”, iller: [“TR25”] },
+{ id: 239, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Akdeniz Bölgesi’nin en büyük şehri hangisidir?”, secenekler: [“Mersin”, “Hatay”, “Adana”, “Antalya”], dogru: 2, aciklama: “Adana, Akdeniz Bölgesi’nin en büyük ve en nüfuslu şehridir.”, iller: [“TR01”] },
+{ id: 240, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Ege Bölgesi’nde yaygın tarım faaliyeti hangisidir?”, secenekler: [“Fındık ve çay”, “Zeytin, üzüm, incir”, “Şekerpancarı”, “Pirinç”], dogru: 1, aciklama: “Ege Bölgesi’nde zeytin, üzüm ve incir tarımı oldukça yaygın olup ihracat açısından büyük önem taşır.”, iller: [] },
+{ id: 241, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de İç Anadolu’nun başkenti hangi şehirdir?”, secenekler: [“Konya”, “Ankara”, “Kayseri”, “Eskişehir”], dogru: 1, aciklama: “Ankara, hem Türkiye’nin başkenti hem de İç Anadolu Bölgesi’nin merkezi konumundaki en önemli şehridir.”, iller: [“TR06”] },
+{ id: 242, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Karadeniz ikliminin belirgin özelliği nedir?”, secenekler: [“Yaz yağışlı, kış kurak”, “Her mevsim yağışlı”, “Kış yağışlı, yaz kurak”, “Her mevsim kurak”], dogru: 1, aciklama: “Karadeniz ikliminde her mevsim yağış görülür; bu nedenle bölgede bitki örtüsü yıl boyu yeşildir.”, iller: [] },
+{ id: 243, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Güneydoğu Anadolu’nun ekonomik açıdan önemi son yıllarda neden artmıştır?”, secenekler: [“Turizm yatırımları”, “GAP projesi”, “Maden işletmeleri”, “Sanayi gelişimi”], dogru: 1, aciklama: “GAP projesi kapsamında inşa edilen barajlar ve sulama kanalları, Güneydoğu Anadolu’nun tarımsal üretimini önemli ölçüde artırmıştır.”, iller: [] },
+{ id: 244, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Ege Bölgesi’nin iklim özelliği nedir?”, secenekler: [“Karasal iklim”, “Akdeniz iklimi”, “Karadeniz iklimi”, “Step iklimi”], dogru: 1, aciklama: “Ege Bölgesi’nde Akdeniz iklimi hâkimdir; yazlar sıcak ve kurak, kışlar ılık ve yağışlıdır.”, iller: [] },
+{ id: 245, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Marmara Bölgesi neden sanayi açısından en gelişmiş bölgedir?”, secenekler: [“Yer altı kaynakları”, “Ulaşım, liman ve büyük pazar yakınlığı”, “Tarım verimliliği”, “Turizm geliri”], dogru: 1, aciklama: “Marmara Bölgesi; deniz ulaşımı, köprüler, büyük pazarlar ve nitelikli işgücüyle sanayi açısından öne çıkmaktadır.”, iller: [] },
+{ id: 246, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Akdeniz Bölgesi’nin en önemli turizm merkezi hangisidir?”, secenekler: [“Adana”, “Mersin”, “Antalya”, “Hatay”], dogru: 2, aciklama: “Antalya, Türkiye’nin en fazla turist çeken şehirlerinden biri olup ‘Turizm Başkenti’ olarak bilinir.”, iller: [“TR07”] },
+{ id: 247, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de İç Anadolu Bölgesi’nde hâkim bitki örtüsü nedir?”, secenekler: [“Tropikal orman”, “Step (bozkır)”, “Sık orman”, “Makis”], dogru: 1, aciklama: “İç Anadolu’nun karasal iklimi nedeniyle bölgede hâkim bitki örtüsü step (bozkır) dır.”, iller: [] },
+{ id: 248, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Güneydoğu Anadolu Bölgesi ile İç Anadolu Bölgesi’ni birbirinden ayıran dağlar hangisidir?”, secenekler: [“Kuzey Anadolu Dağları”, “Güneydoğu Toros Dağları”, “Orta Toros Dağları”, “Munzur Dağları”], dogru: 1, aciklama: “Güneydoğu Toros Dağları, Güneydoğu Anadolu ile diğer bölgeler arasındaki doğal sınırı oluşturur.”, iller: [] },
+{ id: 249, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de Karadeniz Bölgesi’nde en önemli tarım ürünü hangisidir?”, secenekler: [“Buğday”, “Çay ve fındık”, “Pamuk”, “Narenciye”], dogru: 1, aciklama: “Karadeniz Bölgesi’nde çay ve fındık, bölgenin ekonomisinin temel tarımsal ürünleridir.”, iller: [] },
+{ id: 250, unite: 6, test: 2, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’de coğrafi bölge sınırları neye göre belirlenmiştir?”, secenekler: [“Sadece iklime göre”, “Yalnızca idari sınırlara göre”, “İklim, arazi, bitki örtüsü ve ekonomik faaliyetlere göre”, “Nüfus yoğunluğuna göre”], dogru: 2, aciklama: “1941 Birinci Coğrafya Kongresi’nde bölge sınırları; iklim, yüzey şekilleri, bitki örtüsü ve ekonomik özellikler birlikte değerlendirilerek çizilmiştir.”, iller: [] },
 ];
