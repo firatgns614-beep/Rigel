@@ -761,7 +761,11 @@ function showResult() {
     console.warn('SVG yüklenemedi:', e);
   }
 })();
+<script>
+setTimeout(function() {
+  document.body.innerHTML += '<div style="color:yellow;padding:10px;">QUESTIONS tipi: ' + typeof QUESTIONS + '</div>';
+}, 2000);
 </script>
-
+  
 </body>
 </html>
