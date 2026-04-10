@@ -1,4 +1,3 @@
-console.log("questions.js yuklendi");const 
 const QUESTIONS = [
 // ===== ÜNİTE 1: AKARSULAR =====
 // Test 1
