@@ -1,4 +1,4 @@
-console.log("questions.js yuklendi");
+console.log("questions.js yuklendi");const 
 const QUESTIONS = [
 // ===== ÜNİTE 1: AKARSULAR =====
 // Test 1
@@ -194,7 +194,6 @@ const QUESTIONS = [
 { id: 175, unite: 4, test: 1, uniteName: “Göller”, soru: “Türkiye’deki göller içinde yüzey alanı en küçüğü hangisidir?”, secenekler: [“Abant Gölü”, “Gölcük Gölü”, “Tortum Gölü”, “Karamuk Gölü”], dogru: 0, aciklama: “Abant Gölü ve Gölcük Gölü gibi küçük göller, Türkiye’nin küçük yüzey alanlı gölleri arasındadır.”, iller: [] },
 
 // ===== ÜNİTE 5: BOĞAZLAR & KIYILAR =====
-// Test 1
 { id: 176, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’nin en uzun kıyısı hangi denize aittir?”, secenekler: [“Karadeniz”, “Ege”, “Akdeniz”, “Marmara”], dogru: 1, aciklama: “Ege Denizi kıyısı, koy ve yarımadaların çokluğu nedeniyle Türkiye’nin en uzun kıyı şeridine sahiptir.”, iller: [] },
 { id: 177, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “İstanbul Boğazı hangi iki denizi birbirine bağlar?”, secenekler: [“Akdeniz-Ege”, “Karadeniz-Marmara”, “Marmara-Ege”, “Ege-Akdeniz”], dogru: 1, aciklama: “İstanbul Boğazı, Karadeniz ile Marmara Denizi’ni birbirine bağlar.”, iller: [“TR34”] },
 { id: 178, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Çanakkale Boğazı hangi iki denizi birbirine bağlar?”, secenekler: [“Karadeniz-Marmara”, “Marmara-Ege”, “Ege-Akdeniz”, “Karadeniz-Ege”], dogru: 1, aciklama: “Çanakkale Boğazı, Marmara Denizi ile Ege Denizi’ni birbirine bağlar.”, iller: [“TR17”] },
@@ -222,7 +221,6 @@ const QUESTIONS = [
 { id: 200, unite: 5, test: 1, uniteName: “Boğazlar & Kıyılar”, soru: “Türkiye’de Haliç nerede yer alır?”, secenekler: [“İzmir’de”, “Trabzon’da”, “İstanbul’da”, “Samsun’da”], dogru: 2, aciklama: “Haliç, İstanbul’da Avrupa yakasında yer alan ve İstanbul Boğazı’na bağlanan doğal bir haliçtir.”, iller: [“TR34”] },
 
 // ===== ÜNİTE 6: COĞRAFİ BÖLGELER =====
-// Test 1
 { id: 201, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye kaç coğrafi bölgeye ayrılmaktadır?”, secenekler: [“5”, “6”, “7”, “8”], dogru: 2, aciklama: “Türkiye, 1941 Birinci Coğrafya Kongresi’nde 7 coğrafi bölgeye ayrılmıştır.”, iller: [] },
 { id: 202, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’nin en büyük coğrafi bölgesi hangisidir?”, secenekler: [“Karadeniz”, “Ege”, “İç Anadolu”, “Doğu Anadolu”], dogru: 3, aciklama: “Doğu Anadolu Bölgesi, yaklaşık 163.000 km² ile Türkiye’nin en büyük coğrafi bölgesidir.”, iller: [] },
 { id: 203, unite: 6, test: 1, uniteName: “Coğrafi Bölgeler”, soru: “Türkiye’nin en küçük coğrafi bölgesi hangisidir?”, secenekler: [“Marmara”, “Güneydoğu Anadolu”, “Ege”, “Akdeniz”], dogru: 1, aciklama: “Marmara Bölgesi yaklaşık 67.000 km² ile Türkiye’nin en küçük bölgesi olmasına rağmen nüfus yoğunluğu en yüksek bölgedir.”, iller: [] },
